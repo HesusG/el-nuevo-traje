@@ -381,6 +381,9 @@
             font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
             text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; opacity: 0.7;
         }
+        .skill-extra-subtitle {
+            font-size: 0.85rem; color: #888; margin-bottom: 16px; font-style: italic;
+        }
         .skill-extra p {
             font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px; color: #444;
         }
@@ -391,7 +394,11 @@
             font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
             padding: 6px 12px; border: 2px solid; background: #fff;
             box-shadow: 3px 3px 0 rgba(0,0,0,0.08); text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.5px; text-decoration: none; transition: all 0.2s;
+        }
+        .skill-tag:hover {
+            background: var(--fg); color: var(--bg) !important;
+            transform: translateY(-2px);
         }
 
         /* ── Footer ── */
@@ -572,10 +579,28 @@
                 <span class="s-era" style="color:var(--c)">Habilidad 01 · Desarrollo Socioemocional</span>
                 <h2 class="s-name" style="color:var(--c)">Competencias Socioemocionales</h2>
                 <p class="s-thesis" style="border-color:var(--c)">El corazon del traje: sin empatia, el traje es cascara vacia.</p>
+
+                <div class="skill-tags">
+                    <a class="skill-tag" style="border-color: var(--c-socio); color: var(--c-socio);" href="https://es.wikipedia.org/wiki/%C3%89tica_del_cuidado" target="_blank" rel="noopener">Etica del cuidado (Noddings)</a>
+                    <a class="skill-tag" style="border-color: var(--c-socio); color: var(--c-socio);" href="https://es.wikipedia.org/wiki/Aprendizaje_socioemocional" target="_blank" rel="noopener">Aprendizaje socioemocional (CASEL)</a>
+                    <a class="skill-tag" style="border-color: var(--c-socio); color: var(--c-socio);" href="https://es.wikipedia.org/wiki/Pedagog%C3%ADa_del_oprimido" target="_blank" rel="noopener">Pedagogia del oprimido (Freire)</a>
+                </div>
+
                 <div class="s-body">
                     <p>La empatia permite comprender las emociones, intereses y necesidades de los estudiantes. Estas capacidades permiten crear ambientes de aprendizaje seguros, inclusivos y respetuosos, donde los estudiantes se sientan motivados y valorados.</p>
                     <p>El docente no solo ensena contenidos, sino que tambien influye en la formacion integral de los estudiantes. Sin esta conexion emocional, el traje es una cascara vacia: un docente puede dominar la tecnologia y las metodologias mas innovadoras, pero si no conecta emocionalmente con sus estudiantes, las grandes ideas seguiran siendo abstractas e inalcanzables.</p>
                 </div>
+
+                <div class="skill-extra">
+                    <div class="skill-extra-title">Como se desarrolla</div>
+                    <p>A traves de talleres de inteligencia emocional, practicas de escucha activa en el aula, ejercicios de autorreflexion sobre los propios sesgos y disparadores emocionales, y el modelado explicito de empatia en la interaccion cotidiana con los estudiantes.</p>
+
+                    <div class="skill-extra-title">Posibles tensiones</div>
+                    <p>El vinculo emocional cercano puede dificultar la evaluacion objetiva y generar favoritismo percibido. El desgaste emocional (burnout) es un riesgo real cuando el docente absorbe las cargas emocionales de los estudiantes sin establecer limites saludables. Ademas, en grupos grandes, atender las necesidades socioemocionales individuales puede resultar abrumador.</p>
+                </div>
+
+                <div class="skill-extra-title">Citas que respaldan esta habilidad</div>
+                <p class="skill-extra-subtitle">Fragmentos de reportes internacionales que fundamentan la importancia de esta competencia.</p>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
                     <div class="rb-h">OCDE:Teaching Compass 2025 (p. 9) <span class="rb-i">↓</span></div>
@@ -591,29 +616,14 @@
                     </div>
                 </div>
 
-                <div class="tk" style="border-color:var(--c)">
-                    <div class="tk-l" style="color:var(--c)">Mensaje clave</div>
-                    <p>La empatía no es un accesorio del traje, es su corazon. Sin conexión emocional, ninguna metodología ni tecnología puede hacer que las grandes ideas cobren vida.</p>
-                </div>
-
                 <div class="s-lk">
                     <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass 2025</a>
                     <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
                 </div>
 
-                <div class="skill-extra">
-                    <div class="skill-extra-title">Como se desarrolla</div>
-                    <p>Se cultiva mediante la autorreflexion, la escucha activa, el modelado de empatia en el aula y la formacion en inteligencia emocional.</p>
-
-                    <div class="skill-extra-title">Posibles tensiones</div>
-                    <p>El vinculo emocional puede dificultar la evaluacion objetiva. El desgaste emocional (burnout) es un riesgo real cuando no hay limites claros.</p>
-
-                    <div class="skill-extra-title">Teorias pedagogicas relacionadas</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag" style="border-color: var(--c-socio); color: var(--c-socio);">Etica del cuidado (Noddings)</span>
-                        <span class="skill-tag" style="border-color: var(--c-socio); color: var(--c-socio);">Aprendizaje socioemocional (CASEL)</span>
-                        <span class="skill-tag" style="border-color: var(--c-socio); color: var(--c-socio);">Pedagogia del oprimido (Freire)</span>
-                    </div>
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Mensaje clave</div>
+                    <p>La empatia no es un accesorio del traje, es su corazon. Sin conexion emocional, ninguna metodologia ni tecnologia puede hacer que las grandes ideas cobren vida.</p>
                 </div>
             </div>
 
@@ -648,11 +658,29 @@
                 <span class="s-era" style="color:var(--c)">Habilidad 02 · Tecnología Educativa</span>
                 <h2 class="s-name" style="color:var(--c)">Integración de la Tecnología</h2>
                 <p class="s-thesis" style="border-color:var(--c)">Los hilos digitales: la tecnologia teje puentes entre lo abstracto y lo concreto.</p>
+
+                <div class="skill-tags">
+                    <a class="skill-tag" style="border-color: var(--c-tech); color: var(--c-tech);" href="https://es.wikipedia.org/wiki/TPACK" target="_blank" rel="noopener">TPACK (Mishra y Koehler)</a>
+                    <a class="skill-tag" style="border-color: var(--c-tech); color: var(--c-tech);" href="https://es.wikipedia.org/wiki/Conectivismo" target="_blank" rel="noopener">Conectivismo (Siemens)</a>
+                    <a class="skill-tag" style="border-color: var(--c-tech); color: var(--c-tech);" href="https://es.wikipedia.org/wiki/Modelo_SAMR" target="_blank" rel="noopener">Modelo SAMR (Puentedura)</a>
+                </div>
+
                 <div class="s-body">
                     <p>La tecnologia puede ayudar al profesor a hacer visibles y concretas las grandes ideas. Muchos temas implican conceptos abstractos que pueden resultar dificiles de comprender si solo se presentan de forma teorica. Para que los estudiantes se involucren realmente con el aprendizaje, primero necesitan entender por que ese conocimiento es relevante para ellos y como se conecta con situaciones reales.</p>
                     <p>Podemos apoyarnos en <em>simulaciones</em> que permiten experimentar con fenomenos complejos, <em>visualizaciones</em> que ayudan a representar procesos no visibles a simple vista, y <em>proyectos practicos</em> donde los estudiantes aplican lo aprendido para resolver problemas concretos.</p>
                     <p>De esta manera transformamos momentos tradicionalmente pasivos de la clase en experiencias de aprendizaje activas, donde los estudiantes participan, experimentan y reflexionan. Estas actividades tambien generan oportunidades para evaluar el aprendizaje en contextos reales, observando como los estudiantes aplican sus conocimientos y habilidades.</p>
                 </div>
+
+                <div class="skill-extra">
+                    <div class="skill-extra-title">Como se desarrolla</div>
+                    <p>Experimentando con herramientas digitales en contextos reales de aula, colaborando con otros docentes y desarrolladores EdTech, y evaluando criticamente que tecnologia realmente mejora la comprension y cual solo distrae. La clave es integrar la herramienta al objetivo pedagogico, no al reves.</p>
+
+                    <div class="skill-extra-title">Posibles tensiones</div>
+                    <p>El acceso desigual a infraestructura digital genera brechas entre escuelas y regiones. La tecnologia puede convertirse en distraccion cuando se usa sin intencion pedagogica clara. Existe tambien el riesgo de que el docente dependa de la herramienta y pierda la capacidad de ensenar sin ella, o que la presion institucional por "innovar" lleve a adoptar tecnologia por moda y no por necesidad real.</p>
+                </div>
+
+                <div class="skill-extra-title">Citas que respaldan esta habilidad</div>
+                <p class="skill-extra-subtitle">Fragmentos de reportes internacionales que fundamentan la importancia de esta competencia.</p>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
                     <div class="rb-h">OCDE:Education Policy Outlook 2024 (p. 6) <span class="rb-i">↓</span></div>
@@ -668,29 +696,14 @@
                     </div>
                 </div>
 
-                <div class="tk" style="border-color:var(--c)">
-                    <div class="tk-l" style="color:var(--c)">Mensaje clave</div>
-                    <p>La tecnologia no es el traje, son los hilos que lo tejen. Su valor no está en la herramienta, sino en los puentes que permite construir entre las grandes ideas y la experiencia del estudiante.</p>
-                </div>
-
                 <div class="s-lk">
                     <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/11/education-policy-outlook-2024_0411a0c4/dd5140e4-en.pdf" target="_blank" rel="noopener">OCDE Education Policy Outlook 2024</a>
                     <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass 2025</a>
                 </div>
 
-                <div class="skill-extra">
-                    <div class="skill-extra-title">Como se desarrolla</div>
-                    <p>A traves de la experimentacion con herramientas digitales, colaboracion con pares y desarrolladores EdTech, y la integracion critica de simulaciones y visualizaciones en la practica docente.</p>
-
-                    <div class="skill-extra-title">Posibles tensiones</div>
-                    <p>El acceso desigual a infraestructura digital genera brechas. La tecnologia puede convertirse en distraccion si no se usa con intencion pedagogica clara.</p>
-
-                    <div class="skill-extra-title">Teorias pedagogicas relacionadas</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag" style="border-color: var(--c-tech); color: var(--c-tech);">TPACK (Mishra y Koehler)</span>
-                        <span class="skill-tag" style="border-color: var(--c-tech); color: var(--c-tech);">Conectivismo (Siemens)</span>
-                        <span class="skill-tag" style="border-color: var(--c-tech); color: var(--c-tech);">Modelo SAMR (Puentedura)</span>
-                    </div>
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Mensaje clave</div>
+                    <p>La tecnologia no es el traje, son los hilos que lo tejen. Su valor no esta en la herramienta, sino en los puentes que permite construir entre las grandes ideas y la experiencia del estudiante.</p>
                 </div>
             </div>
 
@@ -739,10 +752,28 @@
                 <span class="s-era" style="color:var(--c)">Habilidad 03 · Pedagógica</span>
                 <h2 class="s-name" style="color:var(--c)">Innovación Pedagógica y Aprendizaje Continuo</h2>
                 <p class="s-thesis" style="border-color:var(--c)">La tela que se renueva: la practica reflexiva mantiene al docente vigente.</p>
+
+                <div class="skill-tags">
+                    <a class="skill-tag" style="border-color: var(--c-innov); color: var(--c-innov);" href="https://es.wikipedia.org/wiki/Pr%C3%A1ctica_reflexiva" target="_blank" rel="noopener">Practica reflexiva (Schon)</a>
+                    <a class="skill-tag" style="border-color: var(--c-innov); color: var(--c-innov);" href="https://es.wikipedia.org/wiki/Investigaci%C3%B3n-acci%C3%B3n" target="_blank" rel="noopener">Investigacion-accion (Stenhouse)</a>
+                    <a class="skill-tag" style="border-color: var(--c-innov); color: var(--c-innov);" href="https://es.wikipedia.org/wiki/Aprendizaje_experiencial" target="_blank" rel="noopener">Aprendizaje experiencial (Kolb)</a>
+                </div>
+
                 <div class="s-body">
                     <p>Mantener una formacion constante, investigacion y reflexion sobre la practica docente, ser flexible y disenar proyectos innovadores. El docente debe ser capaz de planificar, desarrollar y evaluar procesos de ensenanza y aprendizaje.</p>
                     <p>Esto implica el dominio de estrategias de ensenanza y aprendizaje, incluyendo la planificacion, el diseno de actividades didacticas, la aplicacion de metodologias y la evaluacion. La tela del traje no es estatica: se <em>renueva</em>, se <em>adapta</em>, se <em>transforma</em>. El docente del siglo XXI no termina de formarse nunca, y esa es precisamente su fortaleza.</p>
                 </div>
+
+                <div class="skill-extra">
+                    <div class="skill-extra-title">Como se desarrolla</div>
+                    <p>Participando en comunidades de practica donde los docentes comparten experiencias y retroalimentacion, llevando diarios reflexivos sobre lo que funciona y lo que no en el aula, realizando investigacion-accion sobre problemas concretos de su contexto, y participando en redes de formacion continua tanto presenciales como virtuales.</p>
+
+                    <div class="skill-extra-title">Posibles tensiones</div>
+                    <p>La sobrecarga laboral y administrativa limita seriamente el tiempo disponible para la reflexion y la formacion. Las estructuras institucionales rigidas pueden frenar la innovacion individual al imponer curriculos y formatos inflexibles. Tambien existe la tension entre innovar por conviccion y hacerlo por presion externa, lo que puede generar cambios superficiales sin impacto real.</p>
+                </div>
+
+                <div class="skill-extra-title">Citas que respaldan esta habilidad</div>
+                <p class="skill-extra-subtitle">Fragmentos de reportes internacionales que fundamentan la importancia de esta competencia.</p>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
                     <div class="rb-h">OCDE:Teaching Compass 2025 (p. 13) <span class="rb-i">↓</span></div>
@@ -758,29 +789,14 @@
                     </div>
                 </div>
 
-                <div class="tk" style="border-color:var(--c)">
-                    <div class="tk-l" style="color:var(--c)">Mensaje clave</div>
-                    <p>La innovación no es adoptar la ultima moda, es la practica reflexiva que mantiene al docente vigente. La formación continua no es un requisito burocrático; es la tela que se renueva cada día.</p>
-                </div>
-
                 <div class="s-lk">
                     <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass 2025</a>
                     <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
                 </div>
 
-                <div class="skill-extra">
-                    <div class="skill-extra-title">Como se desarrolla</div>
-                    <p>Mediante comunidades de practica, investigacion-accion, diarios reflexivos y participacion en redes de formacion continua entre docentes.</p>
-
-                    <div class="skill-extra-title">Posibles tensiones</div>
-                    <p>La sobrecarga laboral limita el tiempo para la reflexion. Las estructuras institucionales rigidas pueden frenar la innovacion individual.</p>
-
-                    <div class="skill-extra-title">Teorias pedagogicas relacionadas</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag" style="border-color: var(--c-innov); color: var(--c-innov);">Practica reflexiva (Schon)</span>
-                        <span class="skill-tag" style="border-color: var(--c-innov); color: var(--c-innov);">Investigacion-accion (Stenhouse)</span>
-                        <span class="skill-tag" style="border-color: var(--c-innov); color: var(--c-innov);">Aprendizaje experiencial (Kolb)</span>
-                    </div>
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Mensaje clave</div>
+                    <p>La innovacion no es adoptar la ultima moda, es la practica reflexiva que mantiene al docente vigente. La formacion continua no es un requisito burocratico; es la tela que se renueva cada dia.</p>
                 </div>
             </div>
 
@@ -816,10 +832,28 @@
                 <span class="s-era" style="color:var(--c)">Habilidad 04 · Diseño Instruccional</span>
                 <h2 class="s-name" style="color:var(--c)">Diseño Instruccional para la Comprensión Profunda</h2>
                 <p class="s-thesis" style="border-color:var(--c)">El patron del traje: sin un buen diseno, la tela mas fina se vuelve un trapo.</p>
-                <div class="s-body">
-                    <p>El <em>patrón</em> es el molde que da forma al traje. El docente que enseña para la comprensión no transmite contenido, transforma objetivos curriculares en <em>preguntas esenciales</em> que orientan la investigación del estudiante y hacen las grandes ideas creíbles y vitales.</p>
-                    <p>Hacer las ideas "creíbles y hacerlas parecer vital" no es solo un reto intelectual; es un reto de <em>diseño</em>. El docente como co-diseñador del aprendizaje y experto adaptativo debe saber convertir la complejidad disciplinar en experiencias de aprendizaje que provoquen comprensión profunda.</p>
+
+                <div class="skill-tags">
+                    <a class="skill-tag" style="border-color: var(--c-design); color: var(--c-design);" href="https://es.wikipedia.org/wiki/Ense%C3%B1anza_para_la_comprensi%C3%B3n" target="_blank" rel="noopener">Ensenanza para la Comprension (Perkins)</a>
+                    <a class="skill-tag" style="border-color: var(--c-design); color: var(--c-design);" href="https://es.wikipedia.org/wiki/Dise%C3%B1o_inverso" target="_blank" rel="noopener">Diseno inverso (Wiggins y McTighe)</a>
+                    <a class="skill-tag" style="border-color: var(--c-design); color: var(--c-design);" href="https://en.wikipedia.org/wiki/Structure_of_observed_learning_outcome" target="_blank" rel="noopener">Taxonomia SOLO (Biggs)</a>
                 </div>
+
+                <div class="s-body">
+                    <p>El <em>patron</em> es el molde que da forma al traje. El docente que ensena para la comprension no transmite contenido, transforma objetivos curriculares en <em>preguntas esenciales</em> que orientan la investigacion del estudiante y hacen las grandes ideas creibles y vitales.</p>
+                    <p>Hacer las ideas "creibles y hacerlas parecer vital" no es solo un reto intelectual; es un reto de <em>diseno</em>. El docente como co-disenador del aprendizaje y experto adaptativo debe saber convertir la complejidad disciplinar en experiencias de aprendizaje que provoquen comprension profunda.</p>
+                </div>
+
+                <div class="skill-extra">
+                    <div class="skill-extra-title">Como se desarrolla</div>
+                    <p>Formulando preguntas esenciales a partir de los contenidos curriculares, disenando evaluaciones autenticas que midan comprension real (no solo memorizacion), y alineando cada actividad con objetivos claros de comprension profunda. Tambien implica aprender a usar el diseno inverso: partir de lo que el estudiante debe comprender al final y disenar hacia atras.</p>
+
+                    <div class="skill-extra-title">Posibles tensiones</div>
+                    <p>Los curriculos rigidos y las evaluaciones estandarizadas dejan poco espacio para preguntas esenciales y evaluaciones autenticas. Disenar para la comprension profunda requiere significativamente mas tiempo de preparacion que simplemente cubrir contenido. Ademas, los docentes pueden enfrentar resistencia institucional cuando sus disenos no se ajustan a los formatos tradicionales de planeacion.</p>
+                </div>
+
+                <div class="skill-extra-title">Citas que respaldan esta habilidad</div>
+                <p class="skill-extra-subtitle">Fragmentos de reportes internacionales que fundamentan la importancia de esta competencia.</p>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
                     <div class="rb-h">OCDE:Teaching Compass 2025 <span class="rb-i">↓</span></div>
@@ -835,30 +869,15 @@
                     </div>
                 </div>
 
-                <div class="tk" style="border-color:var(--c)">
-                    <div class="tk-l" style="color:var(--c)">Mensaje clave</div>
-                    <p>El patrón es lo que transforma la tela en traje. Sin diseño instruccional intencional, los mejores contenidos se quedan en información suelta que el estudiante no puede ensamblar en comprensión.</p>
-                </div>
-
                 <div class="s-lk">
                     <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass 2025</a>
                     <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/11/education-policy-outlook-2024_0411a0c4/dd5140e4-en.pdf" target="_blank" rel="noopener">OCDE Education Policy Outlook 2024</a>
                     <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
                 </div>
 
-                <div class="skill-extra">
-                    <div class="skill-extra-title">Como se desarrolla</div>
-                    <p>Formulando preguntas esenciales a partir de los contenidos, disenando evaluaciones autenticas y alineando actividades con los objetivos de comprension profunda.</p>
-
-                    <div class="skill-extra-title">Posibles tensiones</div>
-                    <p>Los curriculos rigidos y las evaluaciones estandarizadas pueden limitar el espacio para preguntas esenciales. Disenar para la comprension requiere mas tiempo que cubrir contenido.</p>
-
-                    <div class="skill-extra-title">Teorias pedagogicas relacionadas</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag" style="border-color: var(--c-design); color: var(--c-design);">Ensenanza para la Comprension (Perkins)</span>
-                        <span class="skill-tag" style="border-color: var(--c-design); color: var(--c-design);">Diseno inverso (Wiggins y McTighe)</span>
-                        <span class="skill-tag" style="border-color: var(--c-design); color: var(--c-design);">Taxonomia SOLO (Biggs)</span>
-                    </div>
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Mensaje clave</div>
+                    <p>El patron es lo que transforma la tela en traje. Sin diseno instruccional intencional, los mejores contenidos se quedan en informacion suelta que el estudiante no puede ensamblar en comprension.</p>
                 </div>
             </div>
 
