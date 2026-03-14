@@ -1,878 +1,1014 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>El Traje Nuevo del Profesor — Infografía</title>
-<style>
-  :root {
-    --morado: #6C3CE1;
-    --morado-oscuro: #4A1FB8;
-    --morado-claro: #E8DFFB;
-    --amarillo: #FFE066;
-    --amarillo-suave: #FFF8DC;
-    --blanco: #FFFFFF;
-    --gris-oscuro: #2D2D2D;
-    --gris-medio: #6B7280;
-    --gris-claro: #F3F4F6;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    color: var(--gris-oscuro);
-    line-height: 1.6;
-    background: var(--blanco);
-  }
-
-  /* ── HERO ─────────────────────────────── */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(135deg, var(--morado) 0%, var(--morado-oscuro) 100%);
-    color: var(--blanco);
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 300px; height: 300px;
-    background: var(--amarillo);
-    opacity: 0.1;
-    border-radius: 50%;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -80px; left: -80px;
-    width: 400px; height: 400px;
-    background: var(--amarillo);
-    opacity: 0.08;
-    border-radius: 50%;
-  }
-
-  .hero-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.02em;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  }
-
-  .hero h1 span {
-    color: var(--amarillo);
-  }
-
-  .hero .subtitle {
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
-    font-weight: 300;
-    max-width: 700px;
-    margin-bottom: 2.5rem;
-    opacity: 0.9;
-  }
-
-  .hero-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    font-size: 0.95rem;
-    opacity: 0.85;
-    background: rgba(255,255,255,0.08);
-    padding: 1.5rem 2rem;
-    border-radius: 12px;
-    backdrop-filter: blur(4px);
-  }
-
-  .hero-meta strong {
-    color: var(--amarillo);
-    font-weight: 600;
-  }
-
-  .hero-scroll {
-    position: absolute;
-    bottom: 2rem;
-    animation: bounce 2s infinite;
-    font-size: 1.5rem;
-    opacity: 0.6;
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(8px); }
-  }
-
-  /* ── SECTIONS ─────────────────────────── */
-  section {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 4rem 1.5rem;
-  }
-
-  .section-title {
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
-    font-weight: 800;
-    color: var(--morado);
-    margin-bottom: 1rem;
-    position: relative;
-    display: inline-block;
-  }
-
-  .section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: var(--amarillo);
-    border-radius: 2px;
-    margin-top: 0.4rem;
-  }
-
-  /* ── INTRO ────────────────────────────── */
-  .intro-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--gris-oscuro);
-    max-width: 780px;
-  }
-
-  .intro-text em {
-    color: var(--morado);
-    font-style: normal;
-    font-weight: 600;
-  }
-
-  .intro-highlight {
-    background: var(--morado-claro);
-    border-left: 4px solid var(--morado);
-    padding: 1.2rem 1.5rem;
-    border-radius: 0 8px 8px 0;
-    margin-top: 1.5rem;
-    font-size: 1.05rem;
-    line-height: 1.7;
-  }
-
-  /* ── TOGGLE ───────────────────────────── */
-  .toggle-bar {
-    display: flex;
-    justify-content: center;
-    gap: 0;
-    margin: 0 auto 2rem;
-    max-width: 600px;
-    background: var(--gris-claro);
-    border-radius: 50px;
-    padding: 4px;
-  }
-
-  .toggle-btn {
-    flex: 1;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    background: transparent;
-    color: var(--gris-medio);
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-  }
-
-  .toggle-btn.active {
-    background: var(--morado);
-    color: var(--blanco);
-    box-shadow: 0 2px 8px rgba(108, 60, 225, 0.3);
-  }
-
-  .toggle-btn:hover:not(.active) {
-    color: var(--morado);
-  }
-
-  /* ── VERSION CONTAINERS ───────────────── */
-  .version {
-    display: none;
-    animation: fadeIn 0.4s ease;
-  }
-
-  .version.active {
-    display: block;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── VERSION A: CARDS ─────────────────── */
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-
-  .skill-card {
-    background: var(--blanco);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    border: 1px solid rgba(108, 60, 225, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .skill-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(108, 60, 225, 0.12);
-  }
-
-  .card-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .card-area {
-    display: inline-block;
-    background: var(--morado-claro);
-    color: var(--morado);
-    font-size: 0.8rem;
-    font-weight: 700;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    margin-bottom: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .card-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--morado);
-    margin-bottom: 0.3rem;
-  }
-
-  .card-author {
-    font-size: 0.85rem;
-    color: var(--gris-medio);
-    margin-bottom: 1rem;
-    font-style: italic;
-  }
-
-  .card-desc {
-    font-size: 0.95rem;
-    margin-bottom: 1.2rem;
-    line-height: 1.6;
-  }
-
-  .card-quote {
-    background: var(--amarillo-suave);
-    border-left: 3px solid var(--amarillo);
-    padding: 0.8rem 1rem;
-    margin-bottom: 0.8rem;
-    font-size: 0.88rem;
-    line-height: 1.6;
-    border-radius: 0 6px 6px 0;
-    color: #4A4A4A;
-  }
-
-  .card-quote .quote-source {
-    display: block;
-    margin-top: 0.4rem;
-    font-weight: 700;
-    font-size: 0.8rem;
-    color: var(--morado);
-  }
-
-  .card-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
-  }
-
-  .card-links a {
-    font-size: 0.8rem;
-    color: var(--morado);
-    text-decoration: none;
-    border: 1px solid var(--morado-claro);
-    padding: 0.3rem 0.7rem;
-    border-radius: 20px;
-    transition: all 0.2s ease;
-  }
-
-  .card-links a:hover {
-    background: var(--morado);
-    color: var(--blanco);
-  }
-
-  /* ── VERSION B: NARRATIVE ─────────────── */
-  .narrative-section {
-    margin-bottom: 3.5rem;
-    position: relative;
-    padding-left: 3rem;
-  }
-
-  .narrative-section::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, var(--morado), var(--amarillo));
-    border-radius: 2px;
-  }
-
-  .narrative-icon {
-    position: absolute;
-    left: -14px;
-    top: 0;
-    width: 32px;
-    height: 32px;
-    background: var(--morado);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    box-shadow: 0 2px 8px rgba(108, 60, 225, 0.3);
-  }
-
-  .narrative-subtitle {
-    font-size: 0.85rem;
-    color: var(--gris-medio);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.3rem;
-  }
-
-  .narrative-title {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--morado);
-    margin-bottom: 0.3rem;
-  }
-
-  .narrative-author {
-    font-size: 0.85rem;
-    color: var(--gris-medio);
-    font-style: italic;
-    margin-bottom: 1rem;
-  }
-
-  .narrative-body {
-    font-size: 1.02rem;
-    line-height: 1.8;
-    margin-bottom: 1.2rem;
-  }
-
-  .narrative-body em {
-    color: var(--morado);
-    font-style: normal;
-    font-weight: 600;
-  }
-
-  .narrative-quote {
-    background: var(--amarillo-suave);
-    border-left: 3px solid var(--amarillo);
-    padding: 1rem 1.2rem;
-    margin: 1rem 0;
-    font-size: 0.92rem;
-    line-height: 1.7;
-    border-radius: 0 8px 8px 0;
-  }
-
-  .narrative-quote .quote-source {
-    display: block;
-    margin-top: 0.5rem;
-    font-weight: 700;
-    font-size: 0.82rem;
-    color: var(--morado);
-  }
-
-  .narrative-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.8rem;
-  }
-
-  .narrative-links a {
-    font-size: 0.8rem;
-    color: var(--morado);
-    text-decoration: none;
-    border: 1px solid var(--morado-claro);
-    padding: 0.3rem 0.7rem;
-    border-radius: 20px;
-    transition: all 0.2s ease;
-  }
-
-  .narrative-links a:hover {
-    background: var(--morado);
-    color: var(--blanco);
-  }
-
-  .narrative-closure {
-    background: linear-gradient(135deg, var(--morado) 0%, var(--morado-oscuro) 100%);
-    color: var(--blanco);
-    padding: 2rem 2.5rem;
-    border-radius: 16px;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-top: 2.5rem;
-    text-align: center;
-    box-shadow: 0 6px 20px rgba(108, 60, 225, 0.2);
-  }
-
-  .narrative-closure span {
-    color: var(--amarillo);
-    font-weight: 700;
-  }
-
-  /* ── REFERENCES ───────────────────────── */
-  .references {
-    background: var(--gris-claro);
-    padding: 3rem 1.5rem;
-  }
-
-  .references-inner {
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-  .ref-title {
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: var(--morado);
-    margin-bottom: 1.5rem;
-  }
-
-  .ref-title::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 3px;
-    background: var(--amarillo);
-    border-radius: 2px;
-    margin-top: 0.4rem;
-  }
-
-  .ref-list {
-    list-style: none;
-    display: grid;
-    gap: 0.8rem;
-  }
-
-  .ref-list li {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    padding: 0.8rem 1rem;
-    background: var(--blanco);
-    border-radius: 8px;
-    border-left: 3px solid var(--morado);
-  }
-
-  .ref-list li a {
-    color: var(--morado);
-    text-decoration: none;
-    word-break: break-all;
-  }
-
-  .ref-list li a:hover {
-    text-decoration: underline;
-  }
-
-  .ref-org {
-    display: inline-block;
-    background: var(--morado-claro);
-    color: var(--morado);
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 0.15rem 0.5rem;
-    border-radius: 10px;
-    margin-right: 0.3rem;
-    text-transform: uppercase;
-  }
-
-  /* ── FOOTER ───────────────────────────── */
-  footer {
-    text-align: center;
-    padding: 2rem 1rem;
-    font-size: 0.85rem;
-    color: var(--gris-medio);
-    border-top: 1px solid #E5E7EB;
-  }
-
-  /* ── SCROLL ANIMATIONS ────────────────── */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── RESPONSIVE ───────────────────────── */
-  @media (max-width: 600px) {
-    .hero-meta {
-      padding: 1rem 1.2rem;
-      font-size: 0.85rem;
-    }
-
-    .cards-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .narrative-section {
-      padding-left: 2rem;
-    }
-
-    .toggle-btn {
-      font-size: 0.82rem;
-      padding: 0.7rem 0.8rem;
-    }
-
-    .narrative-closure {
-      padding: 1.5rem;
-      font-size: 1rem;
-    }
-  }
-</style>
-</head>
-<body>
-
-<!-- ════════════════════════════════════════
-     HERO / PORTADA
-     ════════════════════════════════════════ -->
-<header class="hero">
-  <div class="hero-icon">🎓</div>
-  <h1>El <span>Traje Nuevo</span> del Profesor</h1>
-  <p class="subtitle">Las Grandes Ideas y las Habilidades del Docente del Siglo XXI</p>
-  <div class="hero-meta">
-    <div><strong>Programa:</strong> Maestría en Pedagogía — UPAEP</div>
-    <div><strong>Maestra:</strong> Socorro Guevara Salazar</div>
-    <div><strong>Fecha:</strong> 14 de marzo de 2026</div>
-    <div><strong>Integrantes:</strong> Carolina Hernández Machorro, Rosa Hernández Machorro, Hesus García Cobos</div>
-  </div>
-  <div class="hero-scroll">↓</div>
-</header>
-
-<!-- ════════════════════════════════════════
-     INTRODUCCIÓN
-     ════════════════════════════════════════ -->
-<section class="fade-in">
-  <h2 class="section-title">Las Grandes Ideas</h2>
-  <p class="intro-text">
-    Las Grandes Ideas son los conceptos centrales y duraderos de una disciplina: los principios que organizan el conocimiento y le dan sentido. Sin embargo, lo que para el profesor es <em>obvio</em>, para el estudiante suele ser <em>abstracto, confuso o irrelevante</em>.
-  </p>
-  <p class="intro-text" style="margin-top: 1rem;">
-    El reto del docente contemporáneo no es repetir contenido ni simplificarlo, sino <em>rediseñar la instrucción</em> para que las grandes ideas se vuelvan creíbles y vitales en la mente del estudiante.
-  </p>
-  <div class="intro-highlight">
-    Por eso hablamos del <strong>"nuevo traje del profesor"</strong>: ya no basta con transmitir información. El docente necesita nuevas habilidades — un nuevo traje — que le permita hacer visible lo invisible, conectar con sus estudiantes y mantenerse en constante evolución.
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     TOGGLE
-     ════════════════════════════════════════ -->
-<section style="padding-bottom: 0;">
-  <div class="toggle-bar">
-    <button class="toggle-btn active" onclick="switchVersion('a')" id="btn-a">
-      ✦ Versión A — Las Tres Habilidades
-    </button>
-    <button class="toggle-btn" onclick="switchVersion('b')" id="btn-b">
-      🧵 Versión B — La Analogía del Traje
-    </button>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     VERSIÓN A — TARJETAS DIRECTAS
-     ════════════════════════════════════════ -->
-<section id="version-a" class="version active">
-  <div class="cards-grid">
-
-    <!-- TARJETA 1 — Socioemocional -->
-    <div class="skill-card fade-in">
-      <div class="card-icon">💜</div>
-      <span class="card-area">Desarrollo Socioemocional</span>
-      <h3 class="card-title">Competencias Socioemocionales</h3>
-      <p class="card-author">Rosa Hernández Machorro</p>
-      <p class="card-desc">
-        Empatía, construcción de ambientes de aprendizaje seguros e inclusivos, y formación integral del estudiante. El docente reconoce sus propios estados emocionales para conectar auténticamente con quienes aprenden.
-      </p>
-      <div class="card-quote">
-        "Cuando los docentes aprenden a reconocer sus propios disparadores emocionales, sesgos cognitivos y fortalezas profesionales, obtienen claridad sobre cómo los estados personales influyen en las decisiones en el aula. La investigación demuestra que la conciencia de sí mismo mejorada, y la empatía que promueve, puede mitigar el sesgo inconsciente y mejorar los resultados de los estudiantes."
-        <span class="quote-source">— OCDE, Teaching Compass 2025, p. 9</span>
-      </div>
-      <div class="card-quote">
-        "La pedagogía debe organizarse en torno a los principios de cooperación, colaboración y solidaridad. Debe fomentar las capacidades intelectuales, sociales y morales de los estudiantes para trabajar juntos y transformar el mundo con empatía y compasión."
-        <span class="quote-source">— UNESCO, Reimaginar juntos nuestros futuros 2021, p. 3</span>
-      </div>
-      <div class="card-links">
-        <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass</a>
-        <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
-      </div>
-    </div>
-
-    <!-- TARJETA 2 — Tecnología -->
-    <div class="skill-card fade-in">
-      <div class="card-icon">🔌</div>
-      <span class="card-area">Tecnología Educativa</span>
-      <h3 class="card-title">Integración de la Tecnología</h3>
-      <p class="card-author">Hesus García Cobos</p>
-      <p class="card-desc">
-        Simulaciones, visualizaciones y proyectos prácticos que hacen visible lo abstracto. La tecnología no reemplaza al docente: amplifica su capacidad de conectar al estudiante con las grandes ideas.
-      </p>
-      <div class="card-quote">
-        "Apoyar a los docentes en la experimentación de prácticas, colaboración con investigadores y desarrolladores de EdTech, y aprovechar la experiencia de pares puede ayudar a cerrar la brecha entre la visión y la práctica en el aula."
-        <span class="quote-source">— OCDE, Education Policy Outlook 2024, p. 6</span>
-      </div>
-      <div class="card-quote">
-        "Las competencias fundamentales incluyen habilidades cognitivas y metacognitivas (como alfabetización, numeracía y alfabetización digital/de datos)… Estas competencias no pueden desarrollarse simplemente sentándose en el aula, sino que requieren participación activa y significativa con el mundo."
-        <span class="quote-source">— OCDE, Teaching Compass 2025, p. 5</span>
-      </div>
-      <div class="card-links">
-        <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/11/education-policy-outlook-2024_0411a0c4/dd5140e4-en.pdf" target="_blank" rel="noopener">OCDE Education Policy Outlook</a>
-        <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass</a>
-      </div>
-    </div>
-
-    <!-- TARJETA 3 — Innovación -->
-    <div class="skill-card fade-in">
-      <div class="card-icon">🔬</div>
-      <span class="card-area">Pedagógica</span>
-      <h3 class="card-title">Innovación Pedagógica y Aprendizaje Continuo</h3>
-      <p class="card-author">Carolina Hernández Machorro</p>
-      <p class="card-desc">
-        Formación constante, investigación, reflexión, diseño de proyectos innovadores, planificación y evaluación. El docente como profesional que evoluciona con su práctica.
-      </p>
-      <div class="card-quote">
-        "La enseñanza se entiende como un viaje de descubrimiento de por vida, en el cual la práctica reflexiva y el aprendizaje continuo impulsan a los docentes a enfrentar nuevos desafíos y aprovechar las oportunidades emergentes."
-        <span class="quote-source">— OCDE, Teaching Compass 2025, p. 13</span>
-      </div>
-      <div class="card-quote">
-        "La enseñanza debe profesionalizarse aún más como un esfuerzo de colaboración en el que los docentes son reconocidos por su trabajo como generadores de conocimiento y figuras clave en la transformación educativa y social."
-        <span class="quote-source">— UNESCO, Reimaginar juntos nuestros futuros 2021, p. 3</span>
-      </div>
-      <div class="card-links">
-        <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass</a>
-        <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     VERSIÓN B — ANALOGÍA DEL TRAJE
-     ════════════════════════════════════════ -->
-<section id="version-b" class="version">
-
-  <!-- Sección 1 — El Corazón -->
-  <div class="narrative-section fade-in">
-    <div class="narrative-icon">💜</div>
-    <p class="narrative-subtitle">Competencias Socioemocionales</p>
-    <h3 class="narrative-title">"El Corazón del Traje"</h3>
-    <p class="narrative-author">Rosa Hernández Machorro</p>
-    <p class="narrative-body">
-      Todo traje tiene un interior que toca la piel — la parte que nadie ve pero que sostiene todo lo demás. El <em>corazón del traje</em> del docente es su capacidad socioemocional: la empatía, la escucha activa, la construcción de espacios donde el estudiante se sienta seguro para equivocarse.
-    </p>
-    <p class="narrative-body">
-      Sin este corazón, el traje es una cáscara vacía. Un docente puede dominar la tecnología y las metodologías más innovadoras, pero si no conecta emocionalmente con sus estudiantes, las grandes ideas seguirán siendo abstractas e inalcanzables. La empatía es lo que transforma la <em>información</em> en <em>comprensión</em>.
-    </p>
-    <div class="narrative-quote">
-      "Cuando los docentes aprenden a reconocer sus propios disparadores emocionales, sesgos cognitivos y fortalezas profesionales, obtienen claridad sobre cómo los estados personales influyen en las decisiones en el aula. La investigación demuestra que la conciencia de sí mismo mejorada, y la empatía que promueve, puede mitigar el sesgo inconsciente y mejorar los resultados de los estudiantes."
-      <span class="quote-source">— OCDE, Teaching Compass 2025, p. 9</span>
-    </div>
-    <div class="narrative-quote">
-      "La pedagogía debe organizarse en torno a los principios de cooperación, colaboración y solidaridad. Debe fomentar las capacidades intelectuales, sociales y morales de los estudiantes para trabajar juntos y transformar el mundo con empatía y compasión."
-      <span class="quote-source">— UNESCO, Reimaginar juntos nuestros futuros 2021, p. 3</span>
-    </div>
-    <div class="narrative-links">
-      <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass</a>
-      <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
-    </div>
-  </div>
-
-  <!-- Sección 2 — Los Hilos Digitales -->
-  <div class="narrative-section fade-in">
-    <div class="narrative-icon">🔌</div>
-    <p class="narrative-subtitle">Integración de la Tecnología</p>
-    <h3 class="narrative-title">"Los Hilos Digitales"</h3>
-    <p class="narrative-author">Hesus García Cobos</p>
-    <p class="narrative-body">
-      Los hilos con los que está tejido el traje son la <em>tecnología</em>. No son el traje en sí — son lo que lo teje, lo que conecta cada pieza con las demás y con el mundo del estudiante.
-    </p>
-    <p class="narrative-body">
-      Las simulaciones, las visualizaciones, los proyectos prácticos son <em>puntadas</em> que unen lo abstracto con lo concreto. Un concepto de física cobra vida en una simulación interactiva. Una idea matemática se vuelve tangible en una visualización de datos. La tecnología no reemplaza al docente: le da nuevos hilos con los cuales tejer puentes entre las grandes ideas y la experiencia del estudiante.
-    </p>
-    <div class="narrative-quote">
-      "Apoyar a los docentes en la experimentación de prácticas, colaboración con investigadores y desarrolladores de EdTech, y aprovechar la experiencia de pares puede ayudar a cerrar la brecha entre la visión y la práctica en el aula."
-      <span class="quote-source">— OCDE, Education Policy Outlook 2024, p. 6</span>
-    </div>
-    <div class="narrative-quote">
-      "Las competencias fundamentales incluyen habilidades cognitivas y metacognitivas (como alfabetización, numeracía y alfabetización digital/de datos)… Estas competencias no pueden desarrollarse simplemente sentándose en el aula, sino que requieren participación activa y significativa con el mundo."
-      <span class="quote-source">— OCDE, Teaching Compass 2025, p. 5</span>
-    </div>
-    <div class="narrative-links">
-      <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/11/education-policy-outlook-2024_0411a0c4/dd5140e4-en.pdf" target="_blank" rel="noopener">OCDE Education Policy Outlook</a>
-      <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass</a>
-    </div>
-  </div>
-
-  <!-- Sección 3 — La Tela que se Renueva -->
-  <div class="narrative-section fade-in">
-    <div class="narrative-icon">🔬</div>
-    <p class="narrative-subtitle">Innovación Pedagógica y Aprendizaje Continuo</p>
-    <h3 class="narrative-title">"La Tela que se Renueva"</h3>
-    <p class="narrative-author">Carolina Hernández Machorro</p>
-    <p class="narrative-body">
-      La tela del traje no es estática — se <em>renueva</em>, se <em>adapta</em>, se <em>transforma</em>. Un traje que no evoluciona se vuelve obsoleto; un docente que no se actualiza pierde la capacidad de conectar con las nuevas generaciones.
-    </p>
-    <p class="narrative-body">
-      La <em>práctica reflexiva</em> y el <em>aprendizaje continuo</em> son lo que mantiene el traje vigente. Cada nueva investigación, cada proyecto innovador, cada momento de reflexión sobre la propia práctica es un hilo que renueva la tela. El docente del siglo XXI no termina de formarse nunca — y esa es precisamente su fortaleza.
-    </p>
-    <div class="narrative-quote">
-      "La enseñanza se entiende como un viaje de descubrimiento de por vida, en el cual la práctica reflexiva y el aprendizaje continuo impulsan a los docentes a enfrentar nuevos desafíos y aprovechar las oportunidades emergentes."
-      <span class="quote-source">— OCDE, Teaching Compass 2025, p. 13</span>
-    </div>
-    <div class="narrative-quote">
-      "La enseñanza debe profesionalizarse aún más como un esfuerzo de colaboración en el que los docentes son reconocidos por su trabajo como generadores de conocimiento y figuras clave en la transformación educativa y social."
-      <span class="quote-source">— UNESCO, Reimaginar juntos nuestros futuros 2021, p. 3</span>
-    </div>
-    <div class="narrative-links">
-      <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass</a>
-      <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
-    </div>
-  </div>
-
-  <!-- Cierre narrativo -->
-  <div class="narrative-closure fade-in">
-    Un traje no se viste por partes.<br><br>
-    El profesor del siglo XXI necesita las tres: <span>el corazón que conecta</span>, <span>los hilos que tejen puentes digitales</span>, y <span>la tela que se renueva cada día</span>.<br><br>
-    Ese es el traje nuevo del profesor — y no es de fantasía.
-  </div>
-
-</section>
-
-<!-- ════════════════════════════════════════
-     REFERENCIAS
-     ════════════════════════════════════════ -->
-<div class="references">
-  <div class="references-inner">
-    <h2 class="ref-title">Referencias</h2>
-    <ul class="ref-list">
-      <li>
-        <span class="ref-org">OCDE</span>
-        <strong>Teaching Compass</strong> (2025).
-        <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">oecd.org — Teaching Compass (PDF)</a>
-      </li>
-      <li>
-        <span class="ref-org">OCDE</span>
-        <strong>Conflict Resolution — Learning Compass 2030</strong> (2019).
-        <a href="https://www.oecd.org/content/dam/oecd/en/topics/policy-issues/future-of-education-and-skills/learning-compass-constructs/Conflict%20Resolution.pdf" target="_blank" rel="noopener">oecd.org — Conflict Resolution (PDF)</a>
-      </li>
-      <li>
-        <span class="ref-org">OCDE</span>
-        <strong>Transformative Competencies for 2030</strong> (2019).
-        <a href="https://www.oecd.org/content/dam/oecd/en/about/projects/edu/education-2040/concept-notes/Transformative_Competencies_for_2030_concept_note.pdf" target="_blank" rel="noopener">oecd.org — Transformative Competencies (PDF)</a>
-      </li>
-      <li>
-        <span class="ref-org">OCDE</span>
-        <strong>Education Policy Outlook 2024</strong>.
-        <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/11/education-policy-outlook-2024_0411a0c4/dd5140e4-en.pdf" target="_blank" rel="noopener">oecd.org — Education Policy Outlook (PDF)</a>
-      </li>
-      <li>
-        <span class="ref-org">UNESCO</span>
-        <strong>Reimaginar juntos nuestros futuros: un nuevo contrato social para la educación</strong> (2021).
-        <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">unesdoc.unesco.org — Reimaginar juntos</a>
-      </li>
-      <li>
-        <span class="ref-org">UNESCO</span>
-        <strong>Global Education Monitoring Report 2023: Technology in Education</strong>.
-        <a href="https://unesdoc.unesco.org/ark:/48223/pf0000385723" target="_blank" rel="noopener">unesdoc.unesco.org — GEM Report 2023</a>
-      </li>
-      <li>
-        <span class="ref-org">UNESCO</span>
-        <strong>Global Report on Teachers 2024</strong>.
-        <a href="https://unesdoc.unesco.org/ark:/48223/pf0000388832" target="_blank" rel="noopener">unesdoc.unesco.org — Informe Docentes 2024</a>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<!-- ════════════════════════════════════════
-     FOOTER
-     ════════════════════════════════════════ -->
-<footer>
-  Maestría en Pedagogía — UPAEP · Marzo 2026
-</footer>
-
-<!-- ════════════════════════════════════════
-     JAVASCRIPT
-     ════════════════════════════════════════ -->
-<script>
-  // ── Toggle entre versiones ──
-  function switchVersion(version) {
-    const versionA = document.getElementById('version-a');
-    const versionB = document.getElementById('version-b');
-    const btnA = document.getElementById('btn-a');
-    const btnB = document.getElementById('btn-b');
-
-    if (version === 'a') {
-      versionA.classList.add('active');
-      versionB.classList.remove('active');
-      btnA.classList.add('active');
-      btnB.classList.remove('active');
-    } else {
-      versionB.classList.add('active');
-      versionA.classList.remove('active');
-      btnB.classList.add('active');
-      btnA.classList.remove('active');
-    }
-
-    // Re-trigger fade-in for newly visible elements
-    const target = version === 'a' ? versionA : versionB;
-    target.querySelectorAll('.fade-in').forEach(function(el) {
-      el.classList.remove('visible');
-      // Force reflow
-      void el.offsetWidth;
-      el.classList.add('visible');
-    });
-  }
-
-  // ── Scroll fade-in with IntersectionObserver ──
-  document.addEventListener('DOMContentLoaded', function() {
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Traje Nuevo del Profesor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ── Variables & Reset ── */
+        :root {
+            --bg: #F5F0E8;
+            --fg: #1a1a1a;
+            --bg-alt: #E8E2D2;
+            --border: 3px solid #1a1a1a;
+            --shadow: 6px 6px 0 #1a1a1a;
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Skill Colors */
+            --c-socio: #7b1fa2;
+            --c-tech: #1976d2;
+            --c-innov: #388e3c;
+            --c-design: #e64a19;
+
+            --yellow: #FFD54F;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
         }
-      });
-    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.fade-in').forEach(function(el) {
-      observer.observe(el);
-    });
-  });
-</script>
+        /* ── Base ── */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 100%; overflow-x: hidden; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--fg);
+            overflow-x: hidden;
+            overflow-wrap: break-word;
+            line-height: 1.6;
+        }
+        ::selection { background: var(--yellow); color: var(--fg); }
 
+        /* ── Divider ── */
+        .dv { display: flex; align-items: center; justify-content: center; padding: 20px 0; }
+        .dv-l { width: 80px; height: 4px; background: rgba(0,0,0,0.1); }
+
+        /* ── Progress Bar ── */
+        #progress {
+            position: fixed; top: 0; left: 0; height: 6px;
+            background: var(--fg); z-index: 9999; width: 0%; transition: width 0.1s;
+        }
+
+        /* ── Nav Dots ── */
+        #tlnav {
+            position: fixed; left: 20px; top: 50%; transform: translateY(-50%);
+            z-index: 999; display: flex; flex-direction: column; gap: 0;
+        }
+        .tl-line { width: 2px; height: 16px; background: rgba(0,0,0,0.1); margin: 0 auto; }
+        .tl-dot {
+            width: 14px; height: 14px; border: 3px solid rgba(0,0,0,0.2);
+            background: var(--bg); cursor: pointer; transition: all 0.4s var(--ease); position: relative;
+        }
+        .tl-dot:hover { border-color: var(--fg); transform: scale(1.4); }
+        .tl-dot.active { background: var(--fg); border-color: var(--fg); transform: scale(1.3); }
+        .tl-dot[data-label]:hover::after {
+            content: attr(data-label); position: absolute; left: 24px; top: 50%;
+            transform: translateY(-50%); background: var(--fg); color: var(--bg);
+            font-family: var(--font-mono); font-size: 11px; padding: 3px 9px;
+            white-space: nowrap; pointer-events: none;
+        }
+        @media (max-width: 900px) { #tlnav { display: none; } }
+
+        /* ── Hero ── */
+        #hero {
+            min-height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; padding: 40px 20px;
+            text-align: center; position: relative; overflow: hidden; border-bottom: var(--border);
+        }
+        .hero-bg-text {
+            position: absolute; font-family: var(--font-display); font-weight: 800;
+            font-size: 18vw; line-height: 0.8; opacity: 0.04; top: 50%; left: 50%;
+            transform: translate(-50%, -50%); pointer-events: none; white-space: nowrap; user-select: none;
+        }
+        .hero-content {
+            position: relative; z-index: 1; max-width: 900px; animation: fadeUp 1s var(--ease);
+        }
+        .hero-pre {
+            font-family: var(--font-mono); font-size: 0.85rem; text-transform: uppercase;
+            letter-spacing: 2px; margin-bottom: 20px; display: inline-block;
+            border: 2px solid var(--fg); padding: 8px 16px; background: var(--yellow);
+            box-shadow: 4px 4px 0 var(--fg);
+        }
+        .hero-title {
+            font-family: var(--font-display); font-weight: 800;
+            font-size: clamp(3rem, 9vw, 6.5rem); line-height: 0.95;
+            margin-bottom: 30px; letter-spacing: -2px;
+        }
+        .hero-title span {
+            background: linear-gradient(180deg, transparent 60%, var(--yellow) 60%);
+            padding: 0 10px;
+        }
+        .hero-sub {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem); margin: 0 auto 30px;
+            color: #444; font-weight: 500; font-style: italic;
+        }
+        .hero-intro {
+            font-size: 1rem; color: #666; margin-bottom: 20px;
+            max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+        .hero-meta {
+            font-family: var(--font-mono); font-size: 0.8rem; color: #555;
+            margin-bottom: 40px; line-height: 1.8;
+        }
+        .hero-arrow {
+            width: 50px; height: 50px; border: var(--border);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px; cursor: pointer; background: var(--bg);
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1); text-decoration: none;
+            color: var(--fg); margin: 0 auto; transition: transform 0.3s;
+        }
+        .hero-arrow:hover { transform: translateY(4px); box-shadow: 2px 2px 0 var(--fg); }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Sections ── */
+        .sec {
+            min-height: 100vh; padding: 100px 40px; display: flex;
+            align-items: center; justify-content: center;
+            border-bottom: 1px solid rgba(0,0,0,0.1); position: relative;
+        }
+        .sec:nth-child(even) { background: var(--bg-alt); }
+        .sec-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+            max-width: 1400px; width: 100%; align-items: center;
+        }
+        .sec-text { order: 1; min-width: 0; }
+        .sec-visual {
+            order: 2; position: relative; display: flex; justify-content: center;
+            align-items: center; min-height: 400px; min-width: 0; perspective: 1000px;
+        }
+        .sec:nth-child(even) .sec-grid .sec-text { order: 2; }
+        .sec:nth-child(even) .sec-grid .sec-visual { order: 1; }
+
+        /* ── Typography ── */
+        .n-badge {
+            font-family: var(--font-display); font-weight: 800; font-size: 6rem;
+            opacity: 0.08; line-height: 1; position: absolute; top: -50px; left: -20px;
+            pointer-events: none; user-select: none;
+        }
+        .s-era {
+            text-transform: uppercase; font-family: var(--font-mono); font-size: 0.85rem;
+            font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; display: block; opacity: 0.8;
+        }
+        .s-name {
+            font-family: var(--font-display); font-size: clamp(1.6rem, 3vw + 1rem, 4.5rem);
+            font-weight: 800; line-height: 0.9; margin-bottom: 15px; letter-spacing: -1px;
+        }
+        .s-thesis {
+            font-family: var(--font-display); font-size: clamp(1rem, 1.5vw + 0.5rem, 1.8rem);
+            line-height: 1.2; margin-bottom: 30px; font-weight: 700;
+            padding-left: 20px; border-left: 6px solid; border-color: inherit; color: #333;
+        }
+        .s-body { font-size: 1.1rem; margin-bottom: 30px; color: #333; line-height: 1.7; }
+        .s-body p { margin-bottom: 1rem; }
+
+        /* ── Collapsibles ── */
+        .rb {
+            border: 2px solid var(--fg); background: #fff; margin-bottom: 16px;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1); transition: transform 0.2s; overflow: hidden;
+        }
+        .rb:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(0,0,0,0.1); }
+        .rb-h {
+            padding: 16px 20px; cursor: pointer; display: flex; justify-content: space-between;
+            align-items: center; font-weight: 700; font-family: var(--font-display);
+            font-size: 1.05rem; user-select: none; background: #fff; transition: background 0.3s;
+        }
+        .rb-h:hover { background: #f9f9f9; }
+        .rb-i { font-family: var(--font-mono); font-size: 1.2rem; transition: transform 0.3s; }
+        .rb.open .rb-i { transform: rotate(180deg); }
+        .rb-b {
+            max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out, padding 0.3s;
+            border-top: 1px solid transparent;
+        }
+        .rb.open .rb-b { max-height: 1000px; padding: 20px; border-top: 1px solid rgba(0,0,0,0.1); }
+        .rb-b p { font-size: 1rem; margin-bottom: 10px; line-height: 1.6; }
+
+        /* ── Takeaway & Links ── */
+        .tk {
+            margin-top: 30px; background: rgba(255,255,255,0.6); padding: 20px;
+            border-left: 6px solid; border-color: inherit;
+        }
+        .tk-l {
+            font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase;
+            letter-spacing: 1.5px; margin-bottom: 8px; font-weight: 700; opacity: 0.7;
+        }
+        .tk p { font-size: 1.05rem; font-style: italic; font-weight: 500; }
+        .s-lk { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
+        .s-lk a {
+            font-family: var(--font-mono); font-size: 0.75rem; text-decoration: none;
+            border: 1px solid var(--fg); padding: 10px 14px; min-height: 44px;
+            display: inline-flex; align-items: center; color: var(--fg);
+            transition: all 0.2s; background: transparent;
+        }
+        .s-lk a:hover { background: var(--fg); color: var(--bg); transform: translateY(-2px); }
+
+        /* ── Diagrams ── */
+        .diagram-box {
+            width: 320px; height: 320px; border: var(--border); background: #fff;
+            box-shadow: var(--shadow); display: flex; flex-direction: column;
+            align-items: center; justify-content: center; padding: 20px;
+            opacity: 0; transform: translateY(20px); transition: all 0.6s 0.2s var(--ease);
+        }
+        .sec.vis .diagram-box { opacity: 1; transform: translateY(0); }
+        .diagram-box h4 {
+            font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase;
+            border-bottom: 2px solid var(--fg); margin-bottom: 16px; padding-bottom: 6px;
+            width: 100%; text-align: center; letter-spacing: 1px;
+        }
+
+        /* Heart Diagram */
+        .d-heart { position: relative; width: 100%; flex: 1; display: flex; align-items: center; justify-content: center; }
+        .d-heart svg { width: 140px; height: 130px; }
+        .d-heart-path {
+            fill: none; stroke: var(--c-socio); stroke-width: 2;
+            stroke-dasharray: 400; stroke-dashoffset: 400;
+        }
+        .sec.vis .d-heart-path { animation: drawHeart 2s ease-out forwards; }
+        @keyframes drawHeart { to { stroke-dashoffset: 0; } }
+        .d-heart-pulse {
+            fill: var(--c-socio); opacity: 0;
+        }
+        .sec.vis .d-heart-pulse { animation: heartPulse 1.5s 1.5s ease-in-out infinite; }
+        @keyframes heartPulse {
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.08); }
+        }
+        .d-heart-labels {
+            position: absolute; width: 100%; height: 100%; top: 0; left: 0;
+        }
+        .d-heart-label {
+            position: absolute; font-family: var(--font-mono); font-size: 0.65rem;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+            opacity: 0; white-space: nowrap;
+        }
+        .sec.vis .d-heart-label { animation: labelIn 0.5s ease-out forwards; }
+        .d-heart-label:nth-child(1) { top: 10%; left: 5%; color: var(--c-socio); }
+        .d-heart-label:nth-child(2) { top: 10%; right: 5%; color: var(--c-socio); }
+        .d-heart-label:nth-child(3) { bottom: 15%; left: 50%; transform: translateX(-50%); color: var(--c-socio); }
+        .sec.vis .d-heart-label:nth-child(1) { animation-delay: 1.8s; }
+        .sec.vis .d-heart-label:nth-child(2) { animation-delay: 2.1s; }
+        .sec.vis .d-heart-label:nth-child(3) { animation-delay: 2.4s; }
+        @keyframes labelIn { to { opacity: 0.8; } }
+
+        /* Network Diagram */
+        .d-network { position: relative; width: 100%; flex: 1; }
+        .d-network svg { width: 100%; height: 220px; }
+        .d-net-line {
+            stroke: var(--c-tech); stroke-width: 1.5; opacity: 0;
+        }
+        .sec.vis .d-net-line { animation: netLineIn 0.6s ease-out forwards; }
+        .d-net-node {
+            fill: #fff; stroke: var(--c-tech); stroke-width: 2.5; opacity: 0;
+        }
+        .sec.vis .d-net-node { animation: netNodeIn 0.5s ease-out forwards; }
+        .d-net-node-fill { fill: var(--c-tech); opacity: 0; }
+        .sec.vis .d-net-node-fill { animation: netNodeIn 0.5s ease-out forwards; }
+        .d-net-label {
+            font-family: var(--font-mono); font-size: 8px; font-weight: 700;
+            fill: var(--fg); text-anchor: middle; opacity: 0;
+        }
+        .sec.vis .d-net-label { animation: labelIn 0.5s 1s ease-out forwards; }
+
+        .sec.vis .d-net-line:nth-child(1) { animation-delay: 0.1s; }
+        .sec.vis .d-net-line:nth-child(2) { animation-delay: 0.2s; }
+        .sec.vis .d-net-line:nth-child(3) { animation-delay: 0.3s; }
+        .sec.vis .d-net-line:nth-child(4) { animation-delay: 0.4s; }
+        .sec.vis .d-net-line:nth-child(5) { animation-delay: 0.5s; }
+        .sec.vis .d-net-line:nth-child(6) { animation-delay: 0.6s; }
+        .sec.vis .d-net-line:nth-child(7) { animation-delay: 0.7s; }
+
+        .sec.vis .d-net-node:nth-child(8)  { animation-delay: 0.2s; }
+        .sec.vis .d-net-node:nth-child(9)  { animation-delay: 0.3s; }
+        .sec.vis .d-net-node:nth-child(10) { animation-delay: 0.4s; }
+        .sec.vis .d-net-node:nth-child(11) { animation-delay: 0.5s; }
+        .sec.vis .d-net-node:nth-child(12) { animation-delay: 0.6s; }
+        .sec.vis .d-net-node-fill:nth-child(13) { animation-delay: 0.35s; }
+
+        @keyframes netLineIn { from { opacity: 0; } to { opacity: 0.4; } }
+        @keyframes netNodeIn { from { opacity: 0; r: 0; } to { opacity: 1; } }
+
+        /* Spiral Diagram */
+        .d-spiral { position: relative; width: 100%; flex: 1; display: flex; align-items: center; justify-content: center; }
+        .d-spiral svg { width: 200px; height: 200px; }
+        .sec.vis .d-spiral svg { animation: spiralSpin 12s linear infinite; }
+        @keyframes spiralSpin { to { transform: rotate(360deg); } }
+        .d-spiral-labels {
+            position: absolute; width: 100%; height: 100%; top: 0; left: 0;
+        }
+        .d-spiral-label {
+            position: absolute; font-family: var(--font-mono); font-size: 0.65rem;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+            opacity: 0; white-space: nowrap; color: var(--c-innov);
+        }
+        .sec.vis .d-spiral-label { animation: labelIn 0.5s ease-out forwards; }
+        .d-spiral-label:nth-child(1) { top: 5%; right: 10%; }
+        .d-spiral-label:nth-child(2) { top: 40%; left: 2%; }
+        .d-spiral-label:nth-child(3) { bottom: 25%; right: 5%; }
+        .d-spiral-label:nth-child(4) { bottom: 5%; left: 15%; }
+        .sec.vis .d-spiral-label:nth-child(1) { animation-delay: 0.5s; }
+        .sec.vis .d-spiral-label:nth-child(2) { animation-delay: 0.8s; }
+        .sec.vis .d-spiral-label:nth-child(3) { animation-delay: 1.1s; }
+        .sec.vis .d-spiral-label:nth-child(4) { animation-delay: 1.4s; }
+
+        /* Brecha Diagram (Intro) */
+        .d-brecha { width: 100%; flex: 1; display: flex; align-items: center; justify-content: center; }
+        .d-brecha svg { width: 280px; height: 180px; }
+        .d-brecha-line { stroke: var(--fg); stroke-width: 1.5; stroke-dasharray: 6 4; opacity: 0.3; }
+        .d-brecha-node { fill: #fff; stroke: var(--fg); stroke-width: 2.5; opacity: 0; }
+        .sec.vis .d-brecha-node { animation: netNodeIn 0.5s ease-out forwards; }
+        .d-brecha-cloud {
+            fill: none; stroke: var(--fg); stroke-width: 1.5; stroke-dasharray: 4 3;
+            opacity: 0;
+        }
+        .sec.vis .d-brecha-cloud { animation: cloudIn 1s 0.5s ease-out forwards; }
+        @keyframes cloudIn { to { opacity: 0.3; } }
+        .d-brecha-label {
+            font-family: var(--font-mono); font-size: 9px; font-weight: 700;
+            fill: var(--fg); text-anchor: middle; opacity: 0;
+        }
+        .sec.vis .d-brecha-label { animation: labelIn 0.5s 0.8s ease-out forwards; }
+        .sec.vis .d-brecha-node:nth-child(3) { animation-delay: 0.2s; }
+        .sec.vis .d-brecha-node:nth-child(4) { animation-delay: 0.8s; }
+
+        /* Funnel Diagram (Diseño Instruccional) */
+        .d-funnel { position: relative; width: 100%; flex: 1; display: flex; align-items: center; justify-content: center; }
+        .d-funnel svg { width: 220px; height: 200px; }
+        .d-funnel-shape {
+            fill: none; stroke: var(--c-design); stroke-width: 2; opacity: 0;
+        }
+        .sec.vis .d-funnel-shape { animation: funnelIn 0.8s ease-out forwards; }
+        .sec.vis .d-funnel-shape:nth-child(1) { animation-delay: 0.2s; }
+        .sec.vis .d-funnel-shape:nth-child(2) { animation-delay: 0.5s; }
+        .sec.vis .d-funnel-shape:nth-child(3) { animation-delay: 0.8s; }
+        @keyframes funnelIn { to { opacity: 1; } }
+        .d-funnel-arrow {
+            stroke: var(--c-design); stroke-width: 2; opacity: 0;
+            marker-end: url(#arrowhead);
+        }
+        .sec.vis .d-funnel-arrow { animation: funnelIn 0.5s 0.4s ease-out forwards; }
+        .sec.vis .d-funnel-arrow:nth-child(5) { animation-delay: 0.7s; }
+        .d-funnel-label {
+            font-family: var(--font-mono); font-size: 8px; font-weight: 700;
+            fill: var(--fg); text-anchor: middle; opacity: 0;
+        }
+        .sec.vis .d-funnel-label { animation: labelIn 0.5s ease-out forwards; }
+        .sec.vis .d-funnel-label:nth-child(6) { animation-delay: 0.3s; }
+        .sec.vis .d-funnel-label:nth-child(7) { animation-delay: 0.6s; }
+        .sec.vis .d-funnel-label:nth-child(8) { animation-delay: 0.9s; }
+        .d-funnel-dot {
+            fill: var(--c-design); opacity: 0;
+        }
+        .sec.vis .d-funnel-dot { animation: funnelDot 2s 1.2s ease-in-out infinite; }
+        @keyframes funnelDot {
+            0%, 100% { opacity: 0; transform: translateY(0); }
+            50% { opacity: 0.8; transform: translateY(-5px); }
+        }
+
+        /* ── Synthesis Cards ── */
+        .pg {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: 24px; margin: 40px 0;
+        }
+        .pc {
+            border: 2px solid var(--fg); background: #fff; padding: 24px;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1); transition: transform 0.3s;
+            opacity: 0; transform: translateY(20px);
+        }
+        .pc.vis { opacity: 1; transform: translateY(0); }
+        .pc:hover { transform: translateY(-5px); box-shadow: 8px 8px 0 rgba(0,0,0,0.1); }
+        .pc-n {
+            font-family: var(--font-display); font-weight: 800; font-size: 2.5rem;
+            opacity: 0.1; line-height: 1; margin-bottom: 10px;
+        }
+        .pc-t { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; }
+        .pc-d { font-size: 0.95rem; line-height: 1.5; color: #555; }
+
+        /* ── Dark Section ── */
+        .sec-dark {
+            background: #1a1a1a !important; color: #F5F0E8;
+            border-bottom-color: rgba(255,255,255,0.05);
+        }
+        .sec-dark .pc {
+            background: #2a2a2a; border-color: rgba(255,255,255,0.15);
+            box-shadow: 4px 4px 0 rgba(255,213,79,0.15);
+        }
+        .sec-dark .pc:hover { box-shadow: 8px 8px 0 rgba(255,213,79,0.2); }
+        .sec-dark .pc-d { color: #ccc; }
+        .sec-dark .pc-n { opacity: 0.15; }
+        .sec-dark .pc-t { color: #F5F0E8; }
+        .sec-dark .hero-sub { color: #aaa; }
+        .sec-dark .sint-quote {
+            border: 2px solid rgba(255,255,255,0.2); box-shadow: 8px 8px 0 var(--yellow);
+            color: #F5F0E8; background: rgba(255,255,255,0.03);
+        }
+
+        .sec-header { text-align: center; margin-bottom: 50px; }
+        .sint-title { font-size: clamp(1.8rem, 5vw, 3rem); }
+        .sint-in { max-width: 1000px; width: 100%; }
+        .sint-quote { text-align: center; max-width: 800px; margin: 0 auto; padding: 30px; }
+        .sint-quote p { font-size: 1.1rem; line-height: 1.8; }
+        .sint-quote strong { color: var(--yellow); }
+
+        /* Color accents on synthesis cards */
+        .pc[data-accent] { border-left: 5px solid var(--pc-accent); }
+
+        /* ── Footer ── */
+        footer {
+            padding: 60px 20px; background: #1a1a1a; color: #F5F0E8;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .footer-inner { max-width: 900px; margin: 0 auto; }
+        .footer-title {
+            font-family: var(--font-display); font-weight: 800; font-size: 1.5rem;
+            margin-bottom: 30px; color: var(--yellow);
+        }
+        .ref-list { list-style: none; display: grid; gap: 12px; margin-bottom: 40px; }
+        .ref-list li {
+            font-size: 0.9rem; line-height: 1.5; padding: 12px 16px;
+            background: #2a2a2a; border-left: 3px solid var(--yellow);
+        }
+        .ref-list li a { color: var(--yellow); text-decoration: none; word-break: break-all; }
+        .ref-list li a:hover { text-decoration: underline; }
+        .ref-org {
+            display: inline-block; background: rgba(255,213,79,0.15); color: var(--yellow);
+            font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem;
+            margin-right: 0.3rem; text-transform: uppercase; font-family: var(--font-mono);
+        }
+        .footer-credits {
+            text-align: center; font-family: var(--font-mono); font-size: 0.8rem; color: #666;
+            padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* ── Animations ── */
+        .rv { opacity: 0; transform: translateY(30px); transition: all 0.8s var(--ease); }
+        .rv.vis { opacity: 1; transform: translateY(0); }
+        .rv-d1 { transition-delay: 0.1s; }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important; scroll-behavior: auto !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .sec { padding: 60px 20px; min-height: auto; }
+            .sec-grid { grid-template-columns: 1fr; gap: 40px; }
+            .sec-text, .sec:nth-child(even) .sec-grid .sec-text { order: 2; }
+            .sec-visual, .sec:nth-child(even) .sec-grid .sec-visual {
+                order: 1; min-height: 250px; flex-direction: column; overflow: hidden;
+            }
+            .s-body { font-size: 1rem; margin-bottom: 24px; }
+            .s-thesis { margin-bottom: 24px; }
+            .rb-h { font-size: 1rem; }
+            .tk { margin-top: 24px; }
+            .n-badge { font-size: 4.5rem; }
+            .diagram-box { width: 260px; height: 260px; }
+            .sec-header { margin-bottom: 40px; }
+            .sint-quote { padding: 24px; }
+            .sint-quote p { font-size: 1rem; }
+        }
+
+        @media (max-width: 600px) {
+            .sec { padding: 40px 14px; }
+            .sec-grid { gap: 24px; }
+            .sec-visual { min-height: 200px; flex-direction: column; overflow: hidden; }
+            .n-badge { font-size: 3.5rem; top: -30px; left: -10px; }
+            .hero-title { font-size: clamp(1.6rem, 7vw, 2.5rem) !important; }
+            .hero-sub { font-size: 0.95rem; }
+            .hero-intro { font-size: 0.9rem; margin-bottom: 16px; }
+            .s-thesis { margin-bottom: 16px; padding-left: 14px; border-left-width: 4px; }
+            .s-body { font-size: 0.95rem; margin-bottom: 16px; line-height: 1.6; }
+            .rb { margin-bottom: 10px; }
+            .rb-h { font-size: 0.95rem; padding: 12px 14px; }
+            .rb.open .rb-b { padding: 14px; }
+            .rb-b p { font-size: 0.9rem; }
+            .tk { margin-top: 16px; padding: 14px; }
+            .tk p { font-size: 0.95rem; }
+            .s-lk { gap: 8px; }
+            .s-lk a { font-size: 0.7rem; padding: 8px 12px; min-height: 40px; }
+            .pg { grid-template-columns: 1fr; gap: 16px; }
+            .pc { padding: 18px; }
+            .pc-n { font-size: 1.6rem; }
+            .sec-header { margin-bottom: 30px; }
+            .sint-quote { padding: 16px; }
+            .sint-quote p { font-size: 0.95rem; line-height: 1.7; }
+            .diagram-box { width: 220px; height: 220px; padding: 14px; }
+            footer { padding: 40px 16px; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="progress"></div>
+    <nav id="tlnav"></nav>
+
+    <!-- ════════════════════════════════════════
+         HERO
+         ════════════════════════════════════════ -->
+    <section id="hero">
+        <div class="hero-bg-text">DOCENTE</div>
+        <div class="hero-content">
+            <div class="hero-pre">Maestria en Pedagogia · UPAEP · 2026</div>
+            <h1 class="hero-title">El Traje Nuevo del <span>Profesor</span></h1>
+            <p class="hero-sub">Las Grandes Ideas y las Habilidades del Docente del Siglo XXI</p>
+            <p class="hero-intro">Las Grandes Ideas son los conceptos centrales y duraderos de una disciplina. El reto del docente contemporáneo es rediseñar la instrucción para que esas ideas se vuelvan creíbles y vitales en la mente del estudiante.</p>
+            <div class="hero-meta">
+                Maestra: Socorro Guevara Salazar<br>
+                Integrantes: Carolina Hernández Machorro · Rosa Hernández Machorro · Hesus García Cobos · Pablo Maximiliano Rodríguez Castro
+            </div>
+            <a href="#intro" class="hero-arrow">↓</a>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         INTRO — Las Grandes Ideas
+         ════════════════════════════════════════ -->
+    <section class="sec" id="intro" data-label="Las Grandes Ideas" style="--c: var(--fg)">
+        <div class="sec-grid">
+            <div class="sec-text rv">
+                <span class="s-era">Las Grandes Ideas</span>
+                <h2 class="s-name">La brecha entre el profesor y el estudiante</h2>
+                <div class="s-body">
+                    <p>Lo que para el profesor es <em>obvio</em>, para el estudiante suele ser <em>abstracto, confuso o irrelevante</em>. Las Grandes Ideas — los principios que organizan el conocimiento y le dan sentido — no se transmiten por repetición ni por simplificación.</p>
+                    <p>El reto del docente contemporáneo no es repetir contenido, sino <em>rediseñar la instrucción</em> para que las grandes ideas se vuelvan creíbles y vitales.</p>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">¿Por qué un "traje nuevo"? <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>Ya no basta con transmitir información. El docente necesita nuevas habilidades — un <strong>nuevo traje</strong> — que le permita hacer visible lo invisible, conectar con sus estudiantes y mantenerse en constante evolución.</p>
+                        <p>Este traje tiene cuatro piezas: el <strong>corazón</strong> que conecta (competencias socioemocionales), los <strong>hilos</strong> que tejen puentes (tecnología), la <strong>tela</strong> que se renueva (innovación pedagógica), y el <strong>patrón</strong> que da forma (diseño instruccional).</p>
+                    </div>
+                </div>
+
+                <div class="tk" style="border-color: var(--fg)">
+                    <div class="tk-l">La metáfora</div>
+                    <p>Un traje no se viste por partes. Estas cuatro habilidades forman un todo integrado — el traje nuevo del profesor.</p>
+                </div>
+            </div>
+
+            <div class="sec-visual rv rv-d1">
+                <div class="diagram-box">
+                    <h4>La Brecha</h4>
+                    <div class="d-brecha">
+                        <svg viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Connection line -->
+                            <line class="d-brecha-line" x1="50" y1="90" x2="230" y2="90"/>
+                            <!-- Cloud in middle -->
+                            <ellipse class="d-brecha-cloud" cx="140" cy="90" rx="50" ry="30"/>
+                            <!-- Professor node -->
+                            <circle class="d-brecha-node" cx="50" cy="90" r="18"/>
+                            <!-- Student node -->
+                            <circle class="d-brecha-node" cx="230" cy="90" r="18"/>
+                            <!-- Labels -->
+                            <text class="d-brecha-label" x="50" y="130">Profesor</text>
+                            <text class="d-brecha-label" x="140" y="140">abstracto</text>
+                            <text class="d-brecha-label" x="140" y="155">confuso</text>
+                            <text class="d-brecha-label" x="230" y="130">Estudiante</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         HABILIDAD 01 — Socioemocional
+         ════════════════════════════════════════ -->
+    <section class="sec" id="s1" data-label="Socioemocional" style="--c: var(--c-socio); border-color: var(--c-socio)">
+        <div class="n-badge">01</div>
+        <div class="sec-grid">
+            <div class="sec-text rv">
+                <span class="s-era" style="color:var(--c)">Habilidad 01 · Desarrollo Socioemocional · Rosa Hernández Machorro</span>
+                <h2 class="s-name" style="color:var(--c)">Competencias Socioemocionales</h2>
+                <p class="s-thesis" style="border-color:var(--c)">El corazón del traje — sin empatía, el traje es cáscara vacía.</p>
+                <div class="s-body">
+                    <p>Todo traje tiene un interior que toca la piel — la parte que nadie ve pero que sostiene todo lo demás. El <em>corazón del traje</em> del docente es su capacidad socioemocional: la empatía, la escucha activa, la construcción de espacios donde el estudiante se sienta seguro para equivocarse.</p>
+                    <p>Sin este corazón, el traje es una cáscara vacía. Un docente puede dominar la tecnología y las metodologías más innovadoras, pero si no conecta emocionalmente con sus estudiantes, las grandes ideas seguirán siendo abstractas e inalcanzables. La empatía es lo que transforma la <em>información</em> en <em>comprensión</em>.</p>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">OCDE — Teaching Compass 2025 (p. 9) <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>"Cuando los docentes aprenden a reconocer sus propios disparadores emocionales, sesgos cognitivos y fortalezas profesionales, obtienen claridad sobre cómo los estados personales influyen en las decisiones en el aula. La investigación demuestra que la conciencia de sí mismo mejorada, y la empatía que promueve, puede mitigar el sesgo inconsciente y mejorar los resultados de los estudiantes."</p>
+                    </div>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">UNESCO — Reimaginar juntos 2021 (p. 3) <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>"La pedagogía debe organizarse en torno a los principios de cooperación, colaboración y solidaridad. Debe fomentar las capacidades intelectuales, sociales y morales de los estudiantes para trabajar juntos y transformar el mundo con empatía y compasión."</p>
+                    </div>
+                </div>
+
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Mensaje clave</div>
+                    <p>La empatía no es un accesorio del traje — es su corazón. Sin conexión emocional, ninguna metodología ni tecnología puede hacer que las grandes ideas cobren vida.</p>
+                </div>
+
+                <div class="s-lk">
+                    <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass 2025</a>
+                    <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
+                </div>
+            </div>
+
+            <div class="sec-visual rv rv-d1">
+                <div class="diagram-box">
+                    <h4>El Corazón</h4>
+                    <div class="d-heart">
+                        <svg viewBox="0 0 140 130" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Heart fill (pulse) -->
+                            <path class="d-heart-pulse" d="M70 120 C70 120, 10 80, 10 45 C10 20, 35 10, 55 25 C62 30, 67 38, 70 45 C73 38, 78 30, 85 25 C105 10, 130 20, 130 45 C130 80, 70 120, 70 120Z"/>
+                            <!-- Heart outline (draws in) -->
+                            <path class="d-heart-path" d="M70 120 C70 120, 10 80, 10 45 C10 20, 35 10, 55 25 C62 30, 67 38, 70 45 C73 38, 78 30, 85 25 C105 10, 130 20, 130 45 C130 80, 70 120, 70 120Z"/>
+                        </svg>
+                        <div class="d-heart-labels">
+                            <span class="d-heart-label">Empatía</span>
+                            <span class="d-heart-label">Seguridad</span>
+                            <span class="d-heart-label">Inclusión</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         HABILIDAD 02 — Tecnología
+         ════════════════════════════════════════ -->
+    <section class="sec" id="s2" data-label="Tecnología" style="--c: var(--c-tech); border-color: var(--c-tech)">
+        <div class="n-badge">02</div>
+        <div class="sec-grid">
+            <div class="sec-text rv">
+                <span class="s-era" style="color:var(--c)">Habilidad 02 · Tecnología Educativa · Hesus García Cobos</span>
+                <h2 class="s-name" style="color:var(--c)">Integración de la Tecnología</h2>
+                <p class="s-thesis" style="border-color:var(--c)">Los hilos digitales — la tecnología teje puentes entre lo abstracto y lo concreto.</p>
+                <div class="s-body">
+                    <p>Los hilos con los que está tejido el traje son la <em>tecnología</em>. No son el traje en sí — son lo que lo teje, lo que conecta cada pieza con las demás y con el mundo del estudiante.</p>
+                    <p>Las simulaciones, las visualizaciones, los proyectos prácticos son <em>puntadas</em> que unen lo abstracto con lo concreto. Un concepto de física cobra vida en una simulación interactiva. Una idea matemática se vuelve tangible en una visualización de datos. La tecnología no reemplaza al docente: le da nuevos hilos con los cuales tejer puentes entre las grandes ideas y la experiencia del estudiante.</p>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">OCDE — Education Policy Outlook 2024 (p. 6) <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>"Apoyar a los docentes en la experimentación de prácticas, colaboración con investigadores y desarrolladores de EdTech, y aprovechar la experiencia de pares puede ayudar a cerrar la brecha entre la visión y la práctica en el aula."</p>
+                    </div>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">OCDE — Teaching Compass 2025 (p. 5) <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>"Las competencias fundamentales incluyen habilidades cognitivas y metacognitivas (como alfabetización, numeracía y alfabetización digital/de datos)… Estas competencias no pueden desarrollarse simplemente sentándose en el aula, sino que requieren participación activa y significativa con el mundo."</p>
+                    </div>
+                </div>
+
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Mensaje clave</div>
+                    <p>La tecnología no es el traje — son los hilos que lo tejen. Su valor no está en la herramienta, sino en los puentes que permite construir entre las grandes ideas y la experiencia del estudiante.</p>
+                </div>
+
+                <div class="s-lk">
+                    <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/11/education-policy-outlook-2024_0411a0c4/dd5140e4-en.pdf" target="_blank" rel="noopener">OCDE Education Policy Outlook 2024</a>
+                    <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass 2025</a>
+                </div>
+            </div>
+
+            <div class="sec-visual rv rv-d1">
+                <div class="diagram-box">
+                    <h4>Red de Puentes</h4>
+                    <div class="d-network">
+                        <svg viewBox="0 0 260 220" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Connections -->
+                            <line class="d-net-line" x1="50" y1="40" x2="130" y2="30"/>
+                            <line class="d-net-line" x1="130" y1="30" x2="210" y2="50"/>
+                            <line class="d-net-line" x1="50" y1="40" x2="80" y2="120"/>
+                            <line class="d-net-line" x1="130" y1="30" x2="130" y2="110"/>
+                            <line class="d-net-line" x1="210" y1="50" x2="180" y2="120"/>
+                            <line class="d-net-line" x1="80" y1="120" x2="130" y2="110"/>
+                            <line class="d-net-line" x1="130" y1="110" x2="180" y2="120"/>
+                            <!-- Outer nodes -->
+                            <circle class="d-net-node" cx="50" cy="40" r="12"/>
+                            <circle class="d-net-node" cx="130" cy="30" r="12"/>
+                            <circle class="d-net-node" cx="210" cy="50" r="12"/>
+                            <circle class="d-net-node" cx="80" cy="120" r="12"/>
+                            <circle class="d-net-node" cx="180" cy="120" r="12"/>
+                            <!-- Center node (bridge) -->
+                            <circle class="d-net-node-fill" cx="130" cy="110" r="14"/>
+                            <!-- Labels -->
+                            <text class="d-net-label" x="50" y="65">Simulación</text>
+                            <text class="d-net-label" x="130" y="15">Visualización</text>
+                            <text class="d-net-label" x="210" y="75">Proyecto</text>
+                            <text class="d-net-label" x="65" y="148">Abstracto</text>
+                            <text class="d-net-label" x="195" y="148">Concreto</text>
+                            <text class="d-net-label" x="130" y="140" style="font-size:10px; fill:var(--c-tech)">Puente</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         HABILIDAD 03 — Innovación Pedagógica
+         ════════════════════════════════════════ -->
+    <section class="sec" id="s3" data-label="Innovación" style="--c: var(--c-innov); border-color: var(--c-innov)">
+        <div class="n-badge">03</div>
+        <div class="sec-grid">
+            <div class="sec-text rv">
+                <span class="s-era" style="color:var(--c)">Habilidad 03 · Pedagógica · Carolina Hernández Machorro</span>
+                <h2 class="s-name" style="color:var(--c)">Innovación Pedagógica y Aprendizaje Continuo</h2>
+                <p class="s-thesis" style="border-color:var(--c)">La tela que se renueva — la práctica reflexiva mantiene al docente vigente.</p>
+                <div class="s-body">
+                    <p>La tela del traje no es estática — se <em>renueva</em>, se <em>adapta</em>, se <em>transforma</em>. Un traje que no evoluciona se vuelve obsoleto; un docente que no se actualiza pierde la capacidad de conectar con las nuevas generaciones.</p>
+                    <p>La <em>práctica reflexiva</em> y el <em>aprendizaje continuo</em> son lo que mantiene el traje vigente. Cada nueva investigación, cada proyecto innovador, cada momento de reflexión sobre la propia práctica es un hilo que renueva la tela. El docente del siglo XXI no termina de formarse nunca — y esa es precisamente su fortaleza.</p>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">OCDE — Teaching Compass 2025 (p. 13) <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>"La enseñanza se entiende como un viaje de descubrimiento de por vida, en el cual la práctica reflexiva y el aprendizaje continuo impulsan a los docentes a enfrentar nuevos desafíos y aprovechar las oportunidades emergentes."</p>
+                    </div>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">UNESCO — Reimaginar juntos 2021 (p. 3) <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>"La enseñanza debe profesionalizarse aún más como un esfuerzo de colaboración en el que los docentes son reconocidos por su trabajo como generadores de conocimiento y figuras clave en la transformación educativa y social."</p>
+                    </div>
+                </div>
+
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Mensaje clave</div>
+                    <p>La innovación no es adoptar la última moda — es la práctica reflexiva que mantiene al docente vigente. La formación continua no es un requisito burocrático; es la tela que se renueva cada día.</p>
+                </div>
+
+                <div class="s-lk">
+                    <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass 2025</a>
+                    <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
+                </div>
+            </div>
+
+            <div class="sec-visual rv rv-d1">
+                <div class="diagram-box">
+                    <h4>Espiral de Renovación</h4>
+                    <div class="d-spiral">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M100 100 C100 80, 120 70, 130 85 C140 100, 130 125, 100 130 C70 135, 45 115, 45 90 C45 60, 70 40, 100 40 C140 40, 165 65, 165 100 C165 140, 135 170, 100 170 C55 170, 25 140, 25 100 C25 55, 55 20, 100 20"
+                                fill="none" stroke="var(--c-innov)" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                            <circle cx="100" cy="100" r="5" fill="var(--c-innov)" opacity="0.8"/>
+                            <circle cx="100" cy="20" r="4" fill="var(--c-innov)" opacity="0.5"/>
+                        </svg>
+                        <div class="d-spiral-labels">
+                            <span class="d-spiral-label">Reflexión</span>
+                            <span class="d-spiral-label">Investigación</span>
+                            <span class="d-spiral-label">Innovación</span>
+                            <span class="d-spiral-label">Evaluación</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         HABILIDAD 04 — Diseño Instruccional
+         ════════════════════════════════════════ -->
+    <section class="sec" id="s4" data-label="Diseño Instruccional" style="--c: var(--c-design); border-color: var(--c-design)">
+        <div class="n-badge">04</div>
+        <div class="sec-grid">
+            <div class="sec-text rv">
+                <span class="s-era" style="color:var(--c)">Habilidad 04 · Diseño Instruccional · Pablo Maximiliano Rodríguez Castro</span>
+                <h2 class="s-name" style="color:var(--c)">Diseño Instruccional para la Comprensión Profunda</h2>
+                <p class="s-thesis" style="border-color:var(--c)">El patrón del traje — sin un buen diseño, la tela más fina se vuelve un trapo.</p>
+                <div class="s-body">
+                    <p>El <em>patrón</em> es el molde que da forma al traje. El docente que enseña para la comprensión no transmite contenido — transforma objetivos curriculares en <em>preguntas esenciales</em> que orientan la investigación del estudiante y hacen las grandes ideas creíbles y vitales.</p>
+                    <p>Hacer las ideas "creíbles y hacerlas parecer vital" no es solo un reto intelectual; es un reto de <em>diseño</em>. El docente como co-diseñador del aprendizaje y experto adaptativo debe saber convertir la complejidad disciplinar en experiencias de aprendizaje que provoquen comprensión profunda.</p>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">OCDE — Teaching Compass 2025 <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>"El docente del siglo XXI es un co-diseñador del aprendizaje y un experto adaptativo. La capacidad de diseñar experiencias de aprendizaje que conecten los contenidos disciplinares con las preguntas esenciales del estudiante es la competencia central del profesional educativo."</p>
+                    </div>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">UNESCO — Reimaginar juntos 2021 <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>"Los currículos deben reimaginarse como espacios de indagación, donde los contenidos se transforman en preguntas que invitan a la exploración. El diseño instruccional centrado en la comprensión profunda permite que el estudiante no solo aprenda, sino que aprenda a aprender."</p>
+                    </div>
+                </div>
+
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Mensaje clave</div>
+                    <p>El patrón es lo que transforma la tela en traje. Sin diseño instruccional intencional, los mejores contenidos se quedan en información suelta que el estudiante no puede ensamblar en comprensión.</p>
+                </div>
+
+                <div class="s-lk">
+                    <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass 2025</a>
+                    <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/11/education-policy-outlook-2024_0411a0c4/dd5140e4-en.pdf" target="_blank" rel="noopener">OCDE Education Policy Outlook 2024</a>
+                    <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
+                </div>
+            </div>
+
+            <div class="sec-visual rv rv-d1">
+                <div class="diagram-box">
+                    <h4>Del Contenido a la Comprensión</h4>
+                    <div class="d-funnel">
+                        <svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                                    <polygon points="0 0, 8 3, 0 6" fill="var(--c-design)"/>
+                                </marker>
+                            </defs>
+                            <!-- Top: wide box (content) -->
+                            <rect class="d-funnel-shape" x="20" y="15" width="180" height="40" rx="2"/>
+                            <!-- Middle: medium box (essential questions) -->
+                            <rect class="d-funnel-shape" x="50" y="90" width="120" height="40" rx="2"/>
+                            <!-- Bottom: small box (understanding) -->
+                            <rect class="d-funnel-shape" x="70" y="160" width="80" height="35" rx="2"/>
+                            <!-- Arrows -->
+                            <line class="d-funnel-arrow" x1="110" y1="55" x2="110" y2="88"/>
+                            <line class="d-funnel-arrow" x1="110" y1="130" x2="110" y2="158"/>
+                            <!-- Labels -->
+                            <text class="d-funnel-label" x="110" y="40">Contenido</text>
+                            <text class="d-funnel-label" x="110" y="114">Preguntas Esenciales</text>
+                            <text class="d-funnel-label" x="110" y="182">Comprensión</text>
+                            <!-- Glow dot at bottom -->
+                            <circle class="d-funnel-dot" cx="110" cy="178" r="4"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         SÍNTESIS — El Traje Completo
+         ════════════════════════════════════════ -->
+    <section class="sec sec-dark" id="sint" data-label="Síntesis">
+        <div class="sint-in">
+            <div class="sec-header rv">
+                <h2 class="hero-title sint-title" style="color:#F5F0E8">El Traje Completo</h2>
+                <p class="hero-sub">Cuatro piezas, un solo traje</p>
+            </div>
+
+            <div class="pg">
+                <div class="pc" style="--pc-accent: var(--c-socio); border-left: 5px solid var(--c-socio);">
+                    <div class="pc-n" style="color: var(--c-socio);">01</div>
+                    <div class="pc-t" style="color: var(--c-socio);">El Corazón</div>
+                    <div class="pc-d">Socioemocional conecta — la empatía transforma la información en comprensión. Sin este corazón, el traje es cáscara vacía.</div>
+                </div>
+                <div class="pc" style="--pc-accent: var(--c-tech); border-left: 5px solid var(--c-tech);">
+                    <div class="pc-n" style="color: var(--c-tech);">02</div>
+                    <div class="pc-t" style="color: var(--c-tech);">Los Hilos</div>
+                    <div class="pc-d">Tecnología teje puentes — simulaciones, visualizaciones y proyectos prácticos que conectan lo abstracto con lo concreto.</div>
+                </div>
+                <div class="pc" style="--pc-accent: var(--c-innov); border-left: 5px solid var(--c-innov);">
+                    <div class="pc-n" style="color: var(--c-innov);">03</div>
+                    <div class="pc-t" style="color: var(--c-innov);">La Tela</div>
+                    <div class="pc-d">Innovación renueva — la práctica reflexiva y el aprendizaje continuo mantienen al docente vigente y conectado con las nuevas generaciones.</div>
+                </div>
+                <div class="pc" style="--pc-accent: var(--c-design); border-left: 5px solid var(--c-design);">
+                    <div class="pc-n" style="color: var(--c-design);">04</div>
+                    <div class="pc-t" style="color: var(--c-design);">El Patrón</div>
+                    <div class="pc-d">Diseño instruccional da forma — transforma contenidos en preguntas esenciales que convierten lo abstracto en comprensión profunda.</div>
+                </div>
+            </div>
+
+            <div class="sint-quote rv">
+                <p>Un traje no se viste por partes.<br><br>
+                El profesor del siglo XXI necesita las cuatro: <strong>el corazón que conecta</strong>, <strong>los hilos que tejen puentes digitales</strong>, <strong>la tela que se renueva cada día</strong>, y <strong>el patrón que da forma a la comprensión</strong>.<br><br>
+                Ese es el traje nuevo del profesor — y no es de fantasía.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         FOOTER — Referencias
+         ════════════════════════════════════════ -->
+    <footer>
+        <div class="footer-inner">
+            <h2 class="footer-title">Referencias</h2>
+            <ul class="ref-list">
+                <li>
+                    <span class="ref-org">OCDE</span>
+                    <strong>Teaching Compass</strong> (2025).
+                    <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">oecd.org — Teaching Compass (PDF)</a>
+                </li>
+                <li>
+                    <span class="ref-org">OCDE</span>
+                    <strong>Conflict Resolution — Learning Compass 2030</strong> (2019).
+                    <a href="https://www.oecd.org/content/dam/oecd/en/topics/policy-issues/future-of-education-and-skills/learning-compass-constructs/Conflict%20Resolution.pdf" target="_blank" rel="noopener">oecd.org — Conflict Resolution (PDF)</a>
+                </li>
+                <li>
+                    <span class="ref-org">OCDE</span>
+                    <strong>Transformative Competencies for 2030</strong> (2019).
+                    <a href="https://www.oecd.org/content/dam/oecd/en/about/projects/edu/education-2040/concept-notes/Transformative_Competencies_for_2030_concept_note.pdf" target="_blank" rel="noopener">oecd.org — Transformative Competencies (PDF)</a>
+                </li>
+                <li>
+                    <span class="ref-org">OCDE</span>
+                    <strong>Education Policy Outlook 2024</strong>.
+                    <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/11/education-policy-outlook-2024_0411a0c4/dd5140e4-en.pdf" target="_blank" rel="noopener">oecd.org — Education Policy Outlook (PDF)</a>
+                </li>
+                <li>
+                    <span class="ref-org">UNESCO</span>
+                    <strong>Reimaginar juntos nuestros futuros: un nuevo contrato social para la educación</strong> (2021).
+                    <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">unesdoc.unesco.org — Reimaginar juntos</a>
+                </li>
+                <li>
+                    <span class="ref-org">UNESCO</span>
+                    <strong>Global Education Monitoring Report 2023: Technology in Education</strong>.
+                    <a href="https://unesdoc.unesco.org/ark:/48223/pf0000385723" target="_blank" rel="noopener">unesdoc.unesco.org — GEM Report 2023</a>
+                </li>
+                <li>
+                    <span class="ref-org">UNESCO</span>
+                    <strong>Global Report on Teachers 2024</strong>.
+                    <a href="https://unesdoc.unesco.org/ark:/48223/pf0000388832" target="_blank" rel="noopener">unesdoc.unesco.org — Informe Docentes 2024</a>
+                </li>
+            </ul>
+            <div class="footer-credits">
+                Maestría en Pedagogía · UPAEP · Marzo 2026
+            </div>
+        </div>
+    </footer>
+
+    <!-- ════════════════════════════════════════
+         JAVASCRIPT
+         ════════════════════════════════════════ -->
+    <script>
+        // Collapsible toggle
+        function tgl(el) {
+            el.classList.toggle('open');
+            el.setAttribute('aria-expanded', el.classList.contains('open'));
+        }
+
+        // Progress Bar
+        window.addEventListener('scroll', () => {
+            const d = document.documentElement;
+            const s = d.scrollTop / (d.scrollHeight - d.clientHeight);
+            document.getElementById('progress').style.width = (s * 100) + '%';
+        });
+
+        // Intersection Observer for Animations
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('vis');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.rv, .sec, .pc, .diagram-box').forEach(el => obs.observe(el));
+
+        // Nav Dots
+        const secList = [
+            { id: 'hero', t: 'Inicio' },
+            { id: 'intro', t: 'Las Grandes Ideas' },
+            { id: 's1', t: 'Socioemocional' },
+            { id: 's2', t: 'Tecnología' },
+            { id: 's3', t: 'Innovación' },
+            { id: 's4', t: 'Diseño Instruccional' },
+            { id: 'sint', t: 'Síntesis' }
+        ];
+        const nav = document.getElementById('tlnav');
+        const dots = [];
+        secList.forEach((s, i) => {
+            if (i > 0) {
+                const l = document.createElement('div');
+                l.className = 'tl-line';
+                nav.appendChild(l);
+            }
+            const d = document.createElement('div');
+            d.className = 'tl-dot';
+            d.setAttribute('data-label', s.t);
+            d.addEventListener('click', () => document.getElementById(s.id).scrollIntoView({ behavior: 'smooth' }));
+            nav.appendChild(d);
+            dots.push(d);
+        });
+        const secEls = secList.map(s => document.getElementById(s.id));
+        const obsNav = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const i = secEls.indexOf(entry.target);
+                    if (i >= 0) dots.forEach((d, j) => d.classList.toggle('active', j === i));
+                }
+            });
+        }, { threshold: 0.3 });
+        secEls.forEach(e => { if (e) obsNav.observe(e); });
+    </script>
 </body>
+
 </html>
