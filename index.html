@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Traje Nuevo del Profesor — Infografía</title>
+<style>
+  :root {
+    --morado: #6C3CE1;
+    --morado-oscuro: #4A1FB8;
+    --morado-claro: #E8DFFB;
+    --amarillo: #FFE066;
+    --amarillo-suave: #FFF8DC;
+    --blanco: #FFFFFF;
+    --gris-oscuro: #2D2D2D;
+    --gris-medio: #6B7280;
+    --gris-claro: #F3F4F6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--gris-oscuro);
+    line-height: 1.6;
+    background: var(--blanco);
+  }
+
+  /* ── HERO ─────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--morado) 0%, var(--morado-oscuro) 100%);
+    color: var(--blanco);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    background: var(--amarillo);
+    opacity: 0.1;
+    border-radius: 50%;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 400px; height: 400px;
+    background: var(--amarillo);
+    opacity: 0.08;
+    border-radius: 50%;
+  }
+
+  .hero-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+
+  .hero h1 span {
+    color: var(--amarillo);
+  }
+
+  .hero .subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-weight: 300;
+    max-width: 700px;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    background: rgba(255,255,255,0.08);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+  }
+
+  .hero-meta strong {
+    color: var(--amarillo);
+    font-weight: 600;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    animation: bounce 2s infinite;
+    font-size: 1.5rem;
+    opacity: 0.6;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+
+  /* ── SECTIONS ─────────────────────────── */
+  section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 800;
+    color: var(--morado);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--amarillo);
+    border-radius: 2px;
+    margin-top: 0.4rem;
+  }
+
+  /* ── INTRO ────────────────────────────── */
+  .intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--gris-oscuro);
+    max-width: 780px;
+  }
+
+  .intro-text em {
+    color: var(--morado);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .intro-highlight {
+    background: var(--morado-claro);
+    border-left: 4px solid var(--morado);
+    padding: 1.2rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  /* ── TOGGLE ───────────────────────────── */
+  .toggle-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 0 auto 2rem;
+    max-width: 600px;
+    background: var(--gris-claro);
+    border-radius: 50px;
+    padding: 4px;
+  }
+
+  .toggle-btn {
+    flex: 1;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background: transparent;
+    color: var(--gris-medio);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+
+  .toggle-btn.active {
+    background: var(--morado);
+    color: var(--blanco);
+    box-shadow: 0 2px 8px rgba(108, 60, 225, 0.3);
+  }
+
+  .toggle-btn:hover:not(.active) {
+    color: var(--morado);
+  }
+
+  /* ── VERSION CONTAINERS ───────────────── */
+  .version {
+    display: none;
+    animation: fadeIn 0.4s ease;
+  }
+
+  .version.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── VERSION A: CARDS ─────────────────── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .skill-card {
+    background: var(--blanco);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border: 1px solid rgba(108, 60, 225, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(108, 60, 225, 0.12);
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-area {
+    display: inline-block;
+    background: var(--morado-claro);
+    color: var(--morado);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--morado);
+    margin-bottom: 0.3rem;
+  }
+
+  .card-author {
+    font-size: 0.85rem;
+    color: var(--gris-medio);
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .card-desc {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .card-quote {
+    background: var(--amarillo-suave);
+    border-left: 3px solid var(--amarillo);
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    border-radius: 0 6px 6px 0;
+    color: #4A4A4A;
+  }
+
+  .card-quote .quote-source {
+    display: block;
+    margin-top: 0.4rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--morado);
+  }
+
+  .card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .card-links a {
+    font-size: 0.8rem;
+    color: var(--morado);
+    text-decoration: none;
+    border: 1px solid var(--morado-claro);
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+  }
+
+  .card-links a:hover {
+    background: var(--morado);
+    color: var(--blanco);
+  }
+
+  /* ── VERSION B: NARRATIVE ─────────────── */
+  .narrative-section {
+    margin-bottom: 3.5rem;
+    position: relative;
+    padding-left: 3rem;
+  }
+
+  .narrative-section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--morado), var(--amarillo));
+    border-radius: 2px;
+  }
+
+  .narrative-icon {
+    position: absolute;
+    left: -14px;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--morado);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(108, 60, 225, 0.3);
+  }
+
+  .narrative-subtitle {
+    font-size: 0.85rem;
+    color: var(--gris-medio);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.3rem;
+  }
+
+  .narrative-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--morado);
+    margin-bottom: 0.3rem;
+  }
+
+  .narrative-author {
+    font-size: 0.85rem;
+    color: var(--gris-medio);
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .narrative-body {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+  }
+
+  .narrative-body em {
+    color: var(--morado);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .narrative-quote {
+    background: var(--amarillo-suave);
+    border-left: 3px solid var(--amarillo);
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .narrative-quote .quote-source {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--morado);
+  }
+
+  .narrative-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+  }
+
+  .narrative-links a {
+    font-size: 0.8rem;
+    color: var(--morado);
+    text-decoration: none;
+    border: 1px solid var(--morado-claro);
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+  }
+
+  .narrative-links a:hover {
+    background: var(--morado);
+    color: var(--blanco);
+  }
+
+  .narrative-closure {
+    background: linear-gradient(135deg, var(--morado) 0%, var(--morado-oscuro) 100%);
+    color: var(--blanco);
+    padding: 2rem 2.5rem;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-top: 2.5rem;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(108, 60, 225, 0.2);
+  }
+
+  .narrative-closure span {
+    color: var(--amarillo);
+    font-weight: 700;
+  }
+
+  /* ── REFERENCES ───────────────────────── */
+  .references {
+    background: var(--gris-claro);
+    padding: 3rem 1.5rem;
+  }
+
+  .references-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .ref-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--morado);
+    margin-bottom: 1.5rem;
+  }
+
+  .ref-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--amarillo);
+    border-radius: 2px;
+    margin-top: 0.4rem;
+  }
+
+  .ref-list {
+    list-style: none;
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .ref-list li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 0.8rem 1rem;
+    background: var(--blanco);
+    border-radius: 8px;
+    border-left: 3px solid var(--morado);
+  }
+
+  .ref-list li a {
+    color: var(--morado);
+    text-decoration: none;
+    word-break: break-all;
+  }
+
+  .ref-list li a:hover {
+    text-decoration: underline;
+  }
+
+  .ref-org {
+    display: inline-block;
+    background: var(--morado-claro);
+    color: var(--morado);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    margin-right: 0.3rem;
+    text-transform: uppercase;
+  }
+
+  /* ── FOOTER ───────────────────────────── */
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.85rem;
+    color: var(--gris-medio);
+    border-top: 1px solid #E5E7EB;
+  }
+
+  /* ── SCROLL ANIMATIONS ────────────────── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ───────────────────────── */
+  @media (max-width: 600px) {
+    .hero-meta {
+      padding: 1rem 1.2rem;
+      font-size: 0.85rem;
+    }
+
+    .cards-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .narrative-section {
+      padding-left: 2rem;
+    }
+
+    .toggle-btn {
+      font-size: 0.82rem;
+      padding: 0.7rem 0.8rem;
+    }
+
+    .narrative-closure {
+      padding: 1.5rem;
+      font-size: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     HERO / PORTADA
+     ════════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-icon">🎓</div>
+  <h1>El <span>Traje Nuevo</span> del Profesor</h1>
+  <p class="subtitle">Las Grandes Ideas y las Habilidades del Docente del Siglo XXI</p>
+  <div class="hero-meta">
+    <div><strong>Programa:</strong> Maestría en Pedagogía — UPAEP</div>
+    <div><strong>Maestra:</strong> Socorro Guevara Salazar</div>
+    <div><strong>Fecha:</strong> 14 de marzo de 2026</div>
+    <div><strong>Integrantes:</strong> Carolina Hernández Machorro, Rosa Hernández Machorro, Hesus García Cobos</div>
+  </div>
+  <div class="hero-scroll">↓</div>
+</header>
+
+<!-- ════════════════════════════════════════
+     INTRODUCCIÓN
+     ════════════════════════════════════════ -->
+<section class="fade-in">
+  <h2 class="section-title">Las Grandes Ideas</h2>
+  <p class="intro-text">
+    Las Grandes Ideas son los conceptos centrales y duraderos de una disciplina: los principios que organizan el conocimiento y le dan sentido. Sin embargo, lo que para el profesor es <em>obvio</em>, para el estudiante suele ser <em>abstracto, confuso o irrelevante</em>.
+  </p>
+  <p class="intro-text" style="margin-top: 1rem;">
+    El reto del docente contemporáneo no es repetir contenido ni simplificarlo, sino <em>rediseñar la instrucción</em> para que las grandes ideas se vuelvan creíbles y vitales en la mente del estudiante.
+  </p>
+  <div class="intro-highlight">
+    Por eso hablamos del <strong>"nuevo traje del profesor"</strong>: ya no basta con transmitir información. El docente necesita nuevas habilidades — un nuevo traje — que le permita hacer visible lo invisible, conectar con sus estudiantes y mantenerse en constante evolución.
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     TOGGLE
+     ════════════════════════════════════════ -->
+<section style="padding-bottom: 0;">
+  <div class="toggle-bar">
+    <button class="toggle-btn active" onclick="switchVersion('a')" id="btn-a">
+      ✦ Versión A — Las Tres Habilidades
+    </button>
+    <button class="toggle-btn" onclick="switchVersion('b')" id="btn-b">
+      🧵 Versión B — La Analogía del Traje
+    </button>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     VERSIÓN A — TARJETAS DIRECTAS
+     ════════════════════════════════════════ -->
+<section id="version-a" class="version active">
+  <div class="cards-grid">
+
+    <!-- TARJETA 1 — Socioemocional -->
+    <div class="skill-card fade-in">
+      <div class="card-icon">💜</div>
+      <span class="card-area">Desarrollo Socioemocional</span>
+      <h3 class="card-title">Competencias Socioemocionales</h3>
+      <p class="card-author">Rosa Hernández Machorro</p>
+      <p class="card-desc">
+        Empatía, construcción de ambientes de aprendizaje seguros e inclusivos, y formación integral del estudiante. El docente reconoce sus propios estados emocionales para conectar auténticamente con quienes aprenden.
+      </p>
+      <div class="card-quote">
+        "Cuando los docentes aprenden a reconocer sus propios disparadores emocionales, sesgos cognitivos y fortalezas profesionales, obtienen claridad sobre cómo los estados personales influyen en las decisiones en el aula. La investigación demuestra que la conciencia de sí mismo mejorada, y la empatía que promueve, puede mitigar el sesgo inconsciente y mejorar los resultados de los estudiantes."
+        <span class="quote-source">— OCDE, Teaching Compass 2025, p. 9</span>
+      </div>
+      <div class="card-quote">
+        "La pedagogía debe organizarse en torno a los principios de cooperación, colaboración y solidaridad. Debe fomentar las capacidades intelectuales, sociales y morales de los estudiantes para trabajar juntos y transformar el mundo con empatía y compasión."
+        <span class="quote-source">— UNESCO, Reimaginar juntos nuestros futuros 2021, p. 3</span>
+      </div>
+      <div class="card-links">
+        <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass</a>
+        <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
+      </div>
+    </div>
+
+    <!-- TARJETA 2 — Tecnología -->
+    <div class="skill-card fade-in">
+      <div class="card-icon">🔌</div>
+      <span class="card-area">Tecnología Educativa</span>
+      <h3 class="card-title">Integración de la Tecnología</h3>
+      <p class="card-author">Hesus García Cobos</p>
+      <p class="card-desc">
+        Simulaciones, visualizaciones y proyectos prácticos que hacen visible lo abstracto. La tecnología no reemplaza al docente: amplifica su capacidad de conectar al estudiante con las grandes ideas.
+      </p>
+      <div class="card-quote">
+        "Apoyar a los docentes en la experimentación de prácticas, colaboración con investigadores y desarrolladores de EdTech, y aprovechar la experiencia de pares puede ayudar a cerrar la brecha entre la visión y la práctica en el aula."
+        <span class="quote-source">— OCDE, Education Policy Outlook 2024, p. 6</span>
+      </div>
+      <div class="card-quote">
+        "Las competencias fundamentales incluyen habilidades cognitivas y metacognitivas (como alfabetización, numeracía y alfabetización digital/de datos)… Estas competencias no pueden desarrollarse simplemente sentándose en el aula, sino que requieren participación activa y significativa con el mundo."
+        <span class="quote-source">— OCDE, Teaching Compass 2025, p. 5</span>
+      </div>
+      <div class="card-links">
+        <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/11/education-policy-outlook-2024_0411a0c4/dd5140e4-en.pdf" target="_blank" rel="noopener">OCDE Education Policy Outlook</a>
+        <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass</a>
+      </div>
+    </div>
+
+    <!-- TARJETA 3 — Innovación -->
+    <div class="skill-card fade-in">
+      <div class="card-icon">🔬</div>
+      <span class="card-area">Pedagógica</span>
+      <h3 class="card-title">Innovación Pedagógica y Aprendizaje Continuo</h3>
+      <p class="card-author">Carolina Hernández Machorro</p>
+      <p class="card-desc">
+        Formación constante, investigación, reflexión, diseño de proyectos innovadores, planificación y evaluación. El docente como profesional que evoluciona con su práctica.
+      </p>
+      <div class="card-quote">
+        "La enseñanza se entiende como un viaje de descubrimiento de por vida, en el cual la práctica reflexiva y el aprendizaje continuo impulsan a los docentes a enfrentar nuevos desafíos y aprovechar las oportunidades emergentes."
+        <span class="quote-source">— OCDE, Teaching Compass 2025, p. 13</span>
+      </div>
+      <div class="card-quote">
+        "La enseñanza debe profesionalizarse aún más como un esfuerzo de colaboración en el que los docentes son reconocidos por su trabajo como generadores de conocimiento y figuras clave en la transformación educativa y social."
+        <span class="quote-source">— UNESCO, Reimaginar juntos nuestros futuros 2021, p. 3</span>
+      </div>
+      <div class="card-links">
+        <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass</a>
+        <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     VERSIÓN B — ANALOGÍA DEL TRAJE
+     ════════════════════════════════════════ -->
+<section id="version-b" class="version">
+
+  <!-- Sección 1 — El Corazón -->
+  <div class="narrative-section fade-in">
+    <div class="narrative-icon">💜</div>
+    <p class="narrative-subtitle">Competencias Socioemocionales</p>
+    <h3 class="narrative-title">"El Corazón del Traje"</h3>
+    <p class="narrative-author">Rosa Hernández Machorro</p>
+    <p class="narrative-body">
+      Todo traje tiene un interior que toca la piel — la parte que nadie ve pero que sostiene todo lo demás. El <em>corazón del traje</em> del docente es su capacidad socioemocional: la empatía, la escucha activa, la construcción de espacios donde el estudiante se sienta seguro para equivocarse.
+    </p>
+    <p class="narrative-body">
+      Sin este corazón, el traje es una cáscara vacía. Un docente puede dominar la tecnología y las metodologías más innovadoras, pero si no conecta emocionalmente con sus estudiantes, las grandes ideas seguirán siendo abstractas e inalcanzables. La empatía es lo que transforma la <em>información</em> en <em>comprensión</em>.
+    </p>
+    <div class="narrative-quote">
+      "Cuando los docentes aprenden a reconocer sus propios disparadores emocionales, sesgos cognitivos y fortalezas profesionales, obtienen claridad sobre cómo los estados personales influyen en las decisiones en el aula. La investigación demuestra que la conciencia de sí mismo mejorada, y la empatía que promueve, puede mitigar el sesgo inconsciente y mejorar los resultados de los estudiantes."
+      <span class="quote-source">— OCDE, Teaching Compass 2025, p. 9</span>
+    </div>
+    <div class="narrative-quote">
+      "La pedagogía debe organizarse en torno a los principios de cooperación, colaboración y solidaridad. Debe fomentar las capacidades intelectuales, sociales y morales de los estudiantes para trabajar juntos y transformar el mundo con empatía y compasión."
+      <span class="quote-source">— UNESCO, Reimaginar juntos nuestros futuros 2021, p. 3</span>
+    </div>
+    <div class="narrative-links">
+      <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass</a>
+      <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
+    </div>
+  </div>
+
+  <!-- Sección 2 — Los Hilos Digitales -->
+  <div class="narrative-section fade-in">
+    <div class="narrative-icon">🔌</div>
+    <p class="narrative-subtitle">Integración de la Tecnología</p>
+    <h3 class="narrative-title">"Los Hilos Digitales"</h3>
+    <p class="narrative-author">Hesus García Cobos</p>
+    <p class="narrative-body">
+      Los hilos con los que está tejido el traje son la <em>tecnología</em>. No son el traje en sí — son lo que lo teje, lo que conecta cada pieza con las demás y con el mundo del estudiante.
+    </p>
+    <p class="narrative-body">
+      Las simulaciones, las visualizaciones, los proyectos prácticos son <em>puntadas</em> que unen lo abstracto con lo concreto. Un concepto de física cobra vida en una simulación interactiva. Una idea matemática se vuelve tangible en una visualización de datos. La tecnología no reemplaza al docente: le da nuevos hilos con los cuales tejer puentes entre las grandes ideas y la experiencia del estudiante.
+    </p>
+    <div class="narrative-quote">
+      "Apoyar a los docentes en la experimentación de prácticas, colaboración con investigadores y desarrolladores de EdTech, y aprovechar la experiencia de pares puede ayudar a cerrar la brecha entre la visión y la práctica en el aula."
+      <span class="quote-source">— OCDE, Education Policy Outlook 2024, p. 6</span>
+    </div>
+    <div class="narrative-quote">
+      "Las competencias fundamentales incluyen habilidades cognitivas y metacognitivas (como alfabetización, numeracía y alfabetización digital/de datos)… Estas competencias no pueden desarrollarse simplemente sentándose en el aula, sino que requieren participación activa y significativa con el mundo."
+      <span class="quote-source">— OCDE, Teaching Compass 2025, p. 5</span>
+    </div>
+    <div class="narrative-links">
+      <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/11/education-policy-outlook-2024_0411a0c4/dd5140e4-en.pdf" target="_blank" rel="noopener">OCDE Education Policy Outlook</a>
+      <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass</a>
+    </div>
+  </div>
+
+  <!-- Sección 3 — La Tela que se Renueva -->
+  <div class="narrative-section fade-in">
+    <div class="narrative-icon">🔬</div>
+    <p class="narrative-subtitle">Innovación Pedagógica y Aprendizaje Continuo</p>
+    <h3 class="narrative-title">"La Tela que se Renueva"</h3>
+    <p class="narrative-author">Carolina Hernández Machorro</p>
+    <p class="narrative-body">
+      La tela del traje no es estática — se <em>renueva</em>, se <em>adapta</em>, se <em>transforma</em>. Un traje que no evoluciona se vuelve obsoleto; un docente que no se actualiza pierde la capacidad de conectar con las nuevas generaciones.
+    </p>
+    <p class="narrative-body">
+      La <em>práctica reflexiva</em> y el <em>aprendizaje continuo</em> son lo que mantiene el traje vigente. Cada nueva investigación, cada proyecto innovador, cada momento de reflexión sobre la propia práctica es un hilo que renueva la tela. El docente del siglo XXI no termina de formarse nunca — y esa es precisamente su fortaleza.
+    </p>
+    <div class="narrative-quote">
+      "La enseñanza se entiende como un viaje de descubrimiento de por vida, en el cual la práctica reflexiva y el aprendizaje continuo impulsan a los docentes a enfrentar nuevos desafíos y aprovechar las oportunidades emergentes."
+      <span class="quote-source">— OCDE, Teaching Compass 2025, p. 13</span>
+    </div>
+    <div class="narrative-quote">
+      "La enseñanza debe profesionalizarse aún más como un esfuerzo de colaboración en el que los docentes son reconocidos por su trabajo como generadores de conocimiento y figuras clave en la transformación educativa y social."
+      <span class="quote-source">— UNESCO, Reimaginar juntos nuestros futuros 2021, p. 3</span>
+    </div>
+    <div class="narrative-links">
+      <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass</a>
+      <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
+    </div>
+  </div>
+
+  <!-- Cierre narrativo -->
+  <div class="narrative-closure fade-in">
+    Un traje no se viste por partes.<br><br>
+    El profesor del siglo XXI necesita las tres: <span>el corazón que conecta</span>, <span>los hilos que tejen puentes digitales</span>, y <span>la tela que se renueva cada día</span>.<br><br>
+    Ese es el traje nuevo del profesor — y no es de fantasía.
+  </div>
+
+</section>
+
+<!-- ════════════════════════════════════════
+     REFERENCIAS
+     ════════════════════════════════════════ -->
+<div class="references">
+  <div class="references-inner">
+    <h2 class="ref-title">Referencias</h2>
+    <ul class="ref-list">
+      <li>
+        <span class="ref-org">OCDE</span>
+        <strong>Teaching Compass</strong> (2025).
+        <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">oecd.org — Teaching Compass (PDF)</a>
+      </li>
+      <li>
+        <span class="ref-org">OCDE</span>
+        <strong>Conflict Resolution — Learning Compass 2030</strong> (2019).
+        <a href="https://www.oecd.org/content/dam/oecd/en/topics/policy-issues/future-of-education-and-skills/learning-compass-constructs/Conflict%20Resolution.pdf" target="_blank" rel="noopener">oecd.org — Conflict Resolution (PDF)</a>
+      </li>
+      <li>
+        <span class="ref-org">OCDE</span>
+        <strong>Transformative Competencies for 2030</strong> (2019).
+        <a href="https://www.oecd.org/content/dam/oecd/en/about/projects/edu/education-2040/concept-notes/Transformative_Competencies_for_2030_concept_note.pdf" target="_blank" rel="noopener">oecd.org — Transformative Competencies (PDF)</a>
+      </li>
+      <li>
+        <span class="ref-org">OCDE</span>
+        <strong>Education Policy Outlook 2024</strong>.
+        <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/11/education-policy-outlook-2024_0411a0c4/dd5140e4-en.pdf" target="_blank" rel="noopener">oecd.org — Education Policy Outlook (PDF)</a>
+      </li>
+      <li>
+        <span class="ref-org">UNESCO</span>
+        <strong>Reimaginar juntos nuestros futuros: un nuevo contrato social para la educación</strong> (2021).
+        <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">unesdoc.unesco.org — Reimaginar juntos</a>
+      </li>
+      <li>
+        <span class="ref-org">UNESCO</span>
+        <strong>Global Education Monitoring Report 2023: Technology in Education</strong>.
+        <a href="https://unesdoc.unesco.org/ark:/48223/pf0000385723" target="_blank" rel="noopener">unesdoc.unesco.org — GEM Report 2023</a>
+      </li>
+      <li>
+        <span class="ref-org">UNESCO</span>
+        <strong>Global Report on Teachers 2024</strong>.
+        <a href="https://unesdoc.unesco.org/ark:/48223/pf0000388832" target="_blank" rel="noopener">unesdoc.unesco.org — Informe Docentes 2024</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+     ════════════════════════════════════════ -->
+<footer>
+  Maestría en Pedagogía — UPAEP · Marzo 2026
+</footer>
+
+<!-- ════════════════════════════════════════
+     JAVASCRIPT
+     ════════════════════════════════════════ -->
+<script>
+  // ── Toggle entre versiones ──
+  function switchVersion(version) {
+    const versionA = document.getElementById('version-a');
+    const versionB = document.getElementById('version-b');
+    const btnA = document.getElementById('btn-a');
+    const btnB = document.getElementById('btn-b');
+
+    if (version === 'a') {
+      versionA.classList.add('active');
+      versionB.classList.remove('active');
+      btnA.classList.add('active');
+      btnB.classList.remove('active');
+    } else {
+      versionB.classList.add('active');
+      versionA.classList.remove('active');
+      btnB.classList.add('active');
+      btnA.classList.remove('active');
+    }
+
+    // Re-trigger fade-in for newly visible elements
+    const target = version === 'a' ? versionA : versionB;
+    target.querySelectorAll('.fade-in').forEach(function(el) {
+      el.classList.remove('visible');
+      // Force reflow
+      void el.offsetWidth;
+      el.classList.add('visible');
+    });
+  }
+
+  // ── Scroll fade-in with IntersectionObserver ──
+  document.addEventListener('DOMContentLoaded', function() {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(function(el) {
+      observer.observe(el);
+    });
+  });
+</script>
+
+</body>
+</html>

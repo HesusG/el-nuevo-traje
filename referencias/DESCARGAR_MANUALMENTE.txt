@@ -1,0 +1,24 @@
+DOCUMENTO PENDIENTE DE DESCARGA MANUAL
+========================================
+
+El siguiente documento no pudo descargarse automaticamente porque el portal
+UNESDOC de la UNESCO requiere interaccion en navegador para la descarga de PDFs.
+
+Documento: UNESCO GEM Report 2023 - Technology in Education
+Titulo:    "Global Education Monitoring Report 2023: Technology in education - A tool on whose terms?"
+URL:       https://unesdoc.unesco.org/ark:/48223/pf0000385723
+Guardar como: UNESCO_GEM_Report_2023_Tecnologia.pdf
+
+Instrucciones:
+1. Abrir la URL en un navegador web
+2. Hacer clic en el boton de descarga (icono de flecha hacia abajo)
+3. Guardar el archivo como "UNESCO_GEM_Report_2023_Tecnologia.pdf" en esta carpeta
+
+========================================
+Documentos descargados exitosamente (6/7):
+- OCDE_Conflict_Resolution_Learning_Compass.pdf
+- OCDE_Education_Policy_Outlook_2024.pdf
+- OCDE_Teaching_Compass_2025.pdf
+- OCDE_Transformative_Competencies_2030.pdf
+- UNESCO_Informe_Docentes_2024.pdf
+- UNESCO_Reimaginar_juntos_2021.pdf
