@@ -373,19 +373,73 @@
             50% { opacity: 0.8; transform: translateY(-5px); }
         }
 
-        /* ── Skill Mini-Section (desarrollo, tensiones, teorías) ── */
-        .skill-extra {
-            margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.1);
+        /* ── Guide Blocks ── */
+        .gb {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(0,0,0,0.08);
         }
+        .gb-title {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(1.3rem, 2vw, 1.8rem);
+            line-height: 1.1;
+            margin-bottom: 10px;
+            color: var(--fg);
+        }
+        .gb-intro {
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            max-width: 600px;
+        }
+        .gb-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 0;
+            color: var(--fg);
+            opacity: 0.6;
+            transition: opacity 0.2s;
+            user-select: none;
+        }
+        .gb-toggle:hover { opacity: 1; }
+        .gb-toggle-icon {
+            transition: transform 0.3s;
+            font-size: 0.9rem;
+        }
+        .gb.open .gb-toggle-icon { transform: rotate(180deg); }
+        .gb-detail {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, margin 0.3s;
+        }
+        .gb.open .gb-detail {
+            max-height: 2000px;
+            margin-top: 16px;
+        }
+        .gb-detail p {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        /* ── Skill Mini-Section (citas) ── */
         .skill-extra-title {
             font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
             text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; opacity: 0.7;
+            margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.08);
         }
         .skill-extra-subtitle {
             font-size: 0.85rem; color: #888; margin-bottom: 16px; font-style: italic;
-        }
-        .skill-extra p {
-            font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px; color: #444;
         }
         .skill-tags {
             display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
@@ -466,6 +520,8 @@
         }
 
         @media (max-width: 600px) {
+            .gb-title { font-size: 1.2rem; }
+            .gb { margin-top: 24px; padding-top: 16px; }
             .sec { padding: 40px 14px; }
             .sec-grid { gap: 24px; }
             .sec-visual { min-height: 200px; flex-direction: column; overflow: hidden; }
@@ -586,17 +642,41 @@
                     <a class="skill-tag" style="border-color: var(--c-socio); color: var(--c-socio);" href="https://es.wikipedia.org/wiki/Pedagog%C3%ADa_del_oprimido" target="_blank" rel="noopener">Pedagogia del oprimido (Freire)</a>
                 </div>
 
-                <div class="s-body">
-                    <p>La empatia permite comprender las emociones, intereses y necesidades de los estudiantes. Estas capacidades permiten crear ambientes de aprendizaje seguros, inclusivos y respetuosos, donde los estudiantes se sientan motivados y valorados.</p>
-                    <p>El docente no solo ensena contenidos, sino que tambien influye en la formacion integral de los estudiantes. Sin esta conexion emocional, el traje es una cascara vacia: un docente puede dominar la tecnologia y las metodologias mas innovadoras, pero si no conecta emocionalmente con sus estudiantes, las grandes ideas seguiran siendo abstractas e inalcanzables.</p>
+                <div class="gb">
+                    <h3 class="gb-title">¿En qué consiste?</h3>
+                    <p class="gb-intro">La empatía permite comprender las emociones de los estudiantes y crear ambientes seguros donde el aprendizaje cobra vida.</p>
+                    <div class="gb-toggle" onclick="tgl(this.parentElement)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this.parentElement)}">
+                        <span class="gb-toggle-text">Leer más</span>
+                        <span class="gb-toggle-icon">↓</span>
+                    </div>
+                    <div class="gb-detail">
+                        <p>La empatia permite comprender las emociones, intereses y necesidades de los estudiantes. Estas capacidades permiten crear ambientes de aprendizaje seguros, inclusivos y respetuosos, donde los estudiantes se sientan motivados y valorados.</p>
+                        <p>El docente no solo ensena contenidos, sino que tambien influye en la formacion integral de los estudiantes. Sin esta conexion emocional, el traje es una cascara vacia: un docente puede dominar la tecnologia y las metodologias mas innovadoras, pero si no conecta emocionalmente con sus estudiantes, las grandes ideas seguiran siendo abstractas e inalcanzables.</p>
+                    </div>
                 </div>
 
-                <div class="skill-extra">
-                    <div class="skill-extra-title">Como se desarrolla</div>
-                    <p>A traves de talleres de inteligencia emocional, practicas de escucha activa en el aula, ejercicios de autorreflexion sobre los propios sesgos y disparadores emocionales, y el modelado explicito de empatia en la interaccion cotidiana con los estudiantes.</p>
+                <div class="gb">
+                    <h3 class="gb-title">¿Cómo se desarrolla?</h3>
+                    <p class="gb-intro">No se aprende de un libro, se construye en la práctica diaria del aula.</p>
+                    <div class="gb-toggle" onclick="tgl(this.parentElement)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this.parentElement)}">
+                        <span class="gb-toggle-text">Leer más</span>
+                        <span class="gb-toggle-icon">↓</span>
+                    </div>
+                    <div class="gb-detail">
+                        <p>A traves de talleres de inteligencia emocional, practicas de escucha activa en el aula, ejercicios de autorreflexion sobre los propios sesgos y disparadores emocionales, y el modelado explicito de empatia en la interaccion cotidiana con los estudiantes.</p>
+                    </div>
+                </div>
 
-                    <div class="skill-extra-title">Posibles tensiones</div>
-                    <p>El vinculo emocional cercano puede dificultar la evaluacion objetiva y generar favoritismo percibido. El desgaste emocional (burnout) es un riesgo real cuando el docente absorbe las cargas emocionales de los estudiantes sin establecer limites saludables. Ademas, en grupos grandes, atender las necesidades socioemocionales individuales puede resultar abrumador.</p>
+                <div class="gb">
+                    <h3 class="gb-title">¿Qué tensiones existen?</h3>
+                    <p class="gb-intro">Toda habilidad valiosa tiene un lado difícil. Conocerlo es parte de dominarla.</p>
+                    <div class="gb-toggle" onclick="tgl(this.parentElement)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this.parentElement)}">
+                        <span class="gb-toggle-text">Leer más</span>
+                        <span class="gb-toggle-icon">↓</span>
+                    </div>
+                    <div class="gb-detail">
+                        <p>El vinculo emocional cercano puede dificultar la evaluacion objetiva y generar favoritismo percibido. El desgaste emocional (burnout) es un riesgo real cuando el docente absorbe las cargas emocionales de los estudiantes sin establecer limites saludables. Ademas, en grupos grandes, atender las necesidades socioemocionales individuales puede resultar abrumador.</p>
+                    </div>
                 </div>
 
                 <div class="skill-extra-title">Citas que respaldan esta habilidad</div>
@@ -665,18 +745,42 @@
                     <a class="skill-tag" style="border-color: var(--c-tech); color: var(--c-tech);" href="https://es.wikipedia.org/wiki/Modelo_SAMR" target="_blank" rel="noopener">Modelo SAMR (Puentedura)</a>
                 </div>
 
-                <div class="s-body">
-                    <p>La tecnologia puede ayudar al profesor a hacer visibles y concretas las grandes ideas. Muchos temas implican conceptos abstractos que pueden resultar dificiles de comprender si solo se presentan de forma teorica. Para que los estudiantes se involucren realmente con el aprendizaje, primero necesitan entender por que ese conocimiento es relevante para ellos y como se conecta con situaciones reales.</p>
-                    <p>Podemos apoyarnos en <em>simulaciones</em> que permiten experimentar con fenomenos complejos, <em>visualizaciones</em> que ayudan a representar procesos no visibles a simple vista, y <em>proyectos practicos</em> donde los estudiantes aplican lo aprendido para resolver problemas concretos.</p>
-                    <p>De esta manera transformamos momentos tradicionalmente pasivos de la clase en experiencias de aprendizaje activas, donde los estudiantes participan, experimentan y reflexionan. Estas actividades tambien generan oportunidades para evaluar el aprendizaje en contextos reales, observando como los estudiantes aplican sus conocimientos y habilidades.</p>
+                <div class="gb">
+                    <h3 class="gb-title">¿En qué consiste?</h3>
+                    <p class="gb-intro">La tecnología puede hacer visibles y concretas las grandes ideas que de otro modo quedan en lo abstracto.</p>
+                    <div class="gb-toggle" onclick="tgl(this.parentElement)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this.parentElement)}">
+                        <span class="gb-toggle-text">Leer más</span>
+                        <span class="gb-toggle-icon">↓</span>
+                    </div>
+                    <div class="gb-detail">
+                        <p>La tecnologia puede ayudar al profesor a hacer visibles y concretas las grandes ideas. Muchos temas implican conceptos abstractos que pueden resultar dificiles de comprender si solo se presentan de forma teorica. Para que los estudiantes se involucren realmente con el aprendizaje, primero necesitan entender por que ese conocimiento es relevante para ellos y como se conecta con situaciones reales.</p>
+                        <p>Podemos apoyarnos en <em>simulaciones</em> que permiten experimentar con fenomenos complejos, <em>visualizaciones</em> que ayudan a representar procesos no visibles a simple vista, y <em>proyectos practicos</em> donde los estudiantes aplican lo aprendido para resolver problemas concretos.</p>
+                        <p>De esta manera transformamos momentos tradicionalmente pasivos de la clase en experiencias de aprendizaje activas, donde los estudiantes participan, experimentan y reflexionan. Estas actividades tambien generan oportunidades para evaluar el aprendizaje en contextos reales, observando como los estudiantes aplican sus conocimientos y habilidades.</p>
+                    </div>
                 </div>
 
-                <div class="skill-extra">
-                    <div class="skill-extra-title">Como se desarrolla</div>
-                    <p>Experimentando con herramientas digitales en contextos reales de aula, colaborando con otros docentes y desarrolladores EdTech, y evaluando criticamente que tecnologia realmente mejora la comprension y cual solo distrae. La clave es integrar la herramienta al objetivo pedagogico, no al reves.</p>
+                <div class="gb">
+                    <h3 class="gb-title">¿Cómo se desarrolla?</h3>
+                    <p class="gb-intro">Se aprende experimentando con herramientas reales, no leyendo manuales.</p>
+                    <div class="gb-toggle" onclick="tgl(this.parentElement)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this.parentElement)}">
+                        <span class="gb-toggle-text">Leer más</span>
+                        <span class="gb-toggle-icon">↓</span>
+                    </div>
+                    <div class="gb-detail">
+                        <p>Experimentando con herramientas digitales en contextos reales de aula, colaborando con otros docentes y desarrolladores EdTech, y evaluando criticamente que tecnologia realmente mejora la comprension y cual solo distrae. La clave es integrar la herramienta al objetivo pedagogico, no al reves.</p>
+                    </div>
+                </div>
 
-                    <div class="skill-extra-title">Posibles tensiones</div>
-                    <p>El acceso desigual a infraestructura digital genera brechas entre escuelas y regiones. La tecnologia puede convertirse en distraccion cuando se usa sin intencion pedagogica clara. Existe tambien el riesgo de que el docente dependa de la herramienta y pierda la capacidad de ensenar sin ella, o que la presion institucional por "innovar" lleve a adoptar tecnologia por moda y no por necesidad real.</p>
+                <div class="gb">
+                    <h3 class="gb-title">¿Qué tensiones existen?</h3>
+                    <p class="gb-intro">El acceso desigual y el uso sin intención pedagógica son riesgos que todo docente debe anticipar.</p>
+                    <div class="gb-toggle" onclick="tgl(this.parentElement)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this.parentElement)}">
+                        <span class="gb-toggle-text">Leer más</span>
+                        <span class="gb-toggle-icon">↓</span>
+                    </div>
+                    <div class="gb-detail">
+                        <p>El acceso desigual a infraestructura digital genera brechas entre escuelas y regiones. La tecnologia puede convertirse en distraccion cuando se usa sin intencion pedagogica clara. Existe tambien el riesgo de que el docente dependa de la herramienta y pierda la capacidad de ensenar sin ella, o que la presion institucional por "innovar" lleve a adoptar tecnologia por moda y no por necesidad real.</p>
+                    </div>
                 </div>
 
                 <div class="skill-extra-title">Citas que respaldan esta habilidad</div>
@@ -759,17 +863,41 @@
                     <a class="skill-tag" style="border-color: var(--c-innov); color: var(--c-innov);" href="https://es.wikipedia.org/wiki/Aprendizaje_experiencial" target="_blank" rel="noopener">Aprendizaje experiencial (Kolb)</a>
                 </div>
 
-                <div class="s-body">
-                    <p>Mantener una formacion constante, investigacion y reflexion sobre la practica docente, ser flexible y disenar proyectos innovadores. El docente debe ser capaz de planificar, desarrollar y evaluar procesos de ensenanza y aprendizaje.</p>
-                    <p>Esto implica el dominio de estrategias de ensenanza y aprendizaje, incluyendo la planificacion, el diseno de actividades didacticas, la aplicacion de metodologias y la evaluacion. La tela del traje no es estatica: se <em>renueva</em>, se <em>adapta</em>, se <em>transforma</em>. El docente del siglo XXI no termina de formarse nunca, y esa es precisamente su fortaleza.</p>
+                <div class="gb">
+                    <h3 class="gb-title">¿En qué consiste?</h3>
+                    <p class="gb-intro">La formación constante y la reflexión sobre la práctica mantienen al docente vigente y relevante.</p>
+                    <div class="gb-toggle" onclick="tgl(this.parentElement)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this.parentElement)}">
+                        <span class="gb-toggle-text">Leer más</span>
+                        <span class="gb-toggle-icon">↓</span>
+                    </div>
+                    <div class="gb-detail">
+                        <p>Mantener una formacion constante, investigacion y reflexion sobre la practica docente, ser flexible y disenar proyectos innovadores. El docente debe ser capaz de planificar, desarrollar y evaluar procesos de ensenanza y aprendizaje.</p>
+                        <p>Esto implica el dominio de estrategias de ensenanza y aprendizaje, incluyendo la planificacion, el diseno de actividades didacticas, la aplicacion de metodologias y la evaluacion. La tela del traje no es estatica: se <em>renueva</em>, se <em>adapta</em>, se <em>transforma</em>. El docente del siglo XXI no termina de formarse nunca, y esa es precisamente su fortaleza.</p>
+                    </div>
                 </div>
 
-                <div class="skill-extra">
-                    <div class="skill-extra-title">Como se desarrolla</div>
-                    <p>Participando en comunidades de practica donde los docentes comparten experiencias y retroalimentacion, llevando diarios reflexivos sobre lo que funciona y lo que no en el aula, realizando investigacion-accion sobre problemas concretos de su contexto, y participando en redes de formacion continua tanto presenciales como virtuales.</p>
+                <div class="gb">
+                    <h3 class="gb-title">¿Cómo se desarrolla?</h3>
+                    <p class="gb-intro">Se construye en comunidades de práctica, diarios reflexivos e investigación-acción.</p>
+                    <div class="gb-toggle" onclick="tgl(this.parentElement)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this.parentElement)}">
+                        <span class="gb-toggle-text">Leer más</span>
+                        <span class="gb-toggle-icon">↓</span>
+                    </div>
+                    <div class="gb-detail">
+                        <p>Participando en comunidades de practica donde los docentes comparten experiencias y retroalimentacion, llevando diarios reflexivos sobre lo que funciona y lo que no en el aula, realizando investigacion-accion sobre problemas concretos de su contexto, y participando en redes de formacion continua tanto presenciales como virtuales.</p>
+                    </div>
+                </div>
 
-                    <div class="skill-extra-title">Posibles tensiones</div>
-                    <p>La sobrecarga laboral y administrativa limita seriamente el tiempo disponible para la reflexion y la formacion. Las estructuras institucionales rigidas pueden frenar la innovacion individual al imponer curriculos y formatos inflexibles. Tambien existe la tension entre innovar por conviccion y hacerlo por presion externa, lo que puede generar cambios superficiales sin impacto real.</p>
+                <div class="gb">
+                    <h3 class="gb-title">¿Qué tensiones existen?</h3>
+                    <p class="gb-intro">La sobrecarga laboral y las estructuras rígidas pueden frenar incluso la mejor intención de innovar.</p>
+                    <div class="gb-toggle" onclick="tgl(this.parentElement)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this.parentElement)}">
+                        <span class="gb-toggle-text">Leer más</span>
+                        <span class="gb-toggle-icon">↓</span>
+                    </div>
+                    <div class="gb-detail">
+                        <p>La sobrecarga laboral y administrativa limita seriamente el tiempo disponible para la reflexion y la formacion. Las estructuras institucionales rigidas pueden frenar la innovacion individual al imponer curriculos y formatos inflexibles. Tambien existe la tension entre innovar por conviccion y hacerlo por presion externa, lo que puede generar cambios superficiales sin impacto real.</p>
+                    </div>
                 </div>
 
                 <div class="skill-extra-title">Citas que respaldan esta habilidad</div>
@@ -839,17 +967,41 @@
                     <a class="skill-tag" style="border-color: var(--c-design); color: var(--c-design);" href="https://en.wikipedia.org/wiki/Structure_of_observed_learning_outcome" target="_blank" rel="noopener">Taxonomia SOLO (Biggs)</a>
                 </div>
 
-                <div class="s-body">
-                    <p>El <em>patron</em> es el molde que da forma al traje. El docente que ensena para la comprension no transmite contenido, transforma objetivos curriculares en <em>preguntas esenciales</em> que orientan la investigacion del estudiante y hacen las grandes ideas creibles y vitales.</p>
-                    <p>Hacer las ideas "creibles y hacerlas parecer vital" no es solo un reto intelectual; es un reto de <em>diseno</em>. El docente como co-disenador del aprendizaje y experto adaptativo debe saber convertir la complejidad disciplinar en experiencias de aprendizaje que provoquen comprension profunda.</p>
+                <div class="gb">
+                    <h3 class="gb-title">¿En qué consiste?</h3>
+                    <p class="gb-intro">El docente que enseña para la comprensión transforma objetivos en preguntas esenciales que guían al estudiante.</p>
+                    <div class="gb-toggle" onclick="tgl(this.parentElement)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this.parentElement)}">
+                        <span class="gb-toggle-text">Leer más</span>
+                        <span class="gb-toggle-icon">↓</span>
+                    </div>
+                    <div class="gb-detail">
+                        <p>El <em>patron</em> es el molde que da forma al traje. El docente que ensena para la comprension no transmite contenido, transforma objetivos curriculares en <em>preguntas esenciales</em> que orientan la investigacion del estudiante y hacen las grandes ideas creibles y vitales.</p>
+                        <p>Hacer las ideas "creibles y hacerlas parecer vital" no es solo un reto intelectual; es un reto de <em>diseno</em>. El docente como co-disenador del aprendizaje y experto adaptativo debe saber convertir la complejidad disciplinar en experiencias de aprendizaje que provoquen comprension profunda.</p>
+                    </div>
                 </div>
 
-                <div class="skill-extra">
-                    <div class="skill-extra-title">Como se desarrolla</div>
-                    <p>Formulando preguntas esenciales a partir de los contenidos curriculares, disenando evaluaciones autenticas que midan comprension real (no solo memorizacion), y alineando cada actividad con objetivos claros de comprension profunda. Tambien implica aprender a usar el diseno inverso: partir de lo que el estudiante debe comprender al final y disenar hacia atras.</p>
+                <div class="gb">
+                    <h3 class="gb-title">¿Cómo se desarrolla?</h3>
+                    <p class="gb-intro">Se aprende diseñando hacia atrás: partir de la comprensión deseada y construir desde ahí.</p>
+                    <div class="gb-toggle" onclick="tgl(this.parentElement)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this.parentElement)}">
+                        <span class="gb-toggle-text">Leer más</span>
+                        <span class="gb-toggle-icon">↓</span>
+                    </div>
+                    <div class="gb-detail">
+                        <p>Formulando preguntas esenciales a partir de los contenidos curriculares, disenando evaluaciones autenticas que midan comprension real (no solo memorizacion), y alineando cada actividad con objetivos claros de comprension profunda. Tambien implica aprender a usar el diseno inverso: partir de lo que el estudiante debe comprender al final y disenar hacia atras.</p>
+                    </div>
+                </div>
 
-                    <div class="skill-extra-title">Posibles tensiones</div>
-                    <p>Los curriculos rigidos y las evaluaciones estandarizadas dejan poco espacio para preguntas esenciales y evaluaciones autenticas. Disenar para la comprension profunda requiere significativamente mas tiempo de preparacion que simplemente cubrir contenido. Ademas, los docentes pueden enfrentar resistencia institucional cuando sus disenos no se ajustan a los formatos tradicionales de planeacion.</p>
+                <div class="gb">
+                    <h3 class="gb-title">¿Qué tensiones existen?</h3>
+                    <p class="gb-intro">Los currículos rígidos y las evaluaciones estandarizadas limitan el espacio para el diseño auténtico.</p>
+                    <div class="gb-toggle" onclick="tgl(this.parentElement)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this.parentElement)}">
+                        <span class="gb-toggle-text">Leer más</span>
+                        <span class="gb-toggle-icon">↓</span>
+                    </div>
+                    <div class="gb-detail">
+                        <p>Los curriculos rigidos y las evaluaciones estandarizadas dejan poco espacio para preguntas esenciales y evaluaciones autenticas. Disenar para la comprension profunda requiere significativamente mas tiempo de preparacion que simplemente cubrir contenido. Ademas, los docentes pueden enfrentar resistencia institucional cuando sus disenos no se ajustan a los formatos tradicionales de planeacion.</p>
+                    </div>
                 </div>
 
                 <div class="skill-extra-title">Citas que respaldan esta habilidad</div>
@@ -971,6 +1123,8 @@
         function tgl(el) {
             el.classList.toggle('open');
             el.setAttribute('aria-expanded', el.classList.contains('open'));
+            var txt = el.querySelector('.gb-toggle-text');
+            if (txt) txt.textContent = el.classList.contains('open') ? 'Cerrar' : 'Leer más';
         }
 
         // Progress Bar
