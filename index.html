@@ -112,20 +112,9 @@
             font-size: 1rem; color: #666; margin-bottom: 20px;
             max-width: 600px; margin-left: auto; margin-right: auto;
         }
-        .hero-cards {
-            display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;
-            margin-bottom: 40px; max-width: 700px;
-        }
-        .hero-card {
-            border: 2px solid var(--fg); padding: 14px 20px; background: #fff;
-            box-shadow: 4px 4px 0 rgba(0,0,0,0.1); text-align: left; flex: 1; min-width: 180px;
-        }
-        .hero-card-label {
-            font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase;
-            letter-spacing: 1.5px; color: #888; margin-bottom: 6px; font-weight: 700;
-        }
-        .hero-card-name {
-            font-size: 0.9rem; font-weight: 600; line-height: 1.5;
+        .hero-meta {
+            font-family: var(--font-mono); font-size: 0.8rem; color: #555;
+            margin-bottom: 40px; line-height: 1.8;
         }
         .hero-arrow {
             width: 50px; height: 50px; border: var(--border);
@@ -512,26 +501,11 @@
             <div class="hero-pre">Maestria en Pedagogia · UPAEP · 2026</div>
             <h1 class="hero-title">El Traje Nuevo del <span>Profesor</span></h1>
             <p class="hero-sub">Las Grandes Ideas y las Habilidades del Docente del Siglo XXI</p>
-            <p class="hero-intro">Las Grandes Ideas son los conceptos centrales y duraderos de una disciplina. El reto del docente contemporaneo es redisenar la instruccion para que esas ideas se vuelvan creibles y vitales en la mente del estudiante.</p>
-
-            <div class="hero-cards">
-                <div class="hero-card">
-                    <div class="hero-card-label">Maestra</div>
-                    <div class="hero-card-name">Socorro Guevara Salazar</div>
-                </div>
-                <div class="hero-card">
-                    <div class="hero-card-label">Integrantes</div>
-                    <div class="hero-card-name">Carolina Hernandez Machorro</div>
-                    <div class="hero-card-name">Rosa Hernandez Machorro</div>
-                    <div class="hero-card-name">Hesus Garcia Cobos</div>
-                    <div class="hero-card-name">Pablo Maximiliano Rodriguez Castro</div>
-                </div>
-                <div class="hero-card">
-                    <div class="hero-card-label">Fecha</div>
-                    <div class="hero-card-name">14 de marzo de 2026</div>
-                </div>
+            <p class="hero-intro">Las Grandes Ideas (Big Ideas) son los conceptos centrales y duraderos de una disciplina, ideas poderosas que ayudan a organizar el conocimiento y permiten que los estudiantes comprendan profundamente un tema, en lugar de memorizar contenidos aislados.</p>
+            <div class="hero-meta">
+                Maestra: Socorro Guevara Salazar<br>
+                Integrantes: Carolina Hernandez Machorro · Rosa Hernandez Machorro · Hesus Garcia Cobos · Pablo Maximiliano Rodriguez Castro
             </div>
-
             <a href="#intro" class="hero-arrow">↓</a>
         </div>
     </section>
@@ -545,8 +519,8 @@
                 <span class="s-era">Las Grandes Ideas</span>
                 <h2 class="s-name">La brecha entre el profesor y el estudiante</h2>
                 <div class="s-body">
-                    <p>Lo que para el profesor es <em>obvio</em>, para el estudiante suele ser <em>abstracto, confuso o irrelevante</em>. Las Grandes Ideas, los principios que organizan el conocimiento y le dan sentido, no se transmiten por repetición ni por simplificación.</p>
-                    <p>El reto del docente contemporáneo no es repetir contenido, sino <em>rediseñar la instrucción</em> para que las grandes ideas se vuelvan creíbles y vitales.</p>
+                    <p>Lo que para el profesor es <em>obvio</em>, para el estudiante suele ser <em>abstracto, confuso o irrelevante</em>. Las Grandes Ideas, los principios que organizan el conocimiento y le dan sentido, no se transmiten por repeticion ni por simplificacion.</p>
+                    <p>Por eso hablamos del "nuevo traje del profesor": ya no basta con transmitir informacion. El docente necesita desarrollar nuevas habilidades que le permitan <em>traducir las grandes ideas en experiencias comprensibles, relevantes y humanas</em> para los estudiantes.</p>
                 </div>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
@@ -599,8 +573,8 @@
                 <h2 class="s-name" style="color:var(--c)">Competencias Socioemocionales</h2>
                 <p class="s-thesis" style="border-color:var(--c)">El corazon del traje: sin empatia, el traje es cascara vacia.</p>
                 <div class="s-body">
-                    <p>Todo traje tiene un interior que toca la piel, la parte que nadie ve pero que sostiene todo lo demás. El <em>corazón del traje</em> del docente es su capacidad socioemocional: la empatía, la escucha activa, la construcción de espacios donde el estudiante se sienta seguro para equivocarse.</p>
-                    <p>Sin este corazón, el traje es una cáscara vacía. Un docente puede dominar la tecnología y las metodologías más innovadoras, pero si no conecta emocionalmente con sus estudiantes, las grandes ideas seguirán siendo abstractas e inalcanzables. La empatía es lo que transforma la <em>información</em> en <em>comprensión</em>.</p>
+                    <p>La empatia permite comprender las emociones, intereses y necesidades de los estudiantes. Estas capacidades permiten crear ambientes de aprendizaje seguros, inclusivos y respetuosos, donde los estudiantes se sientan motivados y valorados.</p>
+                    <p>El docente no solo ensena contenidos, sino que tambien influye en la formacion integral de los estudiantes. Sin esta conexion emocional, el traje es una cascara vacia: un docente puede dominar la tecnologia y las metodologias mas innovadoras, pero si no conecta emocionalmente con sus estudiantes, las grandes ideas seguiran siendo abstractas e inalcanzables.</p>
                 </div>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
@@ -675,8 +649,9 @@
                 <h2 class="s-name" style="color:var(--c)">Integración de la Tecnología</h2>
                 <p class="s-thesis" style="border-color:var(--c)">Los hilos digitales: la tecnologia teje puentes entre lo abstracto y lo concreto.</p>
                 <div class="s-body">
-                    <p>Los hilos con los que está tejido el traje son la <em>tecnología</em>. No son el traje en si, son lo que lo teje, lo que conecta cada pieza con las demás y con el mundo del estudiante.</p>
-                    <p>Las simulaciones, las visualizaciones, los proyectos prácticos son <em>puntadas</em> que unen lo abstracto con lo concreto. Un concepto de física cobra vida en una simulación interactiva. Una idea matemática se vuelve tangible en una visualización de datos. La tecnología no reemplaza al docente: le da nuevos hilos con los cuales tejer puentes entre las grandes ideas y la experiencia del estudiante.</p>
+                    <p>La tecnologia puede ayudar al profesor a hacer visibles y concretas las grandes ideas. Muchos temas implican conceptos abstractos que pueden resultar dificiles de comprender si solo se presentan de forma teorica. Para que los estudiantes se involucren realmente con el aprendizaje, primero necesitan entender por que ese conocimiento es relevante para ellos y como se conecta con situaciones reales.</p>
+                    <p>Podemos apoyarnos en <em>simulaciones</em> que permiten experimentar con fenomenos complejos, <em>visualizaciones</em> que ayudan a representar procesos no visibles a simple vista, y <em>proyectos practicos</em> donde los estudiantes aplican lo aprendido para resolver problemas concretos.</p>
+                    <p>De esta manera transformamos momentos tradicionalmente pasivos de la clase en experiencias de aprendizaje activas, donde los estudiantes participan, experimentan y reflexionan. Estas actividades tambien generan oportunidades para evaluar el aprendizaje en contextos reales, observando como los estudiantes aplican sus conocimientos y habilidades.</p>
                 </div>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
@@ -765,8 +740,8 @@
                 <h2 class="s-name" style="color:var(--c)">Innovación Pedagógica y Aprendizaje Continuo</h2>
                 <p class="s-thesis" style="border-color:var(--c)">La tela que se renueva: la practica reflexiva mantiene al docente vigente.</p>
                 <div class="s-body">
-                    <p>La tela del traje no es estatica: se <em>renueva</em>, se <em>adapta</em>, se <em>transforma</em>. Un traje que no evoluciona se vuelve obsoleto; un docente que no se actualiza pierde la capacidad de conectar con las nuevas generaciones.</p>
-                    <p>La <em>práctica reflexiva</em> y el <em>aprendizaje continuo</em> son lo que mantiene el traje vigente. Cada nueva investigación, cada proyecto innovador, cada momento de reflexión sobre la propia práctica es un hilo que renueva la tela. El docente del siglo XXI no termina de formarse nunca, y esa es precisamente su fortaleza.</p>
+                    <p>Mantener una formacion constante, investigacion y reflexion sobre la practica docente, ser flexible y disenar proyectos innovadores. El docente debe ser capaz de planificar, desarrollar y evaluar procesos de ensenanza y aprendizaje.</p>
+                    <p>Esto implica el dominio de estrategias de ensenanza y aprendizaje, incluyendo la planificacion, el diseno de actividades didacticas, la aplicacion de metodologias y la evaluacion. La tela del traje no es estatica: se <em>renueva</em>, se <em>adapta</em>, se <em>transforma</em>. El docente del siglo XXI no termina de formarse nunca, y esa es precisamente su fortaleza.</p>
                 </div>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
