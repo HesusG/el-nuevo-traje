@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;700&display=swap"
         rel="stylesheet">
     <style>
         /* ── Variables & Reset ── */
@@ -18,7 +18,7 @@
             --bg-alt: #E8E2D2;
             --border: 3px solid #1a1a1a;
             --shadow: 6px 6px 0 #1a1a1a;
-            --font-display: 'Syne', sans-serif;
+            --font-display: 'Inter', sans-serif;
             --font-body: 'DM Sans', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
 
@@ -112,9 +112,20 @@
             font-size: 1rem; color: #666; margin-bottom: 20px;
             max-width: 600px; margin-left: auto; margin-right: auto;
         }
-        .hero-meta {
-            font-family: var(--font-mono); font-size: 0.8rem; color: #555;
-            margin-bottom: 40px; line-height: 1.8;
+        .hero-cards {
+            display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;
+            margin-bottom: 40px; max-width: 700px;
+        }
+        .hero-card {
+            border: 2px solid var(--fg); padding: 14px 20px; background: #fff;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1); text-align: left; flex: 1; min-width: 180px;
+        }
+        .hero-card-label {
+            font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase;
+            letter-spacing: 1.5px; color: #888; margin-bottom: 6px; font-weight: 700;
+        }
+        .hero-card-name {
+            font-size: 0.9rem; font-weight: 600; line-height: 1.5;
         }
         .hero-arrow {
             width: 50px; height: 50px; border: var(--border);
@@ -373,79 +384,57 @@
             50% { opacity: 0.8; transform: translateY(-5px); }
         }
 
-        /* ── Synthesis Cards ── */
-        .pg {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-            gap: 24px; margin: 40px 0;
+        /* ── Skill Mini-Section (desarrollo, tensiones, teorías) ── */
+        .skill-extra {
+            margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.1);
         }
-        .pc {
-            border: 2px solid var(--fg); background: #fff; padding: 24px;
-            box-shadow: 4px 4px 0 rgba(0,0,0,0.1); transition: transform 0.3s;
-            opacity: 0; transform: translateY(20px);
+        .skill-extra-title {
+            font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; opacity: 0.7;
         }
-        .pc.vis { opacity: 1; transform: translateY(0); }
-        .pc:hover { transform: translateY(-5px); box-shadow: 8px 8px 0 rgba(0,0,0,0.1); }
-        .pc-n {
-            font-family: var(--font-display); font-weight: 800; font-size: 2.5rem;
-            opacity: 0.1; line-height: 1; margin-bottom: 10px;
+        .skill-extra p {
+            font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px; color: #444;
         }
-        .pc-t { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; }
-        .pc-d { font-size: 0.95rem; line-height: 1.5; color: #555; }
-
-        /* ── Dark Section ── */
-        .sec-dark {
-            background: #1a1a1a !important; color: #F5F0E8;
-            border-bottom-color: rgba(255,255,255,0.05);
+        .skill-tags {
+            display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
         }
-        .sec-dark .pc {
-            background: #2a2a2a; border-color: rgba(255,255,255,0.15);
-            box-shadow: 4px 4px 0 rgba(255,213,79,0.15);
+        .skill-tag {
+            font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
+            padding: 6px 12px; border: 2px solid; background: #fff;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.08); text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        .sec-dark .pc:hover { box-shadow: 8px 8px 0 rgba(255,213,79,0.2); }
-        .sec-dark .pc-d { color: #ccc; }
-        .sec-dark .pc-n { opacity: 0.15; }
-        .sec-dark .pc-t { color: #F5F0E8; }
-        .sec-dark .hero-sub { color: #aaa; }
-        .sec-dark .sint-quote {
-            border: 2px solid rgba(255,255,255,0.2); box-shadow: 8px 8px 0 var(--yellow);
-            color: #F5F0E8; background: rgba(255,255,255,0.03);
-        }
-
-        .sec-header { text-align: center; margin-bottom: 50px; }
-        .sint-title { font-size: clamp(1.8rem, 5vw, 3rem); }
-        .sint-in { max-width: 1000px; width: 100%; }
-        .sint-quote { text-align: center; max-width: 800px; margin: 0 auto; padding: 30px; }
-        .sint-quote p { font-size: 1.1rem; line-height: 1.8; }
-        .sint-quote strong { color: var(--yellow); }
-
-        /* Color accents on synthesis cards */
-        .pc[data-accent] { border-left: 5px solid var(--pc-accent); }
 
         /* ── Footer ── */
         footer {
-            padding: 60px 20px; background: #1a1a1a; color: #F5F0E8;
-            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 60px 20px; background: var(--bg-alt); color: var(--fg);
+            border-top: var(--border);
         }
         .footer-inner { max-width: 900px; margin: 0 auto; }
         .footer-title {
             font-family: var(--font-display); font-weight: 800; font-size: 1.5rem;
-            margin-bottom: 30px; color: var(--yellow);
+            margin-bottom: 10px;
+        }
+        .footer-subtitle {
+            font-family: var(--font-mono); font-size: 0.85rem; color: #666;
+            margin-bottom: 30px;
         }
         .ref-list { list-style: none; display: grid; gap: 12px; margin-bottom: 40px; }
         .ref-list li {
             font-size: 0.9rem; line-height: 1.5; padding: 12px 16px;
-            background: #2a2a2a; border-left: 3px solid var(--yellow);
+            background: #fff; border: 2px solid var(--fg);
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
         }
-        .ref-list li a { color: var(--yellow); text-decoration: none; word-break: break-all; }
+        .ref-list li a { color: var(--fg); text-decoration: none; word-break: break-all; font-weight: 600; }
         .ref-list li a:hover { text-decoration: underline; }
         .ref-org {
-            display: inline-block; background: rgba(255,213,79,0.15); color: var(--yellow);
+            display: inline-block; background: var(--yellow); color: var(--fg);
             font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem;
             margin-right: 0.3rem; text-transform: uppercase; font-family: var(--font-mono);
         }
         .footer-credits {
             text-align: center; font-family: var(--font-mono); font-size: 0.8rem; color: #666;
-            padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 30px; border-top: 1px solid rgba(0,0,0,0.1);
         }
 
         /* ── Animations ── */
@@ -523,11 +512,26 @@
             <div class="hero-pre">Maestria en Pedagogia · UPAEP · 2026</div>
             <h1 class="hero-title">El Traje Nuevo del <span>Profesor</span></h1>
             <p class="hero-sub">Las Grandes Ideas y las Habilidades del Docente del Siglo XXI</p>
-            <p class="hero-intro">Las Grandes Ideas son los conceptos centrales y duraderos de una disciplina. El reto del docente contemporáneo es rediseñar la instrucción para que esas ideas se vuelvan creíbles y vitales en la mente del estudiante.</p>
-            <div class="hero-meta">
-                Maestra: Socorro Guevara Salazar<br>
-                Integrantes: Carolina Hernández Machorro · Rosa Hernández Machorro · Hesus García Cobos · Pablo Maximiliano Rodríguez Castro
+            <p class="hero-intro">Las Grandes Ideas son los conceptos centrales y duraderos de una disciplina. El reto del docente contemporaneo es redisenar la instruccion para que esas ideas se vuelvan creibles y vitales en la mente del estudiante.</p>
+
+            <div class="hero-cards">
+                <div class="hero-card">
+                    <div class="hero-card-label">Maestra</div>
+                    <div class="hero-card-name">Socorro Guevara Salazar</div>
+                </div>
+                <div class="hero-card">
+                    <div class="hero-card-label">Integrantes</div>
+                    <div class="hero-card-name">Carolina Hernandez Machorro</div>
+                    <div class="hero-card-name">Rosa Hernandez Machorro</div>
+                    <div class="hero-card-name">Hesus Garcia Cobos</div>
+                    <div class="hero-card-name">Pablo Maximiliano Rodriguez Castro</div>
+                </div>
+                <div class="hero-card">
+                    <div class="hero-card-label">Fecha</div>
+                    <div class="hero-card-name">14 de marzo de 2026</div>
+                </div>
             </div>
+
             <a href="#intro" class="hero-arrow">↓</a>
         </div>
     </section>
@@ -541,21 +545,21 @@
                 <span class="s-era">Las Grandes Ideas</span>
                 <h2 class="s-name">La brecha entre el profesor y el estudiante</h2>
                 <div class="s-body">
-                    <p>Lo que para el profesor es <em>obvio</em>, para el estudiante suele ser <em>abstracto, confuso o irrelevante</em>. Las Grandes Ideas — los principios que organizan el conocimiento y le dan sentido — no se transmiten por repetición ni por simplificación.</p>
+                    <p>Lo que para el profesor es <em>obvio</em>, para el estudiante suele ser <em>abstracto, confuso o irrelevante</em>. Las Grandes Ideas, los principios que organizan el conocimiento y le dan sentido, no se transmiten por repetición ni por simplificación.</p>
                     <p>El reto del docente contemporáneo no es repetir contenido, sino <em>rediseñar la instrucción</em> para que las grandes ideas se vuelvan creíbles y vitales.</p>
                 </div>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
                     <div class="rb-h">¿Por qué un "traje nuevo"? <span class="rb-i">↓</span></div>
                     <div class="rb-b">
-                        <p>Ya no basta con transmitir información. El docente necesita nuevas habilidades — un <strong>nuevo traje</strong> — que le permita hacer visible lo invisible, conectar con sus estudiantes y mantenerse en constante evolución.</p>
+                        <p>Ya no basta con transmitir información. El docente necesita nuevas habilidades, un <strong>nuevo traje</strong>, que le permita hacer visible lo invisible, conectar con sus estudiantes y mantenerse en constante evolución.</p>
                         <p>Este traje tiene cuatro piezas: el <strong>corazón</strong> que conecta (competencias socioemocionales), los <strong>hilos</strong> que tejen puentes (tecnología), la <strong>tela</strong> que se renueva (innovación pedagógica), y el <strong>patrón</strong> que da forma (diseño instruccional).</p>
                     </div>
                 </div>
 
                 <div class="tk" style="border-color: var(--fg)">
                     <div class="tk-l">La metáfora</div>
-                    <p>Un traje no se viste por partes. Estas cuatro habilidades forman un todo integrado — el traje nuevo del profesor.</p>
+                    <p>Un traje no se viste por partes. Estas cuatro habilidades forman un todo integrado: el traje nuevo del profesor.</p>
                 </div>
             </div>
 
@@ -591,23 +595,23 @@
         <div class="n-badge">01</div>
         <div class="sec-grid">
             <div class="sec-text rv">
-                <span class="s-era" style="color:var(--c)">Habilidad 01 · Desarrollo Socioemocional · Rosa Hernández Machorro</span>
+                <span class="s-era" style="color:var(--c)">Habilidad 01 · Desarrollo Socioemocional</span>
                 <h2 class="s-name" style="color:var(--c)">Competencias Socioemocionales</h2>
-                <p class="s-thesis" style="border-color:var(--c)">El corazón del traje — sin empatía, el traje es cáscara vacía.</p>
+                <p class="s-thesis" style="border-color:var(--c)">El corazon del traje: sin empatia, el traje es cascara vacia.</p>
                 <div class="s-body">
-                    <p>Todo traje tiene un interior que toca la piel — la parte que nadie ve pero que sostiene todo lo demás. El <em>corazón del traje</em> del docente es su capacidad socioemocional: la empatía, la escucha activa, la construcción de espacios donde el estudiante se sienta seguro para equivocarse.</p>
+                    <p>Todo traje tiene un interior que toca la piel, la parte que nadie ve pero que sostiene todo lo demás. El <em>corazón del traje</em> del docente es su capacidad socioemocional: la empatía, la escucha activa, la construcción de espacios donde el estudiante se sienta seguro para equivocarse.</p>
                     <p>Sin este corazón, el traje es una cáscara vacía. Un docente puede dominar la tecnología y las metodologías más innovadoras, pero si no conecta emocionalmente con sus estudiantes, las grandes ideas seguirán siendo abstractas e inalcanzables. La empatía es lo que transforma la <em>información</em> en <em>comprensión</em>.</p>
                 </div>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
-                    <div class="rb-h">OCDE — Teaching Compass 2025 (p. 9) <span class="rb-i">↓</span></div>
+                    <div class="rb-h">OCDE:Teaching Compass 2025 (p. 9) <span class="rb-i">↓</span></div>
                     <div class="rb-b">
                         <p>"Cuando los docentes aprenden a reconocer sus propios disparadores emocionales, sesgos cognitivos y fortalezas profesionales, obtienen claridad sobre cómo los estados personales influyen en las decisiones en el aula. La investigación demuestra que la conciencia de sí mismo mejorada, y la empatía que promueve, puede mitigar el sesgo inconsciente y mejorar los resultados de los estudiantes."</p>
                     </div>
                 </div>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
-                    <div class="rb-h">UNESCO — Reimaginar juntos 2021 (p. 3) <span class="rb-i">↓</span></div>
+                    <div class="rb-h">UNESCO:Reimaginar juntos 2021 (p. 3) <span class="rb-i">↓</span></div>
                     <div class="rb-b">
                         <p>"La pedagogía debe organizarse en torno a los principios de cooperación, colaboración y solidaridad. Debe fomentar las capacidades intelectuales, sociales y morales de los estudiantes para trabajar juntos y transformar el mundo con empatía y compasión."</p>
                     </div>
@@ -615,18 +619,33 @@
 
                 <div class="tk" style="border-color:var(--c)">
                     <div class="tk-l" style="color:var(--c)">Mensaje clave</div>
-                    <p>La empatía no es un accesorio del traje — es su corazón. Sin conexión emocional, ninguna metodología ni tecnología puede hacer que las grandes ideas cobren vida.</p>
+                    <p>La empatía no es un accesorio del traje, es su corazon. Sin conexión emocional, ninguna metodología ni tecnología puede hacer que las grandes ideas cobren vida.</p>
                 </div>
 
                 <div class="s-lk">
                     <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass 2025</a>
                     <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
                 </div>
+
+                <div class="skill-extra">
+                    <div class="skill-extra-title">Como se desarrolla</div>
+                    <p>Se cultiva mediante la autorreflexion, la escucha activa, el modelado de empatia en el aula y la formacion en inteligencia emocional.</p>
+
+                    <div class="skill-extra-title">Posibles tensiones</div>
+                    <p>El vinculo emocional puede dificultar la evaluacion objetiva. El desgaste emocional (burnout) es un riesgo real cuando no hay limites claros.</p>
+
+                    <div class="skill-extra-title">Teorias pedagogicas relacionadas</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag" style="border-color: var(--c-socio); color: var(--c-socio);">Etica del cuidado (Noddings)</span>
+                        <span class="skill-tag" style="border-color: var(--c-socio); color: var(--c-socio);">Aprendizaje socioemocional (CASEL)</span>
+                        <span class="skill-tag" style="border-color: var(--c-socio); color: var(--c-socio);">Pedagogia del oprimido (Freire)</span>
+                    </div>
+                </div>
             </div>
 
             <div class="sec-visual rv rv-d1">
                 <div class="diagram-box">
-                    <h4>El Corazón</h4>
+                    <h4>El Corazon</h4>
                     <div class="d-heart">
                         <svg viewBox="0 0 140 130" xmlns="http://www.w3.org/2000/svg">
                             <!-- Heart fill (pulse) -->
@@ -652,23 +671,23 @@
         <div class="n-badge">02</div>
         <div class="sec-grid">
             <div class="sec-text rv">
-                <span class="s-era" style="color:var(--c)">Habilidad 02 · Tecnología Educativa · Hesus García Cobos</span>
+                <span class="s-era" style="color:var(--c)">Habilidad 02 · Tecnología Educativa</span>
                 <h2 class="s-name" style="color:var(--c)">Integración de la Tecnología</h2>
-                <p class="s-thesis" style="border-color:var(--c)">Los hilos digitales — la tecnología teje puentes entre lo abstracto y lo concreto.</p>
+                <p class="s-thesis" style="border-color:var(--c)">Los hilos digitales: la tecnologia teje puentes entre lo abstracto y lo concreto.</p>
                 <div class="s-body">
-                    <p>Los hilos con los que está tejido el traje son la <em>tecnología</em>. No son el traje en sí — son lo que lo teje, lo que conecta cada pieza con las demás y con el mundo del estudiante.</p>
+                    <p>Los hilos con los que está tejido el traje son la <em>tecnología</em>. No son el traje en si, son lo que lo teje, lo que conecta cada pieza con las demás y con el mundo del estudiante.</p>
                     <p>Las simulaciones, las visualizaciones, los proyectos prácticos son <em>puntadas</em> que unen lo abstracto con lo concreto. Un concepto de física cobra vida en una simulación interactiva. Una idea matemática se vuelve tangible en una visualización de datos. La tecnología no reemplaza al docente: le da nuevos hilos con los cuales tejer puentes entre las grandes ideas y la experiencia del estudiante.</p>
                 </div>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
-                    <div class="rb-h">OCDE — Education Policy Outlook 2024 (p. 6) <span class="rb-i">↓</span></div>
+                    <div class="rb-h">OCDE:Education Policy Outlook 2024 (p. 6) <span class="rb-i">↓</span></div>
                     <div class="rb-b">
                         <p>"Apoyar a los docentes en la experimentación de prácticas, colaboración con investigadores y desarrolladores de EdTech, y aprovechar la experiencia de pares puede ayudar a cerrar la brecha entre la visión y la práctica en el aula."</p>
                     </div>
                 </div>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
-                    <div class="rb-h">OCDE — Teaching Compass 2025 (p. 5) <span class="rb-i">↓</span></div>
+                    <div class="rb-h">OCDE:Teaching Compass 2025 (p. 5) <span class="rb-i">↓</span></div>
                     <div class="rb-b">
                         <p>"Las competencias fundamentales incluyen habilidades cognitivas y metacognitivas (como alfabetización, numeracía y alfabetización digital/de datos)… Estas competencias no pueden desarrollarse simplemente sentándose en el aula, sino que requieren participación activa y significativa con el mundo."</p>
                     </div>
@@ -676,12 +695,27 @@
 
                 <div class="tk" style="border-color:var(--c)">
                     <div class="tk-l" style="color:var(--c)">Mensaje clave</div>
-                    <p>La tecnología no es el traje — son los hilos que lo tejen. Su valor no está en la herramienta, sino en los puentes que permite construir entre las grandes ideas y la experiencia del estudiante.</p>
+                    <p>La tecnologia no es el traje, son los hilos que lo tejen. Su valor no está en la herramienta, sino en los puentes que permite construir entre las grandes ideas y la experiencia del estudiante.</p>
                 </div>
 
                 <div class="s-lk">
                     <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/11/education-policy-outlook-2024_0411a0c4/dd5140e4-en.pdf" target="_blank" rel="noopener">OCDE Education Policy Outlook 2024</a>
                     <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass 2025</a>
+                </div>
+
+                <div class="skill-extra">
+                    <div class="skill-extra-title">Como se desarrolla</div>
+                    <p>A traves de la experimentacion con herramientas digitales, colaboracion con pares y desarrolladores EdTech, y la integracion critica de simulaciones y visualizaciones en la practica docente.</p>
+
+                    <div class="skill-extra-title">Posibles tensiones</div>
+                    <p>El acceso desigual a infraestructura digital genera brechas. La tecnologia puede convertirse en distraccion si no se usa con intencion pedagogica clara.</p>
+
+                    <div class="skill-extra-title">Teorias pedagogicas relacionadas</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag" style="border-color: var(--c-tech); color: var(--c-tech);">TPACK (Mishra y Koehler)</span>
+                        <span class="skill-tag" style="border-color: var(--c-tech); color: var(--c-tech);">Conectivismo (Siemens)</span>
+                        <span class="skill-tag" style="border-color: var(--c-tech); color: var(--c-tech);">Modelo SAMR (Puentedura)</span>
+                    </div>
                 </div>
             </div>
 
@@ -727,23 +761,23 @@
         <div class="n-badge">03</div>
         <div class="sec-grid">
             <div class="sec-text rv">
-                <span class="s-era" style="color:var(--c)">Habilidad 03 · Pedagógica · Carolina Hernández Machorro</span>
+                <span class="s-era" style="color:var(--c)">Habilidad 03 · Pedagógica</span>
                 <h2 class="s-name" style="color:var(--c)">Innovación Pedagógica y Aprendizaje Continuo</h2>
-                <p class="s-thesis" style="border-color:var(--c)">La tela que se renueva — la práctica reflexiva mantiene al docente vigente.</p>
+                <p class="s-thesis" style="border-color:var(--c)">La tela que se renueva: la practica reflexiva mantiene al docente vigente.</p>
                 <div class="s-body">
-                    <p>La tela del traje no es estática — se <em>renueva</em>, se <em>adapta</em>, se <em>transforma</em>. Un traje que no evoluciona se vuelve obsoleto; un docente que no se actualiza pierde la capacidad de conectar con las nuevas generaciones.</p>
-                    <p>La <em>práctica reflexiva</em> y el <em>aprendizaje continuo</em> son lo que mantiene el traje vigente. Cada nueva investigación, cada proyecto innovador, cada momento de reflexión sobre la propia práctica es un hilo que renueva la tela. El docente del siglo XXI no termina de formarse nunca — y esa es precisamente su fortaleza.</p>
+                    <p>La tela del traje no es estatica: se <em>renueva</em>, se <em>adapta</em>, se <em>transforma</em>. Un traje que no evoluciona se vuelve obsoleto; un docente que no se actualiza pierde la capacidad de conectar con las nuevas generaciones.</p>
+                    <p>La <em>práctica reflexiva</em> y el <em>aprendizaje continuo</em> son lo que mantiene el traje vigente. Cada nueva investigación, cada proyecto innovador, cada momento de reflexión sobre la propia práctica es un hilo que renueva la tela. El docente del siglo XXI no termina de formarse nunca, y esa es precisamente su fortaleza.</p>
                 </div>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
-                    <div class="rb-h">OCDE — Teaching Compass 2025 (p. 13) <span class="rb-i">↓</span></div>
+                    <div class="rb-h">OCDE:Teaching Compass 2025 (p. 13) <span class="rb-i">↓</span></div>
                     <div class="rb-b">
                         <p>"La enseñanza se entiende como un viaje de descubrimiento de por vida, en el cual la práctica reflexiva y el aprendizaje continuo impulsan a los docentes a enfrentar nuevos desafíos y aprovechar las oportunidades emergentes."</p>
                     </div>
                 </div>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
-                    <div class="rb-h">UNESCO — Reimaginar juntos 2021 (p. 3) <span class="rb-i">↓</span></div>
+                    <div class="rb-h">UNESCO:Reimaginar juntos 2021 (p. 3) <span class="rb-i">↓</span></div>
                     <div class="rb-b">
                         <p>"La enseñanza debe profesionalizarse aún más como un esfuerzo de colaboración en el que los docentes son reconocidos por su trabajo como generadores de conocimiento y figuras clave en la transformación educativa y social."</p>
                     </div>
@@ -751,18 +785,33 @@
 
                 <div class="tk" style="border-color:var(--c)">
                     <div class="tk-l" style="color:var(--c)">Mensaje clave</div>
-                    <p>La innovación no es adoptar la última moda — es la práctica reflexiva que mantiene al docente vigente. La formación continua no es un requisito burocrático; es la tela que se renueva cada día.</p>
+                    <p>La innovación no es adoptar la ultima moda, es la practica reflexiva que mantiene al docente vigente. La formación continua no es un requisito burocrático; es la tela que se renueva cada día.</p>
                 </div>
 
                 <div class="s-lk">
                     <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">OCDE Teaching Compass 2025</a>
                     <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
                 </div>
+
+                <div class="skill-extra">
+                    <div class="skill-extra-title">Como se desarrolla</div>
+                    <p>Mediante comunidades de practica, investigacion-accion, diarios reflexivos y participacion en redes de formacion continua entre docentes.</p>
+
+                    <div class="skill-extra-title">Posibles tensiones</div>
+                    <p>La sobrecarga laboral limita el tiempo para la reflexion. Las estructuras institucionales rigidas pueden frenar la innovacion individual.</p>
+
+                    <div class="skill-extra-title">Teorias pedagogicas relacionadas</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag" style="border-color: var(--c-innov); color: var(--c-innov);">Practica reflexiva (Schon)</span>
+                        <span class="skill-tag" style="border-color: var(--c-innov); color: var(--c-innov);">Investigacion-accion (Stenhouse)</span>
+                        <span class="skill-tag" style="border-color: var(--c-innov); color: var(--c-innov);">Aprendizaje experiencial (Kolb)</span>
+                    </div>
+                </div>
             </div>
 
             <div class="sec-visual rv rv-d1">
                 <div class="diagram-box">
-                    <h4>Espiral de Renovación</h4>
+                    <h4>Espiral de Renovacion</h4>
                     <div class="d-spiral">
                         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                             <path d="M100 100 C100 80, 120 70, 130 85 C140 100, 130 125, 100 130 C70 135, 45 115, 45 90 C45 60, 70 40, 100 40 C140 40, 165 65, 165 100 C165 140, 135 170, 100 170 C55 170, 25 140, 25 100 C25 55, 55 20, 100 20"
@@ -789,23 +838,23 @@
         <div class="n-badge">04</div>
         <div class="sec-grid">
             <div class="sec-text rv">
-                <span class="s-era" style="color:var(--c)">Habilidad 04 · Diseño Instruccional · Pablo Maximiliano Rodríguez Castro</span>
+                <span class="s-era" style="color:var(--c)">Habilidad 04 · Diseño Instruccional</span>
                 <h2 class="s-name" style="color:var(--c)">Diseño Instruccional para la Comprensión Profunda</h2>
-                <p class="s-thesis" style="border-color:var(--c)">El patrón del traje — sin un buen diseño, la tela más fina se vuelve un trapo.</p>
+                <p class="s-thesis" style="border-color:var(--c)">El patron del traje: sin un buen diseno, la tela mas fina se vuelve un trapo.</p>
                 <div class="s-body">
-                    <p>El <em>patrón</em> es el molde que da forma al traje. El docente que enseña para la comprensión no transmite contenido — transforma objetivos curriculares en <em>preguntas esenciales</em> que orientan la investigación del estudiante y hacen las grandes ideas creíbles y vitales.</p>
+                    <p>El <em>patrón</em> es el molde que da forma al traje. El docente que enseña para la comprensión no transmite contenido, transforma objetivos curriculares en <em>preguntas esenciales</em> que orientan la investigación del estudiante y hacen las grandes ideas creíbles y vitales.</p>
                     <p>Hacer las ideas "creíbles y hacerlas parecer vital" no es solo un reto intelectual; es un reto de <em>diseño</em>. El docente como co-diseñador del aprendizaje y experto adaptativo debe saber convertir la complejidad disciplinar en experiencias de aprendizaje que provoquen comprensión profunda.</p>
                 </div>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
-                    <div class="rb-h">OCDE — Teaching Compass 2025 <span class="rb-i">↓</span></div>
+                    <div class="rb-h">OCDE:Teaching Compass 2025 <span class="rb-i">↓</span></div>
                     <div class="rb-b">
                         <p>"El docente del siglo XXI es un co-diseñador del aprendizaje y un experto adaptativo. La capacidad de diseñar experiencias de aprendizaje que conecten los contenidos disciplinares con las preguntas esenciales del estudiante es la competencia central del profesional educativo."</p>
                     </div>
                 </div>
 
                 <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
-                    <div class="rb-h">UNESCO — Reimaginar juntos 2021 <span class="rb-i">↓</span></div>
+                    <div class="rb-h">UNESCO:Reimaginar juntos 2021 <span class="rb-i">↓</span></div>
                     <div class="rb-b">
                         <p>"Los currículos deben reimaginarse como espacios de indagación, donde los contenidos se transforman en preguntas que invitan a la exploración. El diseño instruccional centrado en la comprensión profunda permite que el estudiante no solo aprenda, sino que aprenda a aprender."</p>
                     </div>
@@ -821,11 +870,26 @@
                     <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/11/education-policy-outlook-2024_0411a0c4/dd5140e4-en.pdf" target="_blank" rel="noopener">OCDE Education Policy Outlook 2024</a>
                     <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">UNESCO Reimaginar juntos</a>
                 </div>
+
+                <div class="skill-extra">
+                    <div class="skill-extra-title">Como se desarrolla</div>
+                    <p>Formulando preguntas esenciales a partir de los contenidos, disenando evaluaciones autenticas y alineando actividades con los objetivos de comprension profunda.</p>
+
+                    <div class="skill-extra-title">Posibles tensiones</div>
+                    <p>Los curriculos rigidos y las evaluaciones estandarizadas pueden limitar el espacio para preguntas esenciales. Disenar para la comprension requiere mas tiempo que cubrir contenido.</p>
+
+                    <div class="skill-extra-title">Teorias pedagogicas relacionadas</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag" style="border-color: var(--c-design); color: var(--c-design);">Ensenanza para la Comprension (Perkins)</span>
+                        <span class="skill-tag" style="border-color: var(--c-design); color: var(--c-design);">Diseno inverso (Wiggins y McTighe)</span>
+                        <span class="skill-tag" style="border-color: var(--c-design); color: var(--c-design);">Taxonomia SOLO (Biggs)</span>
+                    </div>
+                </div>
             </div>
 
             <div class="sec-visual rv rv-d1">
                 <div class="diagram-box">
-                    <h4>Del Contenido a la Comprensión</h4>
+                    <h4>Del Contenido a la Comprension</h4>
                     <div class="d-funnel">
                         <svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">
                             <defs>
@@ -856,87 +920,47 @@
     </section>
 
     <!-- ════════════════════════════════════════
-         SÍNTESIS — El Traje Completo
-         ════════════════════════════════════════ -->
-    <section class="sec sec-dark" id="sint" data-label="Síntesis">
-        <div class="sint-in">
-            <div class="sec-header rv">
-                <h2 class="hero-title sint-title" style="color:#F5F0E8">El Traje Completo</h2>
-                <p class="hero-sub">Cuatro piezas, un solo traje</p>
-            </div>
-
-            <div class="pg">
-                <div class="pc" style="--pc-accent: var(--c-socio); border-left: 5px solid var(--c-socio);">
-                    <div class="pc-n" style="color: var(--c-socio);">01</div>
-                    <div class="pc-t" style="color: var(--c-socio);">El Corazón</div>
-                    <div class="pc-d">Socioemocional conecta — la empatía transforma la información en comprensión. Sin este corazón, el traje es cáscara vacía.</div>
-                </div>
-                <div class="pc" style="--pc-accent: var(--c-tech); border-left: 5px solid var(--c-tech);">
-                    <div class="pc-n" style="color: var(--c-tech);">02</div>
-                    <div class="pc-t" style="color: var(--c-tech);">Los Hilos</div>
-                    <div class="pc-d">Tecnología teje puentes — simulaciones, visualizaciones y proyectos prácticos que conectan lo abstracto con lo concreto.</div>
-                </div>
-                <div class="pc" style="--pc-accent: var(--c-innov); border-left: 5px solid var(--c-innov);">
-                    <div class="pc-n" style="color: var(--c-innov);">03</div>
-                    <div class="pc-t" style="color: var(--c-innov);">La Tela</div>
-                    <div class="pc-d">Innovación renueva — la práctica reflexiva y el aprendizaje continuo mantienen al docente vigente y conectado con las nuevas generaciones.</div>
-                </div>
-                <div class="pc" style="--pc-accent: var(--c-design); border-left: 5px solid var(--c-design);">
-                    <div class="pc-n" style="color: var(--c-design);">04</div>
-                    <div class="pc-t" style="color: var(--c-design);">El Patrón</div>
-                    <div class="pc-d">Diseño instruccional da forma — transforma contenidos en preguntas esenciales que convierten lo abstracto en comprensión profunda.</div>
-                </div>
-            </div>
-
-            <div class="sint-quote rv">
-                <p>Un traje no se viste por partes.<br><br>
-                El profesor del siglo XXI necesita las cuatro: <strong>el corazón que conecta</strong>, <strong>los hilos que tejen puentes digitales</strong>, <strong>la tela que se renueva cada día</strong>, y <strong>el patrón que da forma a la comprensión</strong>.<br><br>
-                Ese es el traje nuevo del profesor — y no es de fantasía.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ════════════════════════════════════════
          FOOTER — Referencias
          ════════════════════════════════════════ -->
     <footer>
         <div class="footer-inner">
-            <h2 class="footer-title">Referencias</h2>
+            <h2 class="footer-title">Documentos Consultados</h2>
+            <p class="footer-subtitle">Reportes y publicaciones oficiales de la OCDE y la UNESCO citados a lo largo de esta infografia.</p>
             <ul class="ref-list">
                 <li>
                     <span class="ref-org">OCDE</span>
                     <strong>Teaching Compass</strong> (2025).
-                    <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">oecd.org — Teaching Compass (PDF)</a>
+                    <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/05/oecd-teaching-compass_5688638f/8297a24a-en.pdf" target="_blank" rel="noopener">oecd.org:Teaching Compass (PDF)</a>
                 </li>
                 <li>
                     <span class="ref-org">OCDE</span>
-                    <strong>Conflict Resolution — Learning Compass 2030</strong> (2019).
-                    <a href="https://www.oecd.org/content/dam/oecd/en/topics/policy-issues/future-of-education-and-skills/learning-compass-constructs/Conflict%20Resolution.pdf" target="_blank" rel="noopener">oecd.org — Conflict Resolution (PDF)</a>
+                    <strong>Conflict Resolution: Learning Compass 2030</strong> (2019).
+                    <a href="https://www.oecd.org/content/dam/oecd/en/topics/policy-issues/future-of-education-and-skills/learning-compass-constructs/Conflict%20Resolution.pdf" target="_blank" rel="noopener">oecd.org:Conflict Resolution (PDF)</a>
                 </li>
                 <li>
                     <span class="ref-org">OCDE</span>
                     <strong>Transformative Competencies for 2030</strong> (2019).
-                    <a href="https://www.oecd.org/content/dam/oecd/en/about/projects/edu/education-2040/concept-notes/Transformative_Competencies_for_2030_concept_note.pdf" target="_blank" rel="noopener">oecd.org — Transformative Competencies (PDF)</a>
+                    <a href="https://www.oecd.org/content/dam/oecd/en/about/projects/edu/education-2040/concept-notes/Transformative_Competencies_for_2030_concept_note.pdf" target="_blank" rel="noopener">oecd.org:Transformative Competencies (PDF)</a>
                 </li>
                 <li>
                     <span class="ref-org">OCDE</span>
                     <strong>Education Policy Outlook 2024</strong>.
-                    <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/11/education-policy-outlook-2024_0411a0c4/dd5140e4-en.pdf" target="_blank" rel="noopener">oecd.org — Education Policy Outlook (PDF)</a>
+                    <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/11/education-policy-outlook-2024_0411a0c4/dd5140e4-en.pdf" target="_blank" rel="noopener">oecd.org:Education Policy Outlook (PDF)</a>
                 </li>
                 <li>
                     <span class="ref-org">UNESCO</span>
                     <strong>Reimaginar juntos nuestros futuros: un nuevo contrato social para la educación</strong> (2021).
-                    <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">unesdoc.unesco.org — Reimaginar juntos</a>
+                    <a href="https://unesdoc.unesco.org/ark:/48223/pf0000379707" target="_blank" rel="noopener">unesdoc.unesco.org:Reimaginar juntos</a>
                 </li>
                 <li>
                     <span class="ref-org">UNESCO</span>
                     <strong>Global Education Monitoring Report 2023: Technology in Education</strong>.
-                    <a href="https://unesdoc.unesco.org/ark:/48223/pf0000385723" target="_blank" rel="noopener">unesdoc.unesco.org — GEM Report 2023</a>
+                    <a href="https://unesdoc.unesco.org/ark:/48223/pf0000385723" target="_blank" rel="noopener">unesdoc.unesco.org:GEM Report 2023</a>
                 </li>
                 <li>
                     <span class="ref-org">UNESCO</span>
                     <strong>Global Report on Teachers 2024</strong>.
-                    <a href="https://unesdoc.unesco.org/ark:/48223/pf0000388832" target="_blank" rel="noopener">unesdoc.unesco.org — Informe Docentes 2024</a>
+                    <a href="https://unesdoc.unesco.org/ark:/48223/pf0000388832" target="_blank" rel="noopener">unesdoc.unesco.org:Informe Docentes 2024</a>
                 </li>
             </ul>
             <div class="footer-credits">
@@ -980,8 +1004,7 @@
             { id: 's1', t: 'Socioemocional' },
             { id: 's2', t: 'Tecnología' },
             { id: 's3', t: 'Innovación' },
-            { id: 's4', t: 'Diseño Instruccional' },
-            { id: 'sint', t: 'Síntesis' }
+            { id: 's4', t: 'Diseño Instruccional' }
         ];
         const nav = document.getElementById('tlnav');
         const dots = [];
