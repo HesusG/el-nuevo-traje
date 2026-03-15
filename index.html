@@ -134,17 +134,19 @@
         .sec {
             min-height: 100vh; padding: 100px 40px; display: flex;
             align-items: center; justify-content: center;
-            border-bottom: 1px solid rgba(0,0,0,0.1); position: relative;
+            border-bottom: none; position: relative; overflow: hidden;
         }
         .sec:nth-child(even) { background: var(--bg-alt); }
         .sec-grid {
             display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
             max-width: 1400px; width: 100%; align-items: center;
+            position: relative; z-index: 1;
         }
         .sec-text { order: 1; min-width: 0; }
         .sec-visual {
-            order: 2; position: relative; display: flex; justify-content: center;
-            align-items: center; min-height: 400px; min-width: 0; perspective: 1000px;
+            order: 2; position: relative; display: flex; flex-direction: column; gap: 24px;
+            justify-content: center; align-items: center; min-height: 400px; min-width: 0;
+            perspective: 1000px;
         }
         .sec:nth-child(even) .sec-grid .sec-text { order: 2; }
         .sec:nth-child(even) .sec-grid .sec-visual { order: 1; }
@@ -195,13 +197,157 @@
         /* ── Takeaway & Links ── */
         .tk {
             margin-top: 30px; background: rgba(255,255,255,0.6); padding: 20px;
-            border-left: 6px solid; border-color: inherit;
+            border-left: 6px solid; border-color: inherit; position: relative;
         }
         .tk-l {
             font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase;
             letter-spacing: 1.5px; margin-bottom: 8px; font-weight: 700; opacity: 0.7;
         }
         .tk p { font-size: 1.05rem; font-style: italic; font-weight: 500; }
+
+        /* ── Ghost Text per Section ── */
+        .sec-bg-text {
+            position: absolute;
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: clamp(6rem, 18vw, 16rem);
+            line-height: 0.9;
+            opacity: 0.035;
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: -3px;
+            z-index: 0;
+        }
+        .sec-bg-text--right { right: -5%; top: 50%; transform: translateY(-50%); }
+        .sec-bg-text--left  { left: -5%;  top: 50%; transform: translateY(-50%); }
+
+        /* ── Background Textures ── */
+        .sec--dots {
+            background-image: radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .sec--grid-bg {
+            background-image:
+                linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* ── Pixel Art Icons ── */
+        .px-icon {
+            display: inline-block;
+            width: 4px; height: 4px;
+            overflow: visible;
+            vertical-align: middle;
+            margin-right: 36px;
+        }
+        .px-heart {
+            box-shadow:
+                8px 0 0 0 var(--c-socio), 12px 0 0 0 var(--c-socio), 20px 0 0 0 var(--c-socio), 24px 0 0 0 var(--c-socio),
+                4px 4px 0 0 var(--c-socio), 8px 4px 0 0 var(--c-socio), 12px 4px 0 0 var(--c-socio), 16px 4px 0 0 var(--c-socio), 20px 4px 0 0 var(--c-socio), 24px 4px 0 0 var(--c-socio), 28px 4px 0 0 var(--c-socio),
+                4px 8px 0 0 var(--c-socio), 8px 8px 0 0 var(--c-socio), 12px 8px 0 0 var(--c-socio), 16px 8px 0 0 var(--c-socio), 20px 8px 0 0 var(--c-socio), 24px 8px 0 0 var(--c-socio), 28px 8px 0 0 var(--c-socio),
+                4px 12px 0 0 var(--c-socio), 8px 12px 0 0 var(--c-socio), 12px 12px 0 0 var(--c-socio), 16px 12px 0 0 var(--c-socio), 20px 12px 0 0 var(--c-socio), 24px 12px 0 0 var(--c-socio), 28px 12px 0 0 var(--c-socio),
+                8px 16px 0 0 var(--c-socio), 12px 16px 0 0 var(--c-socio), 16px 16px 0 0 var(--c-socio), 20px 16px 0 0 var(--c-socio), 24px 16px 0 0 var(--c-socio),
+                12px 20px 0 0 var(--c-socio), 16px 20px 0 0 var(--c-socio), 20px 20px 0 0 var(--c-socio),
+                16px 24px 0 0 var(--c-socio);
+        }
+        .px-monitor {
+            box-shadow:
+                4px 0 0 0 var(--c-tech), 8px 0 0 0 var(--c-tech), 12px 0 0 0 var(--c-tech), 16px 0 0 0 var(--c-tech), 20px 0 0 0 var(--c-tech), 24px 0 0 0 var(--c-tech),
+                4px 4px 0 0 var(--c-tech), 24px 4px 0 0 var(--c-tech),
+                4px 8px 0 0 var(--c-tech), 24px 8px 0 0 var(--c-tech),
+                4px 12px 0 0 var(--c-tech), 8px 12px 0 0 var(--c-tech), 12px 12px 0 0 var(--c-tech), 16px 12px 0 0 var(--c-tech), 20px 12px 0 0 var(--c-tech), 24px 12px 0 0 var(--c-tech),
+                12px 16px 0 0 var(--c-tech), 16px 16px 0 0 var(--c-tech),
+                8px 20px 0 0 var(--c-tech), 12px 20px 0 0 var(--c-tech), 16px 20px 0 0 var(--c-tech), 20px 20px 0 0 var(--c-tech);
+        }
+        .px-bulb {
+            box-shadow:
+                8px 0 0 0 var(--c-innov), 12px 0 0 0 var(--c-innov), 16px 0 0 0 var(--c-innov),
+                4px 4px 0 0 var(--c-innov), 20px 4px 0 0 var(--c-innov),
+                4px 8px 0 0 var(--c-innov), 20px 8px 0 0 var(--c-innov),
+                8px 12px 0 0 var(--c-innov), 16px 12px 0 0 var(--c-innov),
+                8px 16px 0 0 var(--c-innov), 12px 16px 0 0 var(--c-innov), 16px 16px 0 0 var(--c-innov),
+                12px 20px 0 0 var(--c-innov),
+                8px 24px 0 0 var(--c-innov), 12px 24px 0 0 var(--c-innov), 16px 24px 0 0 var(--c-innov);
+        }
+        .px-pencil {
+            box-shadow:
+                24px 0 0 0 var(--c-design),
+                20px 4px 0 0 var(--c-design), 24px 4px 0 0 var(--c-design),
+                16px 8px 0 0 var(--c-design), 24px 8px 0 0 var(--c-design),
+                12px 12px 0 0 var(--c-design),
+                8px 16px 0 0 var(--c-design),
+                4px 20px 0 0 var(--c-design),
+                4px 24px 0 0 var(--c-design),
+                0 28px 0 0 var(--c-design);
+        }
+
+        /* ── Takeaway Marker ── */
+        .tk::before {
+            content: '>>';
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 1.4rem;
+            position: absolute;
+            top: 18px; left: -30px;
+            opacity: 0.15;
+        }
+
+        /* ── Section Dividers ── */
+        .sec::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 5%; right: 5%;
+            height: 3px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--fg) 0, var(--fg) 8px,
+                transparent 8px, transparent 16px
+            );
+            opacity: 0.1;
+        }
+
+        /* ── Illustrated Cards ── */
+        .illus-card {
+            border: 3px solid var(--fg);
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.15);
+            background: #fff;
+            padding: 12px;
+            max-width: 380px;
+            width: 100%;
+            position: relative;
+            transition: transform 0.2s;
+            margin: 0;
+        }
+        .illus-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.15);
+        }
+        .illus-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            mix-blend-mode: multiply;
+        }
+        .illus-card figcaption {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-align: center;
+            padding-top: 10px;
+            border-top: 2px solid var(--fg);
+            margin-top: 10px;
+            opacity: 0.6;
+            font-weight: 700;
+        }
+        .illus-card--colored {
+            border-color: var(--c);
+            box-shadow: 6px 6px 0 color-mix(in srgb, var(--c) 25%, transparent);
+        }
+
         .s-lk { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
         .s-lk a {
             font-family: var(--font-mono); font-size: 0.75rem; text-decoration: none;
@@ -514,9 +660,11 @@
             .tk { margin-top: 24px; }
             .n-badge { font-size: 4.5rem; }
             .diagram-box { width: 260px; height: 260px; }
+            .illus-card { max-width: 300px; }
             .sec-header { margin-bottom: 40px; }
             .sint-quote { padding: 24px; }
             .sint-quote p { font-size: 1rem; }
+            .sec-bg-text { font-size: clamp(4rem, 14vw, 10rem); }
         }
 
         @media (max-width: 600px) {
@@ -524,7 +672,9 @@
             .gb { margin-top: 24px; padding-top: 16px; }
             .sec { padding: 40px 14px; }
             .sec-grid { gap: 24px; }
-            .sec-visual { min-height: 200px; flex-direction: column; overflow: hidden; }
+            .sec-visual { min-height: 200px; flex-direction: column; overflow: hidden; gap: 16px; }
+            .illus-card { max-width: 260px; padding: 8px; }
+            .illus-card figcaption { font-size: 0.65rem; padding-top: 8px; margin-top: 8px; }
             .n-badge { font-size: 3.5rem; top: -30px; left: -10px; }
             .hero-title { font-size: clamp(1.6rem, 7vw, 2.5rem) !important; }
             .hero-sub { font-size: 0.95rem; }
@@ -547,6 +697,9 @@
             .sint-quote p { font-size: 0.95rem; line-height: 1.7; }
             .diagram-box { width: 220px; height: 220px; padding: 14px; }
             footer { padding: 40px 16px; }
+            .sec-bg-text { font-size: clamp(3rem, 12vw, 7rem); opacity: 0.025; }
+            .px-icon { transform: scale(0.75); margin-right: 28px; }
+            .tk::before { position: static; display: block; margin-bottom: 4px; font-size: 1rem; }
         }
     </style>
 </head>
@@ -560,10 +713,16 @@
          ════════════════════════════════════════ -->
     <section id="hero">
         <div class="hero-bg-text">DOCENTE</div>
+        <div class="hero-bg-text" style="font-size:10vw; opacity:0.025; transform:translate(-50%,-30%) rotate(-5deg)">HABILIDADES</div>
+        <div class="hero-bg-text" style="font-size:7vw; opacity:0.02; transform:translate(-50%,40%) rotate(3deg)">SIGLO XXI</div>
         <div class="hero-content">
             <div class="hero-pre">Maestria en Pedagogia · UPAEP · 2026</div>
             <h1 class="hero-title">El Traje Nuevo del <span>Profesor</span></h1>
             <p class="hero-sub">Las Grandes Ideas y las Habilidades del Docente del Siglo XXI</p>
+            <figure class="illus-card" style="margin: 30px auto; max-width: 320px;">
+                <img src="img/hero-traje.png" alt="Ilustración: el traje nuevo del profesor">
+                <figcaption>Las cuatro piezas del traje</figcaption>
+            </figure>
             <p class="hero-intro">Las Grandes Ideas (Big Ideas) son los conceptos centrales y duraderos de una disciplina, ideas poderosas que ayudan a organizar el conocimiento y permiten que los estudiantes comprendan profundamente un tema, en lugar de memorizar contenidos aislados.</p>
             <div class="hero-meta">
                 Maestra: Socorro Guevara Salazar<br>
@@ -576,7 +735,8 @@
     <!-- ════════════════════════════════════════
          INTRO — Las Grandes Ideas
          ════════════════════════════════════════ -->
-    <section class="sec" id="intro" data-label="Las Grandes Ideas" style="--c: var(--fg)">
+    <section class="sec sec--dots" id="intro" data-label="Las Grandes Ideas" style="--c: var(--fg)">
+        <div class="sec-bg-text sec-bg-text--right" style="color:var(--fg)">IDEAS</div>
         <div class="sec-grid">
             <div class="sec-text rv">
                 <span class="s-era">Las Grandes Ideas</span>
@@ -621,6 +781,10 @@
                         </svg>
                     </div>
                 </div>
+                <figure class="illus-card">
+                    <img src="img/intro-brecha.png" alt="Ilustración: la brecha entre profesor y estudiante">
+                    <figcaption>La distancia por cruzar</figcaption>
+                </figure>
             </div>
         </div>
     </section>
@@ -629,10 +793,11 @@
          HABILIDAD 01 — Socioemocional
          ════════════════════════════════════════ -->
     <section class="sec" id="s1" data-label="Socioemocional" style="--c: var(--c-socio); border-color: var(--c-socio)">
+        <div class="sec-bg-text sec-bg-text--right" style="color:var(--c-socio)">EMPATIA</div>
         <div class="n-badge">01</div>
         <div class="sec-grid">
             <div class="sec-text rv">
-                <span class="s-era" style="color:var(--c)">Habilidad 01 · Desarrollo Socioemocional</span>
+                <span class="s-era" style="color:var(--c)"><span class="px-icon px-heart"></span>Habilidad 01 · Desarrollo Socioemocional</span>
                 <h2 class="s-name" style="color:var(--c)">Competencias Socioemocionales</h2>
                 <p class="s-thesis" style="border-color:var(--c)">El corazon del traje: sin empatia, el traje es cascara vacia.</p>
 
@@ -724,6 +889,10 @@
                         </div>
                     </div>
                 </div>
+                <figure class="illus-card illus-card--colored">
+                    <img src="img/s1-corazon.png" alt="Ilustración: corazón geométrico con manos">
+                    <figcaption>El corazón del traje</figcaption>
+                </figure>
             </div>
         </div>
     </section>
@@ -731,11 +900,12 @@
     <!-- ════════════════════════════════════════
          HABILIDAD 02 — Tecnología
          ════════════════════════════════════════ -->
-    <section class="sec" id="s2" data-label="Tecnología" style="--c: var(--c-tech); border-color: var(--c-tech)">
+    <section class="sec sec--grid-bg" id="s2" data-label="Tecnología" style="--c: var(--c-tech); border-color: var(--c-tech)">
+        <div class="sec-bg-text sec-bg-text--left" style="color:var(--c-tech)">DIGITAL</div>
         <div class="n-badge">02</div>
         <div class="sec-grid">
             <div class="sec-text rv">
-                <span class="s-era" style="color:var(--c)">Habilidad 02 · Tecnología Educativa</span>
+                <span class="s-era" style="color:var(--c)"><span class="px-icon px-monitor"></span>Habilidad 02 · Tecnología Educativa</span>
                 <h2 class="s-name" style="color:var(--c)">Integración de la Tecnología</h2>
                 <p class="s-thesis" style="border-color:var(--c)">Los hilos digitales: la tecnologia teje puentes entre lo abstracto y lo concreto.</p>
 
@@ -842,6 +1012,10 @@
                         </svg>
                     </div>
                 </div>
+                <figure class="illus-card illus-card--colored">
+                    <img src="img/s2-puente.png" alt="Ilustración: puente digital emergiendo de un monitor">
+                    <figcaption>Los hilos digitales</figcaption>
+                </figure>
             </div>
         </div>
     </section>
@@ -850,10 +1024,11 @@
          HABILIDAD 03 — Innovación Pedagógica
          ════════════════════════════════════════ -->
     <section class="sec" id="s3" data-label="Innovación" style="--c: var(--c-innov); border-color: var(--c-innov)">
+        <div class="sec-bg-text sec-bg-text--right" style="color:var(--c-innov)">REFLEXION</div>
         <div class="n-badge">03</div>
         <div class="sec-grid">
             <div class="sec-text rv">
-                <span class="s-era" style="color:var(--c)">Habilidad 03 · Pedagógica</span>
+                <span class="s-era" style="color:var(--c)"><span class="px-icon px-bulb"></span>Habilidad 03 · Pedagógica</span>
                 <h2 class="s-name" style="color:var(--c)">Innovación Pedagógica y Aprendizaje Continuo</h2>
                 <p class="s-thesis" style="border-color:var(--c)">La tela que se renueva: la practica reflexiva mantiene al docente vigente.</p>
 
@@ -946,6 +1121,10 @@
                         </div>
                     </div>
                 </div>
+                <figure class="illus-card illus-card--colored">
+                    <img src="img/s3-foco.png" alt="Ilustración: bombilla de engranajes con rayos de luz">
+                    <figcaption>La tela que se renueva</figcaption>
+                </figure>
             </div>
         </div>
     </section>
@@ -953,11 +1132,12 @@
     <!-- ════════════════════════════════════════
          HABILIDAD 04 — Diseño Instruccional
          ════════════════════════════════════════ -->
-    <section class="sec" id="s4" data-label="Diseño Instruccional" style="--c: var(--c-design); border-color: var(--c-design)">
+    <section class="sec sec--dots" id="s4" data-label="Diseño Instruccional" style="--c: var(--c-design); border-color: var(--c-design)">
+        <div class="sec-bg-text sec-bg-text--left" style="color:var(--c-design)">PATRON</div>
         <div class="n-badge">04</div>
         <div class="sec-grid">
             <div class="sec-text rv">
-                <span class="s-era" style="color:var(--c)">Habilidad 04 · Diseño Instruccional</span>
+                <span class="s-era" style="color:var(--c)"><span class="px-icon px-pencil"></span>Habilidad 04 · Diseño Instruccional</span>
                 <h2 class="s-name" style="color:var(--c)">Diseño Instruccional para la Comprensión Profunda</h2>
                 <p class="s-thesis" style="border-color:var(--c)">El patron del traje: sin un buen diseno, la tela mas fina se vuelve un trapo.</p>
 
@@ -1061,6 +1241,10 @@
                         </svg>
                     </div>
                 </div>
+                <figure class="illus-card illus-card--colored">
+                    <img src="img/s4-plano.png" alt="Ilustración: blueprint con estructura 3D emergiendo">
+                    <figcaption>El patrón del traje</figcaption>
+                </figure>
             </div>
         </div>
     </section>
