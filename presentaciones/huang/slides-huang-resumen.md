@@ -75,12 +75,12 @@ Cátedra UNESCO de Inteligencia Artificial en Educación
 
 <div class="seccion-badge" style="color:var(--c-yellow);border-color:var(--c-yellow)">Relevancia</div>
 
-# ¿Por qué importa esto en México?
+<h1 style="color:#fff">¿Por qué importa esto en México?</h1>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:16px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:12px;color:#ddd">
 <div>
 
-### Lo que dice Huang
+<h3 style="color:#fff">Lo que dice Huang</h3>
 
 <v-clicks>
 
@@ -96,7 +96,7 @@ Cátedra UNESCO de Inteligencia Artificial en Educación
 
 </div>
 <div style="display:flex;align-items:center;justify-content:center;padding:10px">
-<img src="/img/impossible-trinity.png" style="max-height:300px;border-radius:8px;opacity:0.9" />
+<img src="/img/impossible-trinity.png" style="max-height:280px;border-radius:8px;opacity:0.9" />
 </div>
 </div>
 
@@ -192,7 +192,7 @@ graph TD
 <div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3);text-align:center;padding:10px 14px">
 <p style="color:#ccc;font-size:0.8rem;margin:0"><strong style="color:#FFD54F">> 92%</strong> matrícula preescolar</p>
 </div>
-<div style="color:#555;font-size:1.5rem">·</div>
+<div style="color:rgba(255,255,255,0.4);font-size:1.5rem">·</div>
 <div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3);text-align:center;padding:10px 14px">
 <p style="color:#ccc;font-size:0.8rem;margin:0"><strong style="color:#FFD54F">> 60%</strong> tasa bruta educación superior</p>
 </div>
@@ -213,41 +213,41 @@ graph TD
 
 # Equidad a Escala: Los Datos de China
 
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:20px">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px">
 
-<div class="tarjeta" style="text-align:center;padding:12px" v-click>
-<div class="dato-grande" style="font-size:2.2rem;color:var(--c-teal)">97%</div>
-<p style="font-size:0.75rem;margin-top:4px">Hijos de migrantes en escuelas públicas</p>
+<div class="tarjeta" style="text-align:center;padding:8px" v-click>
+<div class="dato-grande" style="font-size:1.8rem;color:var(--c-teal)">97%</div>
+<p style="font-size:0.7rem;margin-top:2px">Hijos de migrantes en escuelas públicas</p>
 </div>
 
-<div class="tarjeta" style="text-align:center;padding:12px" v-click>
-<div class="dato-grande" style="font-size:2.2rem;color:var(--c-teal)">97%</div>
-<p style="font-size:0.75rem;margin-top:4px">Niños con discapacidad en educación obligatoria</p>
+<div class="tarjeta" style="text-align:center;padding:8px" v-click>
+<div class="dato-grande" style="font-size:1.8rem;color:var(--c-teal)">97%</div>
+<p style="font-size:0.7rem;margin-top:2px">Niños con discapacidad en ed. obligatoria</p>
 </div>
 
-<div class="tarjeta" style="text-align:center;padding:12px" v-click>
-<div class="dato-grande" style="font-size:2.2rem;color:var(--c-teal)">150M</div>
-<p style="font-size:0.75rem;margin-top:4px">Estudiantes con beca anualmente</p>
-</div>
-
-</div>
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px">
-
-<div class="tarjeta" style="text-align:center;padding:12px" v-click>
-<div class="dato-grande" style="font-size:2.2rem;color:var(--c-teal)">~100%</div>
-<p style="font-size:0.75rem;margin-top:4px">Escuelas con acceso a internet</p>
-</div>
-
-<div class="tarjeta" style="text-align:center;padding:12px" v-click>
-<div class="dato-grande" style="font-size:2.2rem;color:var(--c-teal)">98%</div>
-<p style="font-size:0.75rem;margin-top:4px">Aulas con equipamiento multimedia</p>
+<div class="tarjeta" style="text-align:center;padding:8px" v-click>
+<div class="dato-grande" style="font-size:1.8rem;color:var(--c-teal)">150M</div>
+<p style="font-size:0.7rem;margin-top:2px">Estudiantes becados al año</p>
 </div>
 
 </div>
 
-<div class="pregunta-reflexion" style="margin-top:12px;padding:8px 14px;font-size:0.8rem" v-click>
-La infraestructura digital es prerrequisito para la innovación. <strong>Estos números demuestran que la inclusión a escala no es utopía — es política pública con ejecución sostenida.</strong>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px">
+
+<div class="tarjeta" style="text-align:center;padding:8px" v-click>
+<div class="dato-grande" style="font-size:1.8rem;color:var(--c-teal)">~100%</div>
+<p style="font-size:0.7rem;margin-top:2px">Escuelas con internet</p>
+</div>
+
+<div class="tarjeta" style="text-align:center;padding:8px" v-click>
+<div class="dato-grande" style="font-size:1.8rem;color:var(--c-teal)">98%</div>
+<p style="font-size:0.7rem;margin-top:2px">Aulas con multimedia</p>
+</div>
+
+</div>
+
+<div class="pregunta-reflexion" style="margin-top:8px;padding:6px 12px;font-size:0.75rem" v-click>
+<strong>La inclusión a escala no es utopía — es política pública con ejecución sostenida.</strong>
 </div>
 
 ---
@@ -295,37 +295,37 @@ graph LR
 
 # La Estrategia 3C + 3I en Acción
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:12px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;font-size:0.88rem">
 <div>
 
-### Las 3C
+<h4 style="margin-bottom:4px">Las 3C</h4>
 
 <v-clicks>
 
-- **Conexión** — Conectividad universal. Sin acceso confiable, la educación digital no llega a todos
+- **Conexión** — Conectividad universal y confiable
 - **Contenido** — Recursos digitales de calidad, culturalmente relevantes
-- **Cooperación** — Colaboración institucional nacional e internacional
+- **Cooperación** — Colaboración nacional e internacional
 
 </v-clicks>
 
-### Las 3I
+<h4 style="margin-top:8px;margin-bottom:4px">Las 3I</h4>
 
 <v-clicks>
 
 - **Integración** — Fusión presencial + en línea
 - **Inteligencia** — IA adaptativa y gobernanza inteligente
-- **Internacionalización** — Marco de colaboración global
+- **Internacionalización** — Colaboración global
 
 </v-clicks>
 
 </div>
-<div style="display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px">
+<div style="display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px">
 
-<img src="/img/smart-platform.png" style="max-height:160px;border-radius:6px" />
+<img src="/img/smart-platform.png" style="max-height:150px;border-radius:6px" />
 
-<div class="tarjeta" style="text-align:center;padding:10px;width:100%;background:var(--c-teal);color:#fff;border-color:var(--c-teal)">
-<div style="font-family:var(--font-display);font-weight:900;font-size:1.4rem;line-height:1">47M recursos · 61B visitas</div>
-<div style="font-family:var(--font-mono);font-size:0.65rem;margin-top:4px;color:#FFD54F">Plataforma Nacional — la más grande del mundo · acceso abierto y gratuito</div>
+<div class="tarjeta" style="text-align:center;padding:8px;width:100%;background:var(--c-teal);color:#fff;border-color:var(--c-teal)">
+<div style="font-family:var(--font-display);font-weight:900;font-size:1.3rem;line-height:1">47M recursos · 61B visitas</div>
+<div style="font-family:var(--font-mono);font-size:0.6rem;margin-top:3px;color:#FFD54F">Plataforma Nacional — la más grande del mundo · acceso abierto</div>
 </div>
 
 </div>
@@ -436,39 +436,39 @@ La tecnología se encarga de lo rutinario. Los seres humanos se dedican a pensar
 
 # 5 Competencias del Ciudadano Digital
 
-<p style="font-size:0.8rem;opacity:0.7;margin-bottom:8px">Publicadas por Huang en <em>Horizontes de la AIU (IAU Horizons)</em> — lo que tus estudiantes necesitan para prosperar</p>
+<p style="font-size:0.75rem;opacity:0.7;margin-bottom:4px">Publicadas por Huang en <em>Horizontes de la AIU</em> — lo que tus estudiantes necesitan para prosperar</p>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:0.85rem">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;font-size:0.82rem">
 
-<div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0" v-click>
-<span style="font-family:var(--font-display);font-weight:900;font-size:1.8rem;color:var(--c-cobalt);line-height:1">1</span>
-<div><strong>Aprendizaje activo a lo largo de la vida</strong><br><span style="font-size:0.78rem;opacity:0.8">Actualizar continuamente conocimientos y habilidades en un mundo cambiante</span></div>
+<div style="display:flex;align-items:flex-start;gap:8px;padding:4px 0" v-click>
+<span style="font-family:var(--font-display);font-weight:900;font-size:1.4rem;color:var(--c-cobalt);line-height:1;min-width:20px">1</span>
+<div><strong>Aprendizaje activo permanente</strong><br><span style="font-size:0.72rem;opacity:0.8">Actualizar conocimientos y habilidades continuamente</span></div>
 </div>
 
-<div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0" v-click>
-<span style="font-family:var(--font-display);font-weight:900;font-size:1.8rem;color:var(--c-cobalt);line-height:1">2</span>
-<div><strong>Creatividad en el uso de la IA</strong><br><span style="font-size:0.78rem;opacity:0.8">No solo consumir contenido generado — colaborar creativamente con sistemas inteligentes</span></div>
+<div style="display:flex;align-items:flex-start;gap:8px;padding:4px 0" v-click>
+<span style="font-family:var(--font-display);font-weight:900;font-size:1.4rem;color:var(--c-cobalt);line-height:1;min-width:20px">2</span>
+<div><strong>Creatividad con la IA</strong><br><span style="font-size:0.72rem;opacity:0.8">Colaborar creativamente con sistemas inteligentes, no solo consumir</span></div>
 </div>
 
-<div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0" v-click>
-<span style="font-family:var(--font-display);font-weight:900;font-size:1.8rem;color:var(--c-cobalt);line-height:1">3</span>
-<div><strong>Adaptabilidad en entornos laborales flexibles</strong><br><span style="font-size:0.78rem;opacity:0.8">Roles dinámicos que exigen flexibilidad y desarrollo continuo de nuevas capacidades</span></div>
+<div style="display:flex;align-items:flex-start;gap:8px;padding:4px 0" v-click>
+<span style="font-family:var(--font-display);font-weight:900;font-size:1.4rem;color:var(--c-cobalt);line-height:1;min-width:20px">3</span>
+<div><strong>Adaptabilidad laboral</strong><br><span style="font-size:0.72rem;opacity:0.8">Roles dinámicos que exigen flexibilidad y desarrollo continuo</span></div>
 </div>
 
-<div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0" v-click>
-<span style="font-family:var(--font-display);font-weight:900;font-size:1.8rem;color:var(--c-cobalt);line-height:1">4</span>
-<div><strong>Resiliencia ante la incertidumbre</strong><br><span style="font-size:0.78rem;opacity:0.8">Navegar cambios tecnológicos y sociales acelerados manteniendo la capacidad de aprender</span></div>
+<div style="display:flex;align-items:flex-start;gap:8px;padding:4px 0" v-click>
+<span style="font-family:var(--font-display);font-weight:900;font-size:1.4rem;color:var(--c-cobalt);line-height:1;min-width:20px">4</span>
+<div><strong>Resiliencia ante incertidumbre</strong><br><span style="font-size:0.72rem;opacity:0.8">Navegar cambios acelerados manteniendo capacidad de aprender</span></div>
 </div>
 
-<div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0" v-click>
-<span style="font-family:var(--font-display);font-weight:900;font-size:1.8rem;color:var(--c-cobalt);line-height:1">5</span>
-<div><strong>Prosperar en entornos de IA</strong><br><span style="font-size:0.78rem;opacity:0.8">Coexistencia productiva entre inteligencia humana e inteligencia artificial</span></div>
+<div style="display:flex;align-items:flex-start;gap:8px;padding:4px 0" v-click>
+<span style="font-family:var(--font-display);font-weight:900;font-size:1.4rem;color:var(--c-cobalt);line-height:1;min-width:20px">5</span>
+<div><strong>Prosperar en entornos de IA</strong><br><span style="font-size:0.72rem;opacity:0.8">Coexistencia productiva inteligencia humana + artificial</span></div>
 </div>
 
 </div>
 
-<div class="pregunta-reflexion" style="margin-top:8px;padding:8px 14px;font-size:0.8rem" v-click>
-💡 De estas cinco, <strong>¿cuál es la que menos desarrollas en tus estudiantes actualmente?</strong>
+<div class="pregunta-reflexion" style="margin-top:6px;padding:6px 12px;font-size:0.75rem" v-click>
+💡 De estas cinco, <strong>¿cuál es la que menos desarrollas en tus estudiantes?</strong>
 </div>
 
 ---
@@ -570,43 +570,43 @@ Del modelo chino al Traje del Docente — conexión con tu formación
 
 <h1 style="color:#fff">¿Cómo pueden las instituciones apoyar este nuevo perfil?</h1>
 
-<p style="color:rgba(255,255,255,0.9);font-size:0.78rem;margin-bottom:8px">Huang propone 5 caminos constructivos — los cimientos institucionales de la educación inteligente:</p>
+<p style="color:rgba(255,255,255,0.9);font-size:0.72rem;margin-bottom:4px">Huang propone 5 caminos constructivos — los cimientos institucionales de la educación inteligente:</p>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
 
-<div style="display:grid;grid-template-columns:1fr;gap:8px">
+<div style="display:grid;grid-template-columns:1fr;gap:5px">
 
-<div class="tarjeta" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.3);color:#fff;padding:8px 12px" v-click>
-<h4 style="color:var(--c-yellow);margin-bottom:2px;font-size:0.82rem">1. Priorizar el Desarrollo Docente</h4>
-<p style="color:rgba(255,255,255,0.9);font-size:0.68rem"><strong>La inversión de mayor retorno</strong> para mejorar los sistemas educativos en la era digital.</p>
+<div class="tarjeta" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.3);color:#fff;padding:6px 10px" v-click>
+<h4 style="color:var(--c-yellow);margin-bottom:1px;font-size:0.78rem">1. Desarrollo Docente</h4>
+<p style="color:rgba(255,255,255,0.9);font-size:0.64rem"><strong>La inversión de mayor retorno</strong> para mejorar sistemas educativos.</p>
 </div>
 
-<div class="tarjeta" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.3);color:#fff;padding:8px 12px" v-click>
-<h4 style="color:var(--c-yellow);margin-bottom:2px;font-size:0.82rem">2. Comunidades de Aprendizaje</h4>
-<p style="color:rgba(255,255,255,0.9);font-size:0.68rem"><strong>Redes colaborativas</strong> como motor de construcción de conocimiento.</p>
+<div class="tarjeta" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.3);color:#fff;padding:6px 10px" v-click>
+<h4 style="color:var(--c-yellow);margin-bottom:1px;font-size:0.78rem">2. Comunidades de Aprendizaje</h4>
+<p style="color:rgba(255,255,255,0.9);font-size:0.64rem"><strong>Redes colaborativas</strong> como motor de conocimiento.</p>
 </div>
 
-<div class="tarjeta" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.3);color:#fff;padding:8px 12px" v-click>
-<h4 style="color:var(--c-yellow);margin-bottom:2px;font-size:0.82rem">3. Adopción Ética de Tecnología</h4>
-<p style="color:rgba(255,255,255,0.9);font-size:0.68rem">Supervisión ética, transparencia y rendición de cuentas.</p>
+<div class="tarjeta" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.3);color:#fff;padding:6px 10px" v-click>
+<h4 style="color:var(--c-yellow);margin-bottom:1px;font-size:0.78rem">3. Adopción Ética</h4>
+<p style="color:rgba(255,255,255,0.9);font-size:0.64rem">Supervisión, transparencia y rendición de cuentas.</p>
 </div>
 
 </div>
-<div style="display:grid;grid-template-columns:1fr;gap:8px">
+<div style="display:grid;grid-template-columns:1fr;gap:5px">
 
-<div class="tarjeta" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.3);color:#fff;padding:8px 12px" v-click>
-<h4 style="color:var(--c-yellow);margin-bottom:2px;font-size:0.82rem">4. Planificación Sostenible</h4>
-<p style="color:rgba(255,255,255,0.9);font-size:0.68rem"><strong>Estrategias a largo plazo</strong> que trasciendan ciclos políticos.</p>
+<div class="tarjeta" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.3);color:#fff;padding:6px 10px" v-click>
+<h4 style="color:var(--c-yellow);margin-bottom:1px;font-size:0.78rem">4. Planificación Sostenible</h4>
+<p style="color:rgba(255,255,255,0.9);font-size:0.64rem"><strong>Estrategias a largo plazo</strong> que trasciendan ciclos políticos.</p>
 </div>
 
-<div class="tarjeta" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.3);color:#fff;padding:8px 12px" v-click>
-<h4 style="color:var(--c-yellow);margin-bottom:2px;font-size:0.82rem">5. Colaboración Multisectorial</h4>
-<p style="color:rgba(255,255,255,0.9);font-size:0.68rem">Gobierno, industria, academia y sociedad civil: <strong>ecosistemas alineados</strong>.</p>
+<div class="tarjeta" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.3);color:#fff;padding:6px 10px" v-click>
+<h4 style="color:var(--c-yellow);margin-bottom:1px;font-size:0.78rem">5. Colaboración Multisectorial</h4>
+<p style="color:rgba(255,255,255,0.9);font-size:0.64rem">Gobierno, industria, academia, sociedad civil.</p>
 </div>
 
-<div class="tarjeta" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.3);color:#fff;padding:8px 12px" v-click>
-<h4 style="color:var(--c-yellow);margin-bottom:2px;font-size:0.82rem">+ IA Demostrablemente Benéfica</h4>
-<p style="color:rgba(255,255,255,0.9);font-size:0.68rem">La meta no es IA segura sino IA donde la <strong>evidencia de impacto positivo</strong> guíe su despliegue.</p>
+<div class="tarjeta" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.3);color:#fff;padding:6px 10px" v-click>
+<h4 style="color:var(--c-yellow);margin-bottom:1px;font-size:0.78rem">+ IA Demostrablemente Benéfica</h4>
+<p style="color:rgba(255,255,255,0.9);font-size:0.64rem"><strong>Evidencia de impacto positivo</strong> como base del despliegue.</p>
 </div>
 
 </div>
@@ -622,33 +622,33 @@ Del modelo chino al Traje del Docente — conexión con tu formación
 
 # 5 Ideas de Huang para tu Práctica
 
-<div style="margin-top:12px">
+<div style="margin-top:8px">
 
 <v-clicks>
 
-<div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:10px">
-<div style="min-width:40px;height:40px;background:var(--c-teal);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:1.1rem">1</div>
-<span style="font-size:0.88rem"><strong>La tecnología sin pedagogía no transforma.</strong> No basta tener herramientas — necesitas integración profunda de tecnología Y pedagogía para cerrar la brecha de uso.</span>
+<div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:6px">
+<div style="min-width:32px;height:32px;background:var(--c-teal);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:0.95rem">1</div>
+<span style="font-size:0.82rem"><strong>La tecnología sin pedagogía no transforma.</strong> Integración profunda de tecnología Y pedagogía para cerrar la brecha de uso.</span>
 </div>
 
-<div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:10px">
-<div style="min-width:40px;height:40px;background:var(--c-teal);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:1.1rem">2</div>
-<span style="font-size:0.88rem"><strong>Tu rol cambia, no desaparece.</strong> De transmisor a diseñador de experiencias. Lo que te hace insustituible: empatía, guía ética, creatividad.</span>
+<div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:6px">
+<div style="min-width:32px;height:32px;background:var(--c-teal);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:0.95rem">2</div>
+<span style="font-size:0.82rem"><strong>Tu rol cambia, no desaparece.</strong> De transmisor a diseñador de experiencias. Insustituible: empatía, ética, creatividad.</span>
 </div>
 
-<div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:10px">
-<div style="min-width:40px;height:40px;background:var(--c-teal);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:1.1rem">3</div>
-<span style="font-size:0.88rem"><strong>La IA es tu aliada, no tu reemplazo.</strong> El marco HAR: humanos y sistemas inteligentes colaboran, cada uno aporta lo que el otro no puede.</span>
+<div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:6px">
+<div style="min-width:32px;height:32px;background:var(--c-teal);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:0.95rem">3</div>
+<span style="font-size:0.82rem"><strong>La IA es tu aliada, no tu reemplazo.</strong> Marco HAR: humanos y sistemas inteligentes colaboran complementariamente.</span>
 </div>
 
-<div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:10px">
-<div style="min-width:40px;height:40px;background:var(--c-teal);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:1.1rem">4</div>
-<span style="font-size:0.88rem"><strong>Transforma tu práctica, no solo tus formatos.</strong> La diferencia entre digitalización y transformación digital es un cambio de identidad y propósito.</span>
+<div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:6px">
+<div style="min-width:32px;height:32px;background:var(--c-teal);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:0.95rem">4</div>
+<span style="font-size:0.82rem"><strong>Transforma tu práctica, no solo tus formatos.</strong> La diferencia es un cambio de identidad y propósito.</span>
 </div>
 
-<div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:10px">
-<div style="min-width:40px;height:40px;background:var(--c-teal);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:1.1rem">5</div>
-<span style="font-size:0.88rem"><strong>No estás solo/a.</strong> Comunidades de aprendizaje, colaboración institucional y planificación a largo plazo son los cimientos.</span>
+<div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:6px">
+<div style="min-width:32px;height:32px;background:var(--c-teal);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:0.95rem">5</div>
+<span style="font-size:0.82rem"><strong>No estás solo/a.</strong> Comunidades de aprendizaje, colaboración institucional y planificación a largo plazo.</span>
 </div>
 
 </v-clicks>

@@ -47,37 +47,98 @@
 /* ── Fondos Variados ── */
 
 /* Crema sólido */
-.bg-cream { background: var(--bg-cream) !important; color: var(--bg-carbon) !important; }
+.bg-cream { background: var(--bg-cream) !important; }
 
 /* Carbón oscuro */
-.bg-dark { background: var(--bg-carbon) !important; color: #f0f0f0 !important; }
-.bg-dark h1, .bg-dark h2, .bg-dark h3 { color: #fff !important; }
-.bg-dark .slidev-vclick-target { color: #ddd; }
+.bg-dark { background: var(--bg-carbon) !important; }
 
 /* Gradientes de sección */
-.bg-teal-gradient {
-  background: linear-gradient(135deg, #004D40 0%, #00695C 50%, #00897B 100%) !important;
-  color: #fff !important;
-}
-.bg-teal-gradient h1, .bg-teal-gradient h2 { color: #fff !important; }
+.bg-teal-gradient { background: linear-gradient(135deg, #004D40 0%, #00695C 50%, #00897B 100%) !important; }
+.bg-red-gradient { background: linear-gradient(135deg, #8E0000 0%, #C62828 50%, #E53935 100%) !important; }
+.bg-cobalt-gradient { background: linear-gradient(135deg, #0D47A1 0%, #1565C0 50%, #1E88E5 100%) !important; }
+.bg-amber-gradient { background: linear-gradient(135deg, #E65100 0%, #F57F17 50%, #FFB300 100%) !important; }
 
-.bg-red-gradient {
-  background: linear-gradient(135deg, #8E0000 0%, #C62828 50%, #E53935 100%) !important;
-  color: #fff !important;
-}
-.bg-red-gradient h1, .bg-red-gradient h2 { color: #fff !important; }
+/*
+ * ── Contrast auto-inheritance via :has() ──
+ * Background divs are positioned siblings, not parents.
+ * These rules apply text colors to the SLIDE LAYOUT when it contains a bg div.
+ */
 
-.bg-cobalt-gradient {
-  background: linear-gradient(135deg, #0D47A1 0%, #1565C0 50%, #1E88E5 100%) !important;
-  color: #fff !important;
+/* Dark backgrounds → light text */
+.slidev-layout:has(.bg-dark),
+.slidev-layout:has(.bg-teal-gradient),
+.slidev-layout:has(.bg-red-gradient),
+.slidev-layout:has(.bg-cobalt-gradient) {
+  color: #e0e0e0 !important;
 }
-.bg-cobalt-gradient h1, .bg-cobalt-gradient h2 { color: #fff !important; }
+.slidev-layout:has(.bg-dark) h1,
+.slidev-layout:has(.bg-dark) h2,
+.slidev-layout:has(.bg-dark) h3,
+.slidev-layout:has(.bg-teal-gradient) h1,
+.slidev-layout:has(.bg-teal-gradient) h2,
+.slidev-layout:has(.bg-teal-gradient) h3,
+.slidev-layout:has(.bg-red-gradient) h1,
+.slidev-layout:has(.bg-red-gradient) h2,
+.slidev-layout:has(.bg-red-gradient) h3,
+.slidev-layout:has(.bg-cobalt-gradient) h1,
+.slidev-layout:has(.bg-cobalt-gradient) h2,
+.slidev-layout:has(.bg-cobalt-gradient) h3 {
+  color: #ffffff !important;
+}
+.slidev-layout:has(.bg-dark) strong,
+.slidev-layout:has(.bg-teal-gradient) strong,
+.slidev-layout:has(.bg-red-gradient) strong,
+.slidev-layout:has(.bg-cobalt-gradient) strong {
+  color: #fff;
+}
+.slidev-layout:has(.bg-dark) a,
+.slidev-layout:has(.bg-teal-gradient) a,
+.slidev-layout:has(.bg-red-gradient) a,
+.slidev-layout:has(.bg-cobalt-gradient) a {
+  color: var(--c-yellow);
+}
+.slidev-layout:has(.bg-dark) blockquote,
+.slidev-layout:has(.bg-teal-gradient) blockquote,
+.slidev-layout:has(.bg-red-gradient) blockquote,
+.slidev-layout:has(.bg-cobalt-gradient) blockquote {
+  color: #ccc;
+  border-left-color: rgba(255,255,255,0.3);
+}
+.slidev-layout:has(.bg-dark) code,
+.slidev-layout:has(.bg-teal-gradient) code,
+.slidev-layout:has(.bg-red-gradient) code,
+.slidev-layout:has(.bg-cobalt-gradient) code {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
 
-.bg-amber-gradient {
-  background: linear-gradient(135deg, #E65100 0%, #F57F17 50%, #FFB300 100%) !important;
+/* Amber gradient → dark text (light background) */
+.slidev-layout:has(.bg-amber-gradient) {
   color: var(--bg-carbon) !important;
 }
-.bg-amber-gradient h1, .bg-amber-gradient h2 { color: var(--bg-carbon) !important; }
+.slidev-layout:has(.bg-amber-gradient) h1,
+.slidev-layout:has(.bg-amber-gradient) h2,
+.slidev-layout:has(.bg-amber-gradient) h3 {
+  color: var(--bg-carbon) !important;
+}
+
+/* Light backgrounds → dark text (explicit, as safety net) */
+.slidev-layout:has(.bg-cream),
+.slidev-layout:has(.bg-dots),
+.slidev-layout:has(.bg-grid) {
+  color: var(--bg-carbon) !important;
+}
+.slidev-layout:has(.bg-cream) h1,
+.slidev-layout:has(.bg-cream) h2,
+.slidev-layout:has(.bg-cream) h3,
+.slidev-layout:has(.bg-dots) h1,
+.slidev-layout:has(.bg-dots) h2,
+.slidev-layout:has(.bg-dots) h3,
+.slidev-layout:has(.bg-grid) h1,
+.slidev-layout:has(.bg-grid) h2,
+.slidev-layout:has(.bg-grid) h3 {
+  color: var(--bg-carbon) !important;
+}
 
 /* Patrón de puntos */
 .bg-dots {
