@@ -1,0 +1,19 @@
+{
+  "name": "huang",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "completa": "slidev slides-huang-completa.md --open",
+    "resumen": "slidev slides-huang-resumen.md --open",
+    "build:completa": "slidev build slides-huang-completa.md",
+    "build:resumen": "slidev build slides-huang-resumen.md"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@slidev/cli": "^52.14.1",
+    "@slidev/theme-seriph": "^0.25.0"
+  }
+}

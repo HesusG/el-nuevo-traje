@@ -1,0 +1,252 @@
+/* ── Tema Personalizado: Presentaciones Huang ── */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --slidev-theme-primary: #00695C;
+  --bg-cream: #F5F0E8;
+  --bg-carbon: #1a1a1a;
+  --c-teal: #00695C;
+  --c-red: #C62828;
+  --c-cobalt: #1565C0;
+  --c-amber: #F57F17;
+  --c-yellow: #FFD54F;
+  --c-socio: #7b1fa2;
+  --c-tech: #1976d2;
+  --c-innov: #388e3c;
+  --c-design: #e64a19;
+  --font-display: 'Inter', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ── Tipografía Base ── */
+.slidev-layout {
+  font-family: var(--font-body);
+  color: var(--bg-carbon);
+}
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.slidev-layout h1 { font-size: 2.4rem; line-height: 1.1; }
+.slidev-layout h2 { font-size: 1.8rem; line-height: 1.15; }
+.slidev-layout h3 { font-size: 1.3rem; line-height: 1.2; }
+
+.slidev-layout code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: rgba(0,0,0,0.06);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* ── Fondos Variados ── */
+
+/* Crema sólido */
+.bg-cream { background: var(--bg-cream) !important; color: var(--bg-carbon) !important; }
+
+/* Carbón oscuro */
+.bg-dark { background: var(--bg-carbon) !important; color: #f0f0f0 !important; }
+.bg-dark h1, .bg-dark h2, .bg-dark h3 { color: #fff !important; }
+.bg-dark .slidev-vclick-target { color: #ddd; }
+
+/* Gradientes de sección */
+.bg-teal-gradient {
+  background: linear-gradient(135deg, #004D40 0%, #00695C 50%, #00897B 100%) !important;
+  color: #fff !important;
+}
+.bg-teal-gradient h1, .bg-teal-gradient h2 { color: #fff !important; }
+
+.bg-red-gradient {
+  background: linear-gradient(135deg, #8E0000 0%, #C62828 50%, #E53935 100%) !important;
+  color: #fff !important;
+}
+.bg-red-gradient h1, .bg-red-gradient h2 { color: #fff !important; }
+
+.bg-cobalt-gradient {
+  background: linear-gradient(135deg, #0D47A1 0%, #1565C0 50%, #1E88E5 100%) !important;
+  color: #fff !important;
+}
+.bg-cobalt-gradient h1, .bg-cobalt-gradient h2 { color: #fff !important; }
+
+.bg-amber-gradient {
+  background: linear-gradient(135deg, #E65100 0%, #F57F17 50%, #FFB300 100%) !important;
+  color: var(--bg-carbon) !important;
+}
+.bg-amber-gradient h1, .bg-amber-gradient h2 { color: var(--bg-carbon) !important; }
+
+/* Patrón de puntos */
+.bg-dots {
+  background-image: radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-color: var(--bg-cream);
+}
+
+/* Patrón de cuadrícula */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-color: #fff;
+}
+
+/* ── Tarjeta de Dato ── */
+.dato-grande {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--c-yellow);
+}
+.dato-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+/* ── Citas ── */
+.cita-grande {
+  position: relative;
+  font-size: 1.4rem;
+  font-style: italic;
+  line-height: 1.6;
+  padding-left: 30px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.cita-grande::before {
+  content: '\201C';
+  position: absolute;
+  left: -10px;
+  top: -20px;
+  font-size: 5rem;
+  font-family: var(--font-display);
+  opacity: 0.15;
+  line-height: 1;
+}
+.cita-autor {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-top: 16px;
+  text-align: right;
+}
+
+/* ── Watermark de Sección ── */
+.watermark {
+  position: absolute;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 12rem;
+  opacity: 0.04;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  right: -5%;
+  bottom: -10%;
+  text-transform: uppercase;
+}
+.watermark-left {
+  right: auto;
+  left: -5%;
+}
+
+/* ── Etiqueta de Sección ── */
+.seccion-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 6px 14px;
+  border: 2px solid currentColor;
+  margin-bottom: 16px;
+}
+
+/* ── Slide de Transición ── */
+.slide-transicion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+.slide-transicion h1 {
+  font-size: 2.8rem;
+  max-width: 700px;
+}
+.numero-seccion {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 8rem;
+  opacity: 0.1;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  line-height: 1;
+}
+
+/* ── Mermaid Overrides ── */
+.mermaid {
+  font-family: var(--font-body) !important;
+}
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node polygon {
+  stroke-width: 2px !important;
+}
+
+/* ── Grid de Tarjetas ── */
+.tarjeta {
+  background: #fff;
+  border: 2px solid var(--bg-carbon);
+  padding: 16px;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+}
+.tarjeta h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+.tarjeta p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+/* ── Animaciones de entrada ── */
+.slidev-vclick-target {
+  transition: all 0.4s ease;
+}
+
+/* ── Pregunta reflexiva ── */
+.pregunta-reflexion {
+  background: rgba(255,213,79,0.15);
+  border-left: 4px solid var(--c-yellow);
+  padding: 12px 16px;
+  font-style: italic;
+  margin-top: 16px;
+  font-size: 0.95rem;
+}
+
+/* ── Mapeo Traje ── */
+.traje-col {
+  border-left: 4px solid;
+  padding-left: 12px;
+  margin-bottom: 12px;
+}
+.traje-col.socio { border-color: var(--c-socio); }
+.traje-col.tech { border-color: var(--c-tech); }
+.traje-col.innov { border-color: var(--c-innov); }
+.traje-col.design { border-color: var(--c-design); }

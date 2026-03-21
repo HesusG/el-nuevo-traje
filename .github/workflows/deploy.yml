@@ -1,0 +1,62 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # ── Build Slidev presentations ──
+      - name: Install Slidev dependencies
+        working-directory: presentaciones/huang
+        run: npm ci || npm install
+
+      - name: Build presentación completa
+        working-directory: presentaciones/huang
+        run: npx slidev build slides-huang-completa.md --base /el-nuevo-traje/huang-completa/ --out ../../dist/huang-completa
+
+      - name: Build presentación resumen
+        working-directory: presentaciones/huang
+        run: npx slidev build slides-huang-resumen.md --base /el-nuevo-traje/huang-resumen/ --out ../../dist/huang-resumen
+
+      # ── Assemble site ──
+      - name: Copy root site files
+        run: |
+          cp index.html dist/
+          cp brutalist-sample.html dist/ 2>/dev/null || true
+          cp -r img dist/ 2>/dev/null || true
+          cp -r css dist/ 2>/dev/null || true
+          cp -r js dist/ 2>/dev/null || true
+          cp -r fonts dist/ 2>/dev/null || true
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
