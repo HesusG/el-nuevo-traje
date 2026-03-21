@@ -24,7 +24,7 @@ drawings:
 
 ## Estrategias, Iniciativas y Prácticas en China
 
-<div style="margin-top:40px;font-family:var(--font-mono);font-size:0.85rem;opacity:0.8">
+<div style="margin-top:40px;font-family:var(--font-mono);font-size:0.85rem;opacity:0.85">
 Prof. Ronghuai Huang (黄荣怀)<br>
 Instituto de Aprendizaje Inteligente · Universidad Normal de Beijing<br>
 Cátedra UNESCO de Inteligencia Artificial en Educación
@@ -212,7 +212,7 @@ Los sistemas educativos buscan lograr tres metas simultáneamente:
 
 <div style="display:flex;justify-content:center;margin:20px 0">
 
-```mermaid {scale: 0.8}
+```mermaid {scale: 0.7}
 graph TD
     A["🎯 <b>Calidad</b><br>Educación de<br>alta calidad"] --- B["📈 <b>Escala</b><br>Acceso a<br>gran escala"]
     B --- C["🧩 <b>Personalización</b><br>Aprendizaje<br>individualizado"]
@@ -246,21 +246,21 @@ graph TD
 <v-click>
 <div>
 <div class="dato-grande">280M</div>
-<div class="dato-label">Estudiantes</div>
+<div class="dato-label" style="color:#bbb;opacity:1">Estudiantes</div>
 </div>
 </v-click>
 
 <v-click>
 <div>
 <div class="dato-grande">440,000</div>
-<div class="dato-label">Escuelas</div>
+<div class="dato-label" style="color:#bbb;opacity:1">Escuelas</div>
 </div>
 </v-click>
 
 <v-click>
 <div>
 <div class="dato-grande">18.7M</div>
-<div class="dato-label">Docentes</div>
+<div class="dato-label" style="color:#bbb;opacity:1">Docentes</div>
 </div>
 </v-click>
 
@@ -269,11 +269,11 @@ graph TD
 <v-click>
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px;font-size:0.9rem">
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2);color:#ddd">
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3);color:#ddd">
 <h4 style="color:#FFD54F">Preescolar</h4>
 <p style="color:#ccc">> 92% de matrícula</p>
 </div>
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2);color:#ddd">
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3);color:#ddd">
 <h4 style="color:#FFD54F">Educación Superior</h4>
 <p style="color:#ccc">Tasa bruta > 60%, duplicada desde 2012</p>
 </div>
@@ -403,7 +403,7 @@ Plan a largo plazo que guía la reforma educativa de China con la tecnología co
 <div class="cita-grande" style="color:#fff">
 Cuando la educación prospera, la nación prospera.
 </div>
-<div class="cita-autor" style="color:#aaa">— Dicho ampliamente citado en China</div>
+<div class="cita-autor" style="color:#bbb;opacity:1">— Dicho ampliamente citado en China</div>
 </div>
 
 <v-click>
@@ -488,7 +488,7 @@ Los sistemas digitales deben servir a docentes, estudiantes y administradores.
 
 # Estrategia 3C + 3I
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:20px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:12px">
 
 <div>
 
@@ -496,19 +496,19 @@ Los sistemas digitales deben servir a docentes, estudiantes y administradores.
 
 <v-clicks>
 
-<div class="tarjeta" style="margin-bottom:12px">
-<h4>🔌 Conexión</h4>
-<p>Conectividad universal y de calidad como base de la equidad digital.</p>
+<div class="tarjeta" style="margin-bottom:8px;padding:10px 14px">
+<h4 style="margin-bottom:4px">🔌 Conexión</h4>
+<p style="font-size:0.75rem">Conectividad universal y de calidad como base de la equidad digital.</p>
 </div>
 
-<div class="tarjeta" style="margin-bottom:12px">
-<h4>📚 Contenido</h4>
-<p>Recursos de aprendizaje digital de calidad, culturalmente relevantes.</p>
+<div class="tarjeta" style="margin-bottom:8px;padding:10px 14px">
+<h4 style="margin-bottom:4px">📚 Contenido</h4>
+<p style="font-size:0.75rem">Recursos de aprendizaje digital de calidad, culturalmente relevantes.</p>
 </div>
 
-<div class="tarjeta">
-<h4>🤝 Cooperación</h4>
-<p>Colaboración nacional e internacional para expandir recursos e innovación.</p>
+<div class="tarjeta" style="padding:10px 14px">
+<h4 style="margin-bottom:4px">🤝 Cooperación</h4>
+<p style="font-size:0.75rem">Colaboración nacional e internacional para expandir recursos e innovación.</p>
 </div>
 
 </v-clicks>
@@ -521,19 +521,19 @@ Los sistemas digitales deben servir a docentes, estudiantes y administradores.
 
 <v-clicks>
 
-<div class="tarjeta" style="margin-bottom:12px">
-<h4>🔄 Integrado</h4>
-<p>Fusión fluida entre aprendizaje en línea y presencial.</p>
+<div class="tarjeta" style="margin-bottom:8px;padding:10px 14px">
+<h4 style="margin-bottom:4px">🔄 Integrado</h4>
+<p style="font-size:0.75rem">Fusión fluida entre aprendizaje en línea y presencial.</p>
 </div>
 
-<div class="tarjeta" style="margin-bottom:12px">
-<h4>🧠 Inteligente</h4>
-<p>IA para aprendizaje adaptativo, evaluación inteligente y gobernanza educativa.</p>
+<div class="tarjeta" style="margin-bottom:8px;padding:10px 14px">
+<h4 style="margin-bottom:4px">🧠 Inteligente</h4>
+<p style="font-size:0.75rem">IA para aprendizaje adaptativo, evaluación inteligente y gobernanza educativa.</p>
 </div>
 
-<div class="tarjeta">
-<h4>🌐 Internacional</h4>
-<p>Posicionamiento dentro de un marco de colaboración global.</p>
+<div class="tarjeta" style="padding:10px 14px">
+<h4 style="margin-bottom:4px">🌐 Internacional</h4>
+<p style="font-size:0.75rem">Posicionamiento dentro de un marco de colaboración global.</p>
 </div>
 
 </v-clicks>
@@ -551,28 +551,28 @@ Los sistemas digitales deben servir a docentes, estudiantes y administradores.
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px">
 
 <v-click>
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2)">
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3)">
 <h4 style="color:#FFD54F">👨‍🏫 Docentes del Futuro</h4>
 <p style="color:#ccc">Ya no transmisores de conocimiento, sino <strong>diseñadores de experiencias</strong> y orquestadores de la colaboración humano-IA.</p>
 </div>
 </v-click>
 
 <v-click>
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2)">
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3)">
 <h4 style="color:#FFD54F">🏫 Aulas del Futuro</h4>
 <p style="color:#ccc">Ambientes dinámicos y flexibles que <strong>fusionan espacios físicos y virtuales</strong> para un aprendizaje interactivo y personalizado.</p>
 </div>
 </v-click>
 
 <v-click>
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2)">
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3)">
 <h4 style="color:#FFD54F">🏛️ Escuelas del Futuro</h4>
 <p style="color:#ccc"><strong>Ecosistemas abiertos de aprendizaje</strong> integrados en la comunidad, no espacios institucionales aislados.</p>
 </div>
 </v-click>
 
 <v-click>
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2)">
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3)">
 <h4 style="color:#FFD54F">📖 Centros de Aprendizaje</h4>
 <p style="color:#ccc">Educación <strong>permanente y a demanda</strong>, sirviendo a personas en todas las etapas de la vida.</p>
 </div>
@@ -718,7 +718,7 @@ La transformación digital es **sistémica, no cosmética**. No agrega tecnolog�
 
 # ¿Qué es la Educación Inteligente?
 
-<div style="text-align:center;margin:20px 0;color:#aaa;font-size:0.95rem">
+<div style="text-align:center;margin:20px 0;color:#bbb;font-size:0.95rem">
 No es educación tradicional mejorada con herramientas digitales.<br>
 Es una <strong style="color:#FFD54F">forma claramente definida de educación</strong> para la era de la inteligencia.
 </div>
@@ -726,21 +726,21 @@ Es una <strong style="color:#FFD54F">forma claramente definida de educación</st
 <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:24px">
 
 <v-click>
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2)">
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3)">
 <h4 style="color:#FFD54F">🌟 Alta Experiencia</h4>
 <p style="color:#ccc">Estudiantes profundamente comprometidos e intrínsecamente motivados, con apoyo continuo a lo largo de todo el proceso de aprendizaje.</p>
 </div>
 </v-click>
 
 <v-click>
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2)">
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3)">
 <h4 style="color:#FFD54F">🔄 Adaptabilidad</h4>
 <p style="color:#ccc">Currículo y recursos que se adaptan dinámicamente a las necesidades, contexto y progreso de cada estudiante.</p>
 </div>
 </v-click>
 
 <v-click>
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2)">
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3)">
 <h4 style="color:#FFD54F">⚡ Eficiencia Docente</h4>
 <p style="color:#ccc">Tecnologías inteligentes liberan al docente de tareas repetitivas para enfocarse en mentoría, guía y creatividad.</p>
 </div>
@@ -758,10 +758,10 @@ Tres capas arquitectónicas — cada una construida sobre la anterior.
 
 <div style="margin-top:16px">
 
-```mermaid {scale: 0.8}
+```mermaid {scale: 0.65}
 graph BT
-    A["<b>Capa 1: Ambientes Inteligentes</b><br>Espacios físicos y virtuales diseñados para<br>tecnologías inteligentes y experiencias basadas en datos"] --> B["<b>Capa 2: Enseñanza y Aprendizaje Mejorados</b><br>Pedagogía personalizada, adaptativa y colaborativa.<br>Nuevas configuraciones entre estudiantes, docentes y sistemas IA"]
-    B --> C["<b>Capa 3: Gobernanza Basada en Evidencia</b><br>Analítica de datos para guiar decisiones,<br>mejorar políticas y apoyar innovación"]
+    A["<b>Capa 1: Ambientes Inteligentes</b><br>Espacios físicos y virtuales con<br>tecnologías inteligentes"] --> B["<b>Capa 2: Enseñanza Mejorada</b><br>Pedagogía personalizada y colaborativa<br>entre estudiantes, docentes e IA"]
+    B --> C["<b>Capa 3: Gobernanza por Evidencia</b><br>Analítica de datos para decisiones<br>y mejora de políticas"]
     style A fill:#B2DFDB,color:#004D40
     style B fill:#4DB6AC,color:#fff
     style C fill:#00695C,color:#fff
@@ -781,6 +781,7 @@ graph BT
 
 # Cuatro Dimensiones de una Estrategia Nacional
 
+<div style="font-size:0.9rem;line-height:1.5">
 <v-clicks>
 
 **1. Enseñanza y aprendizaje transformadores**
@@ -796,6 +797,7 @@ Visión nacional clara, capacidad de infraestructura, inversión en capital huma
 Inclusión y equidad, cultura de mejora continua, alianzas intersectoriales fuertes.
 
 </v-clicks>
+</div>
 
 ---
 
@@ -803,8 +805,9 @@ Inclusión y equidad, cultura de mejora continua, alianzas intersectoriales fuer
 
 # Cinco Rasgos Performativos
 
-Metas observables que indican si se ha logrado la educación inteligente.
+<p style="font-size:0.85rem;opacity:0.8;margin-bottom:8px">Metas observables que indican si se ha logrado la educación inteligente.</p>
 
+<div style="font-size:0.9rem;line-height:1.5">
 <v-clicks>
 
 1. **Centrado en el estudiante** — agencia, voz, autonomía y trayectorias personalizadas
@@ -818,6 +821,7 @@ Metas observables que indican si se ha logrado la educación inteligente.
 5. **Equidad como principio central** — la tecnología digital debe cerrar brechas educativas, no ampliarlas
 
 </v-clicks>
+</div>
 
 ---
 
@@ -825,8 +829,9 @@ Metas observables que indican si se ha logrado la educación inteligente.
 
 # Cinco Rasgos Constructivos
 
-Caminos habilitadores para construir sistemas de educación inteligente.
+<p style="font-size:0.85rem;opacity:0.8;margin-bottom:8px">Caminos habilitadores para construir sistemas de educación inteligente.</p>
 
+<div style="font-size:0.9rem;line-height:1.5">
 <v-clicks>
 
 1. **Comunidades sociales de aprendizaje** — redes colaborativas entre estudiantes, docentes e instituciones como motor de construcción de conocimiento
@@ -840,6 +845,7 @@ Caminos habilitadores para construir sistemas de educación inteligente.
 5. **Colaboración multisectorial** — gobierno, industria, academia y sociedad civil trabajando juntos para crear ecosistemas alineados
 
 </v-clicks>
+</div>
 
 ---
 
@@ -850,28 +856,28 @@ Caminos habilitadores para construir sistemas de educación inteligente.
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px">
 
 <v-click>
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2)">
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3)">
 <h4 style="color:#FFD54F">🔭 Nuevos Horizontes del Conocimiento</h4>
 <p style="color:#ccc">El conocimiento ya no se transmite — se <strong>co-crea</strong> entre humanos, sistemas de IA y comunidades de aprendizaje.</p>
 </div>
 </v-click>
 
 <v-click>
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2)">
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3)">
 <h4 style="color:#FFD54F">🗺️ Nuevos Paisajes de Aprendizaje</h4>
 <p style="color:#ccc">De recepción pasiva a <strong>exploración autodirigida</strong>: curiosidad, motivación y agencia como motores.</p>
 </div>
 </v-click>
 
 <v-click>
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2)">
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3)">
 <h4 style="color:#FFD54F">📐 Nuevos Patrones Curriculares</h4>
 <p style="color:#ccc">En lugar de rutas estandarizadas, <strong>trayectorias personalizadas</strong> que se adaptan a necesidades, intereses y metas.</p>
 </div>
 </v-click>
 
 <v-click>
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2)">
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3)">
 <h4 style="color:#FFD54F">🤝 Nuevos Paradigmas de Enseñanza</h4>
 <p style="color:#ccc">Docentes e IA <strong>no compiten</strong> — colaboran de manera complementaria, cada uno aportando lo que el otro no puede reemplazar.</p>
 </div>
@@ -885,35 +891,35 @@ Caminos habilitadores para construir sistemas de educación inteligente.
 
 # Marco HAR: El Ecosistema Humano-IA en el Aula
 
-Publicado en el *Diario de Aprendizaje Aplicado y Enseñanza* (*Journal of Applied Learning and Teaching*).
+<p style="font-size:0.8rem;opacity:0.8;margin-bottom:8px">Publicado en el <em>Journal of Applied Learning and Teaching</em>.</p>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px">
 
 <v-click>
-<div class="tarjeta">
-<h4>👨‍🏫 Docentes Humanos</h4>
-<p><strong>Insustituibles</strong> en empatía, guía ética, creatividad y apoyo socioemocional.</p>
+<div class="tarjeta" style="padding:10px 14px">
+<h4 style="margin-bottom:4px">👨‍🏫 Docentes Humanos</h4>
+<p style="font-size:0.75rem"><strong>Insustituibles</strong> en empatía, guía ética, creatividad y apoyo socioemocional.</p>
 </div>
 </v-click>
 
 <v-click>
-<div class="tarjeta">
-<h4>🖥️ Avatares de IA</h4>
-<p>Agentes instruccionales virtuales: apoyo escalable y siempre disponible — explicaciones, retroalimentación, tutoría.</p>
+<div class="tarjeta" style="padding:10px 14px">
+<h4 style="margin-bottom:4px">🖥️ Avatares de IA</h4>
+<p style="font-size:0.75rem">Agentes instruccionales virtuales: apoyo escalable y siempre disponible — explicaciones, retroalimentación, tutoría.</p>
 </div>
 </v-click>
 
 <v-click>
-<div class="tarjeta">
-<h4>📊 Gemelos Digitales</h4>
-<p>Modelos computacionales que representan estudiantes y procesos de aprendizaje: simulación, predicción, trayectorias personalizadas.</p>
+<div class="tarjeta" style="padding:10px 14px">
+<h4 style="margin-bottom:4px">📊 Gemelos Digitales</h4>
+<p style="font-size:0.75rem">Modelos computacionales de estudiantes y aprendizaje: simulación, predicción, trayectorias personalizadas.</p>
 </div>
 </v-click>
 
 <v-click>
-<div class="tarjeta">
-<h4>🤖 Robots Educativos</h4>
-<p>IA en ambientes físicos: experiencias prácticas, colaborativas y tangibles, especialmente en educación CTIM (Ciencia, Tecnología, Ingeniería, Matemáticas).</p>
+<div class="tarjeta" style="padding:10px 14px">
+<h4 style="margin-bottom:4px">🤖 Robots Educativos</h4>
+<p style="font-size:0.75rem">IA en ambientes físicos: experiencias prácticas, colaborativas y tangibles, especialmente en CTIM.</p>
 </div>
 </v-click>
 
@@ -933,33 +939,33 @@ Publicado en el *Diario de Aprendizaje Aplicado y Enseñanza* (*Journal of Appli
 
 No es enseñanza tradicional con herramientas digitales — es una **nueva ciencia pedagógica** para la era digital.
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
 
 <v-click>
-<div class="tarjeta" style="border-left:4px solid var(--c-cobalt)">
-<h4>1. Competencia Digital Profunda</h4>
-<p>Navegar herramientas y entornos de información para experiencias de aprendizaje significativas y profundas.</p>
+<div class="tarjeta" style="border-left:4px solid var(--c-cobalt);padding:10px 14px">
+<h4 style="margin-bottom:4px">1. Competencia Digital Profunda</h4>
+<p style="font-size:0.75rem">Navegar herramientas y entornos de información para experiencias de aprendizaje significativas y profundas.</p>
 </div>
 </v-click>
 
 <v-click>
-<div class="tarjeta" style="border-left:4px solid var(--c-cobalt)">
-<h4>2. Práctica Basada en Evidencia</h4>
-<p>Estrategias guiadas por investigación y apoyadas en materiales digitales bien diseñados.</p>
+<div class="tarjeta" style="border-left:4px solid var(--c-cobalt);padding:10px 14px">
+<h4 style="margin-bottom:4px">2. Práctica Basada en Evidencia</h4>
+<p style="font-size:0.75rem">Estrategias guiadas por investigación y apoyadas en materiales digitales bien diseñados.</p>
 </div>
 </v-click>
 
 <v-click>
-<div class="tarjeta" style="border-left:4px solid var(--c-cobalt)">
-<h4>3. Ambientes con Tecnología Apropiada</h4>
-<p>Tecnología integrada de forma reflexiva para apoyar — no distraer — los procesos de enseñanza y aprendizaje.</p>
+<div class="tarjeta" style="border-left:4px solid var(--c-cobalt);padding:10px 14px">
+<h4 style="margin-bottom:4px">3. Ambientes con Tecnología Apropiada</h4>
+<p style="font-size:0.75rem">Tecnología integrada de forma reflexiva para apoyar — no distraer — la enseñanza y el aprendizaje.</p>
 </div>
 </v-click>
 
 <v-click>
-<div class="tarjeta" style="border-left:4px solid var(--c-cobalt)">
-<h4>4. Sinergia Humano-IA</h4>
-<p>Educadores y sistemas de IA confiables colaborando de manera complementaria.</p>
+<div class="tarjeta" style="border-left:4px solid var(--c-cobalt);padding:10px 14px">
+<h4 style="margin-bottom:4px">4. Sinergia Humano-IA</h4>
+<p style="font-size:0.75rem">Educadores y sistemas de IA confiables colaborando de manera complementaria.</p>
 </div>
 </v-click>
 
@@ -988,8 +994,9 @@ No es enseñanza tradicional con herramientas digitales — es una **nueva cienc
 
 # Cinco Competencias del Ciudadano Digital
 
-Publicadas en *Horizontes de la AIU* (*IAU Horizons*).
+<p style="font-size:0.85rem;opacity:0.8;margin-bottom:8px">Publicadas en <em>Horizontes de la AIU</em> (<em>IAU Horizons</em>).</p>
 
+<div style="font-size:0.9rem;line-height:1.5">
 <v-clicks>
 
 1. **Aprendizaje activo a lo largo de la vida** — En un mundo cambiante, las personas deben actualizar continuamente sus conocimientos y habilidades.
@@ -1003,6 +1010,7 @@ Publicadas en *Horizontes de la AIU* (*IAU Horizons*).
 5. **Capacidad de prosperar en entornos de IA** — Coexistencia productiva donde la inteligencia humana y la inteligencia artificial trabajan juntas.
 
 </v-clicks>
+</div>
 
 ---
 
@@ -1012,20 +1020,19 @@ Publicadas en *Horizontes de la AIU* (*IAU Horizons*).
 
 La adopción de IA en educación **no puede depender de suposiciones ni de optimismo**. Requiere:
 
+<div style="font-size:0.9rem;line-height:1.5">
 <v-clicks>
 
 - **Estructuras sólidas de gobernanza** para la IA educativa
 
 - **Mecanismos sistemáticos** de evaluación de impactos reales a lo largo del tiempo
 
-- **Experimentos Sociales Inteligentes (ESI)**: estudios de investigación e implementación a largo plazo, cuidadosamente diseñados, que examinan cómo las tecnologías de IA influyen en:
-  - Calidad de la enseñanza
-  - Resultados de aprendizaje
-  - Gestión institucional
+- **Experimentos Sociales Inteligentes (ESI)**: estudios a largo plazo que examinan cómo la IA influye en calidad de enseñanza, resultados de aprendizaje y gestión institucional
 
 - Alineados con la **Década Internacional de Ciencias para el Desarrollo Sostenible (2024-2033)**
 
 </v-clicks>
+</div>
 
 <v-click>
 
@@ -1042,31 +1049,35 @@ La meta no es solo construir IA más segura, sino desarrollar <strong>IA demostr
 
 # Colaboración China-América Latina
 
-<div style="margin-top:20px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px">
 
-<v-clicks>
-
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2);margin-bottom:12px">
-<h4 style="color:#FFD54F">1. Aprender sobre la IA y su uso responsable</h4>
-<p style="color:#ccc">Entender cómo funciona la inteligencia artificial y cómo aplicarla ética y responsablemente en educación y sociedad.</p>
+<v-click>
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3);padding:10px 14px">
+<h4 style="color:#FFD54F;margin-bottom:4px">1. Aprender sobre la IA y su uso responsable</h4>
+<p style="color:#ccc;font-size:0.75rem">Entender cómo funciona la IA y cómo aplicarla ética y responsablemente en educación y sociedad.</p>
 </div>
+</v-click>
 
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2);margin-bottom:12px">
-<h4 style="color:#FFD54F">2. Explorar cómo la IA mejora el aprendizaje</h4>
-<p style="color:#ccc">Aprendizaje personalizado, mejor apoyo al desarrollo académico y mayor eficiencia en la educación superior.</p>
+<v-click>
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3);padding:10px 14px">
+<h4 style="color:#FFD54F;margin-bottom:4px">2. Explorar cómo la IA mejora el aprendizaje</h4>
+<p style="color:#ccc;font-size:0.75rem">Aprendizaje personalizado, mejor apoyo al desarrollo académico y mayor eficiencia en la educación superior.</p>
 </div>
+</v-click>
 
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2);margin-bottom:12px">
-<h4 style="color:#FFD54F">3. Intercambio académico intercultural</h4>
-<p style="color:#ccc">Investigación conjunta, plataformas digitales de aprendizaje y movilidad estudiantil entre China y América Latina.</p>
+<v-click>
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3);padding:10px 14px">
+<h4 style="color:#FFD54F;margin-bottom:4px">3. Intercambio académico intercultural</h4>
+<p style="color:#ccc;font-size:0.75rem">Investigación conjunta, plataformas digitales de aprendizaje y movilidad estudiantil entre China y América Latina.</p>
 </div>
+</v-click>
 
-<div class="tarjeta" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2)">
-<h4 style="color:#FFD54F">4. Desarrollar competencias digitales para el futuro</h4>
-<p style="color:#ccc">Prepararse para carreras en un mundo cada vez más inteligente y globalmente conectado.</p>
+<v-click>
+<div class="tarjeta" style="background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.3);padding:10px 14px">
+<h4 style="color:#FFD54F;margin-bottom:4px">4. Desarrollar competencias digitales para el futuro</h4>
+<p style="color:#ccc;font-size:0.75rem">Prepararse para carreras en un mundo cada vez más inteligente y globalmente conectado.</p>
 </div>
-
-</v-clicks>
+</v-click>
 
 </div>
 
@@ -1078,7 +1089,7 @@ La meta no es solo construir IA más segura, sino desarrollar <strong>IA demostr
 
 <div style="display:flex;align-items:center;justify-content:center;height:70%;flex-direction:column">
 
-<div class="cita-grande" style="max-width:750px;font-size:1.5rem">
+<div class="cita-grande" style="max-width:750px;font-size:1.3rem">
 En la era de la inteligencia, la tecnología se hará cargo cada vez más de las tareas rutinarias. Pero la verdadera misión de la educación siempre será profundamente humana.
 
 La tecnología se encarga de lo rutinario. Los seres humanos se dedican a pensar, sentir y crear significado.
@@ -1096,26 +1107,26 @@ El futuro de la educación no está en reemplazar docentes con máquinas, sino e
 
 # Preguntas del Público
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
 
-<div class="tarjeta">
-<h4>¿Cómo usar IA para aprender idiomas?</h4>
-<p>Recursos de la plataforma nacional china, aplicaciones especializadas, modelos de lenguaje como DeepSeek para practicar vocabulario y lectura.</p>
+<div class="tarjeta" style="padding:10px 14px">
+<h4 style="margin-bottom:4px;font-size:0.9rem">¿Cómo usar IA para aprender idiomas?</h4>
+<p style="font-size:0.75rem">Recursos de la plataforma nacional china, aplicaciones especializadas, modelos de lenguaje como DeepSeek para practicar vocabulario y lectura.</p>
 </div>
 
-<div class="tarjeta">
-<h4>¿Cómo habilita la IA la adaptabilidad de contenidos?</h4>
-<p>En clases de 40-45 estudiantes, la IA permite diferenciar la enseñanza — por ejemplo, ayudando individualmente a escribir ensayos, ajustando nivel y retroalimentación.</p>
+<div class="tarjeta" style="padding:10px 14px">
+<h4 style="margin-bottom:4px;font-size:0.9rem">¿Cómo habilita la IA la adaptabilidad de contenidos?</h4>
+<p style="font-size:0.75rem">En clases de 40-45 estudiantes, la IA permite diferenciar la enseñanza — ayudando individualmente a escribir ensayos, ajustando nivel y retroalimentación.</p>
 </div>
 
-<div class="tarjeta">
-<h4>¿Están las plataformas chinas disponibles para otros países?</h4>
-<p>En expansión: versión en inglés, contribuciones a la pasarela UNESCO de aprendizaje digital público, plataformas universitarias abiertas tipo MOOC.</p>
+<div class="tarjeta" style="padding:10px 14px">
+<h4 style="margin-bottom:4px;font-size:0.9rem">¿Están las plataformas chinas disponibles para otros países?</h4>
+<p style="font-size:0.75rem">En expansión: versión en inglés, contribuciones a la pasarela UNESCO de aprendizaje digital público, plataformas abiertas tipo MOOC.</p>
 </div>
 
-<div class="tarjeta">
-<h4>¿Cómo mantenerse actualizado como docente?</h4>
-<p>Los gobiernos deben proveer políticas e infraestructura; usar Recursos Educativos Abiertos (REA); <strong>los docentes deben aprender primero</strong> para luego guiar a los estudiantes.</p>
+<div class="tarjeta" style="padding:10px 14px">
+<h4 style="margin-bottom:4px;font-size:0.9rem">¿Cómo mantenerse actualizado como docente?</h4>
+<p style="font-size:0.75rem">Gobiernos deben proveer políticas e infraestructura; usar REA; <strong>los docentes deben aprender primero</strong> para luego guiar a estudiantes.</p>
 </div>
 
 </div>
@@ -1130,7 +1141,7 @@ El futuro de la educación no está en reemplazar docentes con máquinas, sino e
 
 # Gracias
 
-<div style="margin-top:30px;font-family:var(--font-mono);font-size:0.8rem;opacity:0.7;line-height:2">
+<div style="margin-top:30px;font-family:var(--font-mono);font-size:0.8rem;opacity:0.85;line-height:2">
 Prof. Ronghuai Huang (黄荣怀)<br>
 Instituto de Aprendizaje Inteligente · Universidad Normal de Beijing<br>
 Cátedra UNESCO de Inteligencia Artificial en Educación<br>
